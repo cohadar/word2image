@@ -16,3 +16,4 @@ Download wiki bz2 file in text-analysis directory in this repo but please do NOT
 * `cd test-analysis`
 * `./xml.bz2-to-text.gz.sh dewiki-20170920-pages-articles.xml.bz2` - this will extract raw text from wikipedia with filename `dewiki-20170920-pages-articles.text.gz`
 * you can view the content of this file with: `gzcat dewiki-20170920-pages-articles.text.gz | head`
+* Note that above processing takes around 20m on mac book pro.
