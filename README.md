@@ -9,4 +9,10 @@
 
 We will use German as target language. 10000 most frequent words will be extracted by analyzing text of german wikipedia. You can find it [here](https://dumps.wikimedia.org), or more specifically [here](https://dumps.wikimedia.org/dewiki/20170920/dewiki-20170920-pages-articles.xml.bz2)
 
+## 1.1
 Download wiki bz2 file in text-analysis directory in this repo but please do NOT add it to the project, it is 6.4 Gigabytes!
+
+## 1.2
+* `cd test-analysis`
+* `./xml.bz2-to-text.gz.sh dewiki-20170920-pages-articles.xml.bz2` - this will extract raw text from wikipedia with filename `dewiki-20170920-pages-articles.text.gz`
+* you can view the content of this file with: `gzcat dewiki-20170920-pages-articles.text.gz | head`
