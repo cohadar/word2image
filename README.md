@@ -25,3 +25,7 @@ Download wiki bz2 file in text-analysis directory in this repo but please do NOT
 ## 1.3
 * Running count-words.py will output top 10k words by frequency 
 * gzcat dewiki-20170920-pages-articles.text.gz | python count-words.py > common-10k-words.txt
+
+## 1.4 
+* Get images from google.de by running (pip install bs4 and request)
+* cat common-10k-words.txt  | python get-images.py
