@@ -27,3 +27,6 @@ Download wiki bz2 file in text-analysis directory in this repo but please do NOT
 * ./words.gz-to-freq.tsv dewiki-20170920-pages-articles.words.gz
 * this will create __dewiki-20170920-pages-articles.freq.tsv__ - a list of 10k most frequent words in german.
 * Note that previous list was not correct because of wrong handling of uppercase ÄÜÖ
+
+## 1.4
+* improved word counter to preserve Title case of German nouns.

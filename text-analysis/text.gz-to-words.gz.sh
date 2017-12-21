@@ -9,9 +9,11 @@ name=${1%.text.gz}
 # remove blank lines: ' ', '   '
 # remove single char words: 'a', 'f'
 # remove uppercased words: 'MCMLX', 'VII', 'APFEL'
+# remove words with: '\' - wiki markdown leftowers
 gzcat "${name}.text.gz" |
 	tr ' ' '\n' |
 	sed -E '/^ *$/d' |
 	sed -E '/^.$/d' |
 	sed -E '/^[[:upper:]]+$/d' |
+	sed -E '/.*[\].*/d' |
 	gzip > "${name}.words.gz"
