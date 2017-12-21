@@ -17,16 +17,13 @@ If you have any questions or problems use __Issues__
 Download wiki bz2 file in text-analysis directory in this repo but please do NOT add it to the project, it is 6.4 Gigabytes!
 
 ## 1.2
-* `cd test-analysis`
+* `cd text-analysis`
 * `./xml.bz2-to-text.gz.sh dewiki-20170920-pages-articles.xml.bz2` - this will extract raw text from wikipedia with filename `dewiki-20170920-pages-articles.text.gz`
 * you can view the content of this file with: `gzcat dewiki-20170920-pages-articles.text.gz | head`
 * Note that above processing takes around 20m on mac book pro.
 * `./text.gz-to-words.gz.sh dewiki-20170920-pages-articles.text.gz` - convert text into a stream of words, each word on a new line. Also removes some undesired words. This reduces the time for later processing scripts.
 
 ## 1.3
-* Running count-words.py will output top 10k words by frequency 
-* gzcat dewiki-20170920-pages-articles.text.gz | python count-words.py > common-10k-words.txt
-
-## 1.4 
-* Get images from google.de by running (pip install bs4 and request)
-* cat common-10k-words.txt  | python get-images.py
+* ./words.gz-to-freq.tsv dewiki-20170920-pages-articles.words.gz
+* this will create __dewiki-20170920-pages-articles.freq.tsv__ - a list of 10k most frequent words in german.
+* Note that previous list was not correct because of wrong handling of uppercase ÄÜÖ

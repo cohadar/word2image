@@ -1,0 +1,9 @@
+#!/bin/bash
+set -e
+if ! [[ "$1" =~ .words.gz$ ]]; then
+	echo "you must specify .words.gz file"
+	exit 1
+fi
+name=${1%.words.gz}
+# we MUST use python3 because python2 does not properly lowercase german characters!
+gzcat "${name}.words.gz" | python3 count-words.py 10000 > "${name}.freq.tsv"
