@@ -30,3 +30,5 @@ Download wiki bz2 file in text-analysis directory in this repo but please do NOT
 
 ## 1.4
 * improved word counter to preserve Title case of German nouns.
+* We can see that __5787__ words are Nouns!
+* `cat dewiki-20170920-pages-articles.freq.tsv | cut -f2 | sed -nE '/^[A-ZÜÄÖ].*/p' | wc -l`
