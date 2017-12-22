@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+if ! [[ "$1" =~ .freq.tsv$ ]]; then
+	echo "you must specify .freq.tsv file"
+	exit 1
+fi
+name=${1%.freq.tsv}
+cat "${name}.freq.tsv" | cut -f2 | xargs -n1 ./translate.sh > "${name}.trans.tsv"
