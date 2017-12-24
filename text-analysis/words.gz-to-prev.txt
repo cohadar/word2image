@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+if ! [[ "$1" =~ .words.gz$ ]]; then
+	echo "you must specify .words.gz file"
+	exit 1
+fi
+name=${1%.words.gz}
+gzcat "${name}.words.gz" | python3 count-prev.py "${name}.freq.tsv" 10 > "${name}.prev.txt"

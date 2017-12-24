@@ -36,3 +36,6 @@ Download wiki bz2 file in text-analysis directory in this repo but please do NOT
 ## 1.5
 * did partial automated word translation using standard unix __dict__
 * 4401 words was not translated, mostly because they were in acusative or dative case, need better dict
+
+## 1.6
+* dewiki-20170920-pages-articles.prev.txt contains 10 most frequent previous words for our 10k words.
