@@ -39,3 +39,5 @@ Download wiki bz2 file in text-analysis directory in this repo but please do NOT
 
 ## 1.6
 * dewiki-20170920-pages-articles.prev.txt contains 10 most frequent previous words for our 10k words.
+* dewiki-20170920-pages-articles.next.txt contains 10 most frequent next words for our 10k words.
+
