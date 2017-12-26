@@ -27,14 +27,14 @@ def extract_url(anchor):
         name = anchor.get('name')
         if name is None:
             sys.stderr.write('extract_url needs to be updated')
-            sys.exit(2)
+            return None
         return TNB_URL + name
 
 def get_urls(query):
     r = http.request('GET', SEARCH_URL + urllib.parse.quote(query), headers=HEADERS)
     if r.status != 200:
         sys.stderr.write(r.status)
-        sys.exit(1)
+        return None
     soup = bs4.BeautifulSoup(r.data, 'html.parser')
     return [extract_url(a) for a in soup.find_all("img", attrs={'class': 'rg_ic rg_i'})]
 
@@ -96,7 +96,10 @@ def searchImages():
     if not query:
         return Response("{}", status=404, mimetype='application/json')
     urls = get_urls(query)
-    return jsonify({'urls': urls})
+    if urls:
+        return jsonify({'urls': urls})
+    else:
+        return Response("{}", status=404, mimetype='application/json')
 
 @app.route('/rotateimgs/<word>', methods=['POST'])
 def rotateimgs(word):
