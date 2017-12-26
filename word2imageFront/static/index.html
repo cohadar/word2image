@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            $(".hiddenFirstTime").hide();
+            $("#word").val(null);
+            $("#description").val(null);
+            $("#findImages").click(function(){
+                var word = $("#word").val();
+                $.ajax({
+                  url: "http://127.0.0.1:5000/search?q=" + word,
+                  type: 'GET',
+                  dataType: 'json',
+                  contentType: 'application/json; charset=utf-8',
+                  success: function(result){
+                    l = 0;
+                    debugger;
+                    $("#description").val(result.text);
+                    result.imgs.forEach(function(i){
+                        var id = "#img" + l;
+                        l = l + 1;
+                        $(id).attr("src",i);
+                    });
+                  },
+                  error: function(e) {
+                    $(".hiddenFirstTime").hide();
+                    var w = $("#word").val();
+                    $("#word").val(null);
+                    alert("Not found word: " + w);
+                  }
+                });
+                $(".hiddenFirstTime").show();
+            });
+        });
+    </script>
+    <div class="container-fluid">
+        <div class="container">
+            <h1><a href="file:///home/igor/Documents/Hakaton_2017/word2image/word2imageFront/index.html">word2image</a></h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <fieldset>
+                        <input id="word" placeholder="Insert word" type="text">
+                    </fieldset>
+                </div>
+                <div class="col">
+                    <input id="findImages" class="btn btn-primary" type="button" value="Find Images">
+                </div>
+            </div>
+        </div>
+        <div class="container hiddenFirstTime">
+            <hr class="my-4">
+            <h5>Result of research:</h5>
+        </div>
+        <div class="container hiddenFirstTime">
+            <div class="row">
+                <div class="col">
+                    <img id="img0" class="card-img-top" src="" alt="Card image cap">
+                </div>
+                <div class="col">
+                    <img id="img1" class="card-img-top" src="" alt="Card image cap">
+                </div>
+                <div class="col">
+                    <img id="img2" class="card-img-top" src="" alt="Card image cap">
+                </div>
+                <div class="col">
+                    <img id="img3" class="card-img-top" src="" alt="Card image cap">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <textarea class="form-control hiddenFirstTime" id="description" rows="3"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="container hiddenFirstTime">
+        <hr class="my-4">
+        <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Get Next Word</a>
+    </div>
+</body>
+</html>

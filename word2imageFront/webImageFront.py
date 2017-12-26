@@ -1,27 +1,13 @@
-from flask import Flask
-from flask import jsonify
-from flask import request
-from flask import Response
-import redis
-import sys
-import bs4
-import urllib
-import urllib3
-import os
-import base64
+from flask import Flask, send_from_directory
 
+# set the project root directory as the static folder, you can set others.
 app = Flask(__name__)
 
-@app.after_request
-def after_request(response):
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
-    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
-    return response
 
-@app.route('/')
-def root():
-   return app.send_static_file('researchData.html')
+@app.route('/<path:path>')
+def send(path):
+    return send_from_directory('static', path)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=80)
