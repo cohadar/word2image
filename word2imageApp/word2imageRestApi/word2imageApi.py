@@ -30,7 +30,6 @@ def extract_url(anchor):
             sys.exit(2)
         return TNB_URL + name
 
-
 def get_urls(query):
     r = http.request('GET', SEARCH_URL + urllib.parse.quote(query), headers=HEADERS)
     if r.status != 200:
@@ -51,8 +50,9 @@ app = Flask(__name__)
 
 redis_db = redis.StrictRedis(host=REDIS_HOST, port=6379, db=0, password=REDIS_PASS)
 
-@app.route('/word/<word>', methods=['GET'])
-def get_image_by_word(word):
+@app.route('/search', methods=['GET'])
+def get_image_by_word():
+    word = request.args.get('q', default='', type=str)
     weight = redis_db.get("WORD:" + word)
     if weight:
         weight.decode('utf-8')
