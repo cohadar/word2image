@@ -15,7 +15,7 @@ def get_image_by_word(word):
     text = redis_db.get("TEXT:" + word)
     text.decode('utf-8')
     text = str(text)
-    imgs = redis_db.get("LRANGE:" + word + "0 3")
+    imgs = redis_db.lrange("IMGS:" + word, 0, 3)
     images = []
     if(imgs):
         images.append(str(imgs[0].decode('utf-8')))
