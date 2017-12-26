@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import jsonify
 from flask import request
+from flask import Response
 import redis
 import sys
 import bs4
@@ -64,6 +65,14 @@ def insert_word_2_image():
 def searchImages(query):
     urls = get_urls(query)
     return jsonify({'urls': urls})
+
+@app.route('/rotateimgs/<word>', methods=['POST'])
+def rotateimgs(word):
+    img = redis_db.rpoplpush("IMGS:" + word, "IMGS:" + word)
+    if img:
+        return Response("{}", status=200, mimetype='application/json')
+    else:
+        return Response("{}", status=404, mimetype='application/json')
 
 if __name__ == '__main__':
     app.run(debug=True)
