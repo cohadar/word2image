@@ -9,6 +9,7 @@ import urllib
 import urllib3
 import os
 import base64
+from flask_cors import CORS
 
 REDIS_HOST = os.environ['REDIS_HOST']
 REDIS_PASS = os.environ['REDIS_PASS']
@@ -47,8 +48,16 @@ def getImageData(url):
     return r.data
 
 app = Flask(__name__)
+CORS(app)
 
 redis_db = redis.StrictRedis(host=REDIS_HOST, port=6379, db=0, password=REDIS_PASS)
+
+@app.after_request
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
+    return response
 
 @app.route('/search', methods=['GET'])
 def get_image_by_word():
