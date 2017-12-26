@@ -67,11 +67,10 @@ def get_image_by_word(word):
         text = ''
     imgs = redis_db.lrange("IMGS:" + word, 0, 3)
     images = []
-    if(imgs):
-        images.append(str(imgs[0].decode('utf-8')))
-        images.append(str(imgs[1].decode('utf-8')))
-        images.append(str(imgs[2].decode('utf-8')))
-        images.append(str(imgs[3].decode('utf-8')))
+    for i in imgs:
+        images.append(str(i.decode('utf-8')))
+    if weight == 0 and text = '' and len(images) == 0:
+        return Response("{}", status=404, mimetype='application/json')
     return jsonify({'word': word, 'weight': weight, 'text': text, 'imgs': images})
 
 @app.route('/appendimg/<word>', methods=['POST'])
