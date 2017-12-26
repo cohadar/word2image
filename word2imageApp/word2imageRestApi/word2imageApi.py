@@ -53,6 +53,8 @@ redis_db = redis.StrictRedis(host=REDIS_HOST, port=6379, db=0, password=REDIS_PA
 @app.route('/search', methods=['GET'])
 def get_image_by_word():
     word = request.args.get('q', default='', type=str)
+    if not word:
+        return Response("{}", status=404, mimetype='application/json')
     weight = redis_db.get("WORD:" + word)
     if weight:
         weight.decode('utf-8')
@@ -88,8 +90,9 @@ def insert_word_2_image(word):
     redis_db.rpush("IMGS:" + word, image)
     return Response("{}", status=200, mimetype='application/json')
 
-@app.route('/searchurls/<query>', methods=['GET'])
-def searchImages(query):
+@app.route('/searchurls', methods=['GET'])
+def searchImages():
+    query = request.args.get('q', default='', type=str)
     if not query:
         return Response("{}", status=404, mimetype='application/json')
     urls = get_urls(query)
