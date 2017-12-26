@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.baneizalfe.word2image"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "BASE_URL", '"http://188.226.233.17/api/v1/"'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding.enabled = true
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:$rootProject.versions.app_compat"
+    implementation "com.android.support:cardview-v7:$rootProject.versions.app_compat"
+    implementation "com.android.support:recyclerview-v7:$rootProject.versions.app_compat"
+    implementation "com.android.support:support-annotations:$rootProject.versions.app_compat"
+    implementation "com.android.support:design:$rootProject.versions.app_compat"
+    implementation "com.android.support.constraint:constraint-layout:$rootProject.versions.constraint_layout"
+
+    implementation "android.arch.lifecycle:extensions:$rootProject.versions.arch_comp"
+
+    // Networking
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.versions.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.versions.retrofit"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.versions.retrofit"
+    implementation "com.squareup.retrofit2:converter-scalars:$rootProject.versions.retrofit"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.versions.logging_interceptor"
+
+    //Image
+    implementation "com.github.bumptech.glide:glide:$rootProject.versions.glide"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.versions.glide"
+
+    //RxJava
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.versions.rx_java"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.versions.rx_java_android"
+
+    //Dagger2
+    implementation "com.google.dagger:dagger:$rootProject.versions.dagger"
+    implementation "com.google.dagger:dagger-android:$rootProject.versions.dagger"
+    implementation "com.google.dagger:dagger-android-support:$rootProject.versions.dagger"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$rootProject.versions.dagger"
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.versions.dagger"
+
+    implementation "com.jakewharton:butterknife:$rootProject.versions.butterknife"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.versions.butterknife"
+    implementation "com.jakewharton.timber:timber:$rootProject.versions.timber"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+}
