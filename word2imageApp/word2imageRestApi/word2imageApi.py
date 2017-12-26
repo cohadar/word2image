@@ -57,14 +57,12 @@ def get_image_by_word():
         return Response("{}", status=404, mimetype='application/json')
     weight = redis_db.get("WORD:" + word)
     if weight:
-        weight.decode('utf-8')
-        weight = int(weight)
+        weight = int(weight.decode('utf-8'))
     else:
         weight = 0
     text = redis_db.get("TEXT:" + word)
     if text:
-        text.decode('utf-8')
-        text = str(text)
+        text = str(text.decode('utf-8'))
     else:
         text = ''
     imgs = redis_db.lrange("IMGS:" + word, 0, 3)
