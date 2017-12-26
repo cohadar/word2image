@@ -69,7 +69,7 @@ def get_image_by_word(word):
     images = []
     for i in imgs:
         images.append(str(i.decode('utf-8')))
-    if weight == 0 and text = '' and len(images) == 0:
+    if weight == 0 and text == '' and len(images) == 0:
         return Response("{}", status=404, mimetype='application/json')
     return jsonify({'word': word, 'weight': weight, 'text': text, 'imgs': images})
 
