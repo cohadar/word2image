@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container-fluid">
+        <h1><a href="{% url 'index' %}">word2image</a></h1>
+        <h3>Preparing data for research</h3>
+        <div class="row">
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <label class="form-check-label">
+                                <div class="card" style="width: 15rem;">
+                                    <img class="card-img-top" src="https://i.ytimg.com/vi/JM46WVW7-1I/maxresdefault.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> 1
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col">
+                            <label class="form-check-label">
+                                <div class="card" style="width: 15rem;">
+                                    <img class="card-img-top" src="https://www.rezepte-und-tipps.de/Lebensmittel/Gemuese/Bild/Zwiebeln.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> 1
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label class="form-check-label">
+                                <div class="card" style="width: 15rem;">
+                                    <img class="card-img-top" src="https://images.ichkoche.at/data/image/variations/381x290/1/zwiebel-img-1101.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> 1
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col">
+                            <label class="form-check-label">
+                                <div class="card" style="width: 15rem;">
+                                    <img class="card-img-top" src="http://www.gemuese.ch/Ressourcen/Bilder/Gemusearten/Gemusebilder-Header/Headerbilder_Saisonkalender_Bundzwiebel-de.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> 1
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <fieldset>
+                            <p>
+                                <label for="phrase">Phrase:</label>
+                                <input id="phrase" placeholder="Phrase in german" type="text">
+                            </p>
+                            <p>
+                                <label for="translate">Translate:</label>
+                                <input id="translate" placeholder="Translate" type="text">
+                            </p>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+</html>
