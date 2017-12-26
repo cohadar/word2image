@@ -8,6 +8,7 @@ import bs4
 import urllib
 import urllib3
 import os
+import base64
 
 REDIS_HOST = os.environ['REDIS_HOST']
 REDIS_PASS = os.environ['REDIS_PASS']
@@ -38,6 +39,14 @@ def get_urls(query):
     soup = bs4.BeautifulSoup(r.data, 'html.parser')
     return [extract_url(a) for a in soup.find_all("img", attrs={'class': 'rg_ic rg_i'})]
 
+def getImageData(url):
+    r = http.request('GET', url, headers=HEADERS)
+    if r.status != 200:
+        sys.stderr.write(url)
+        sys.stderr.write(r.status)
+        return None
+    return r.data
+
 app = Flask(__name__)
 
 redis_db = redis.StrictRedis(host=REDIS_HOST, port=6379, db=0, password=REDIS_PASS)
@@ -45,11 +54,17 @@ redis_db = redis.StrictRedis(host=REDIS_HOST, port=6379, db=0, password=REDIS_PA
 @app.route('/word/<word>', methods=['GET'])
 def get_image_by_word(word):
     weight = redis_db.get("WORD:" + word)
-    weight.decode('utf-8')
-    weight = int(weight)
+    if weight:
+        weight.decode('utf-8')
+        weight = int(weight)
+    else:
+        weight = 0
     text = redis_db.get("TEXT:" + word)
-    text.decode('utf-8')
-    text = str(text)
+    if text:
+        text.decode('utf-8')
+        text = str(text)
+    else:
+        text = ''
     imgs = redis_db.lrange("IMGS:" + word, 0, 3)
     images = []
     if(imgs):
@@ -62,14 +77,22 @@ def get_image_by_word(word):
 @app.route('/appendimg/<word>', methods=['POST'])
 def insert_word_2_image(word):
     data = request.get_json()
-    #data =
+    if not data['url']:
+        return Response("{}", status=404, mimetype='application/json')
+    img = getImageData(data['url'])
+    if not img:
+        return Response("{}", status=404, mimetype='application/json')
+    image = base64.b64encode(img).decode('utf-8')
+    image = 'data:image;base64,' + image
     if redis_db.llen("IMGS:" + word) >= 4:
         redis_db.lpop("IMGS:" + word)
-    redis_db.rpush("IMGS:" + word, data['url'])
+    redis_db.rpush("IMGS:" + word, image)
     return Response("{}", status=200, mimetype='application/json')
 
 @app.route('/searchurls/<query>', methods=['GET'])
 def searchImages(query):
+    if not query:
+        return Response("{}", status=404, mimetype='application/json')
     urls = get_urls(query)
     return jsonify({'urls': urls})
 
@@ -82,4 +105,4 @@ def rotateimgs(word):
         return Response("{}", status=404, mimetype='application/json')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0")
