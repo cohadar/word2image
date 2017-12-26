@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Word 2 Image</string>
+
+    <string name="search_hint">Search ex \'Serbische Ritter Massage\'</string>
+</resources>
