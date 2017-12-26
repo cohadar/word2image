@@ -7,6 +7,10 @@ import sys
 import bs4
 import urllib
 import urllib3
+import os
+
+REDIS_HOST = os.environ['REDIS_HOST']
+REDIS_PASS = os.environ['REDIS_PASS']
 
 HEADERS = {'User-Agent': "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36"}
 SEARCH_URL = "https://www.google.de/search?tbm=isch&q="
@@ -36,7 +40,7 @@ def get_urls(query):
 
 app = Flask(__name__)
 
-redis_db = redis.StrictRedis(host="iv.hackaton.tda.link", port=6379, db=0, password='svebisekeljubilemornare')
+redis_db = redis.StrictRedis(host=REDIS_HOST, port=6379, db=0, password=REDIS_PASS)
 
 @app.route('/word/<word>', methods=['GET'])
 def get_image_by_word(word):
@@ -56,10 +60,13 @@ def get_image_by_word(word):
     return jsonify({'word': word, 'weight': weight, 'text': text, 'imgs': images})
 
 @app.route('/appendimg/<word>', methods=['POST'])
-def insert_word_2_image():
+def insert_word_2_image(word):
     data = request.get_json()
-    result =  word2image(data['word'], data['translate'], data['image1'], data['image2'], data['image3'], data['image4'])
-    return jsonify({'result': 'done'})
+    #data =
+    if redis_db.llen("IMGS:" + word) >= 4:
+        redis_db.lpop("IMGS:" + word)
+    redis_db.rpush("IMGS:" + word, data['url'])
+    return Response("{}", status=200, mimetype='application/json')
 
 @app.route('/searchurls/<query>', methods=['GET'])
 def searchImages(query):
