@@ -97,11 +97,33 @@ def searchImages(query):
 
 @app.route('/rotateimgs/<word>', methods=['POST'])
 def rotateimgs(word):
+    if not word:
+        return Response("{}", status=404, mimetype='application/json')
     img = redis_db.rpoplpush("IMGS:" + word, "IMGS:" + word)
     if img:
         return Response("{}", status=200, mimetype='application/json')
     else:
         return Response("{}", status=404, mimetype='application/json')
+
+@app.route('/deleteimg/<word>/<index>', methods=['DELETE'])
+def deleteImage(word, index):
+    if not word:
+        return Response("{}", status=404, mimetype='application/json')
+    if int(index) < 0 or int(index) > 3:
+        return Response("{}", status=404, mimetype='application/json')
+    redis_db.lset("IMGS:" + word, index, "DELETEME")
+    redis_db.lrem("IMGS:" + word, 4, "DELETEME")
+    return Response("{}", status=200, mimetype='application/json')
+
+@app.route('/updateText/<word>', methods=['PUT'])
+def updateText(word):
+    if not word:
+        return Response("{}", status=404, mimetype='application/json')
+    data = request.get_json()
+    if not data['text']:
+        return Response("{}", status=404, mimetype='application/json')
+    redis_db.set("TEXT:" + word, data['text'])
+    return Response("{}", status=200, mimetype='application/json')
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")
