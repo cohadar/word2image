@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<title>
+Konjugation | liegen | Deutsche Verben konjugieren - Netzverb
+</title>
+<meta name="description" content="Konjugation des Verbs liegen — liegt, lag, gelegen usw. — Alle Formen von liegen als Tabelle — Indikativ, Konjunktiv, Imperativ — Partizip, Infinitiv, Aktiv, Passiv — Präsens, Gegenwart, Präteritum, Vergangenheit, Perfekt, Plusquamperfekt, Futur, Zukunft — Beispiele, Pdf"/>
+<meta name="robots" content="noindex, follow" />
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<meta name=viewport content="width=device-width, initial-scale=1">	
+<meta name="HandheldFriendly" content="true"/>
+<meta name="MobileOptimized" content="width"/>
+<meta name="application-name" content="Netzverb" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000086">
+<meta name="theme-color" content="#000086">
+<script type="text/javascript">
+var Rahmen = {};
+(function() {
+function istauf(id) {
+var e = document.getElementById(id);
+var d = e.currentStyle ? e.currentStyle.display : getComputedStyle(e, null).display;
+return d != "none";
+}
+function aufzu(id, auf) {
+var e = document.getElementById(id);
+if(!e) return;
+e.style.display = auf ? "inline" : "none";
+var b = document.getElementById(id + "Img");
+if(!b) return;
+b.getElementsByClassName("rAuf")[0].style.display = auf ? "inline" : "none";
+b.getElementsByClassName("rZu")[0].style.display = auf ? "none" : "inline";
+}
+this.alleaufzu = function(id, k) {
+var ia = istauf(id);
+var es = document.getElementsByClassName(k);
+for (var i = 0; i < es.length; i++) aufzu(es[i].id, !ia);
+}
+this.aufzu = function(ids) {
+if(ids instanceof Array) { var ia = istauf(ids[0]); for (var id in ids)	aufzu(ids[id], !ia) }
+else aufzu(ids, !istauf(ids));
+}
+this.breite = function() {
+return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+}
+}).apply(Rahmen); 
+var Eingabe = {};
+(function() {
+function element(id) {
+return document.getElementById(id);
+}
+function sprung(ide, idl, start, schritt) {
+var e = element(ide);
+var l = element(idl);
+if(l.selectedIndex == -1) l.selectedIndex = start;
+else l.selectedIndex = l.selectedIndex + schritt;
+if(l.selectedIndex != -1) e.value = l.options[l.selectedIndex].text;
+}
+this.zeige = function(w, v) {
+if(this.w != w) { return; }
+var s=0;
+while(this.l.children.length > 0) this.l.removeChild(this.l.children[0]);
+for (i = 0; i < v.length; i++) {
+if(!v[i])
+continue;
+if(v[i] instanceof Array) {
+if(v[i].length <= 1)
+continue;
+var g = document.createElement('optgroup');	g.label = v[i][0]; s++;
+for (j = 1; j < v[i].length; j++) {	var o = document.createElement('option'); o.text = v[i][j];	g.appendChild(o);  s++; } 
+this.l.appendChild(g);
+} else {
+var o = document.createElement('option'); o.text = v[i]; this.l.appendChild(o); s++;
+}
+}
+if(s <= 1) { this.l.style.display = "none"; return; }
+this.l.style.top = (this.f.clientHeight + this.f.getBoundingClientRect().top) + "px";
+this.l.style.width = (this.f.clientWidth) + "px";
+this.l.style.display = "inline";
+this.l.size = s; 
+}
+this.an = function(ide, idl, fnkl) {
+var e = element(ide);
+this.l=element(idl); this.w = e.value; this.f=e.parentElement;
+if(this.w.length == 0) { this.l.style.display = "none"; return;	}
+var v=fnkl(this.w);
+};
+this.aus = function(ide, idl) {
+setTimeout(function() {
+var e = element(ide);
+var l = element(idl);
+if(document.activeElement == e || document.activeElement == l) return;
+l.style.display = "none";
+},50);
+};
+this.uebernahme = function(ide, idl) {
+var e = element(ide);
+var l = element(idl);
+e.value = l.options[l.selectedIndex].text;
+l.style.display = "none";
+l.form.submit();
+};
+this.taste = function(ide, idl, event) {
+var l = element(idl);
+keyCode = ('which' in event) ? event.which : event.keyCode;
+if(keyCode == 40) { sprung(ide, idl, 0, 1); event.preventDefault(); }
+if(keyCode == 38) { sprung(ide, idl, l.options.length - 1, -1); event.preventDefault(); }
+if(keyCode == 27) { l.style.display = "none"; }
+};
+}).apply(Eingabe);
+var Hinweis = {};
+(function() {
+this.weg = function(n) {
+var e=document.getElementById(n);
+e.style.display="none";
+document.cookie="de.netzverb.rahmen.hinweis_"+n+"=none" +
+";expires="+new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toUTCString() +
+";path=/";
+};
+}).apply(Hinweis);
+var Ajax = {};
+(function() {
+var a, v;
+function param(d) {
+var is = d.getElementsByTagName("input");
+var p = paar(p,a,v);
+a = null; v = null;
+for(var i=0; i<is.length; i++)
+if(!is[i].disabled && is[i].name && is[i].type != "submit")
+if(is[i].type != "radio" && is[i].type != "checkbox" || is[i].checked)
+p += paar(p, is[i].name, is[i].value);
+var tas = d.getElementsByTagName("textarea");
+for(var i=0; i<tas.length; i++)
+if(!tas[i].disabled && tas[i].name)
+p += paar(p, tas[i].name, tas[i].value);
+var ss = d.getElementsByTagName("select");
+for(var i=0; i<ss.length; i++)
+if(!ss[i].disabled && ss[i].name && ss[i].selectedIndex >= 0)
+p += paar(p, ss[i].name, ss[i].options[ss[i].selectedIndex].value);
+return p;
+}	
+function paar(p, n, v) {
+return (p ? "&" : "") + encodeURIComponent(n) + "=" + encodeURIComponent(v);
+}
+this.ersetze = function(e, id) {
+e.preventDefault();
+var f = e.target;
+if(f.tagName != "FORM")
+f = f.form;
+var p = param(f);
+var r = new XMLHttpRequest();
+r.onload = function() {
+var d =  document.getElementById(id);
+if(r.status == 200)
+d.outerHTML = r.responseText;
+else
+d.innerHTML = r.responseURL + " (" + r.status + ": " + r.statusText + ")";
+}
+r.open("POST", f.action, true);
+r.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
+r.send(p);
+return false;
+}
+this.aktion = function(x) {
+a = 'aktion';
+v = x;
+}
+this.klick = function(e) {
+a = e.currentTarget.name;
+v = e.currentTarget.value;
+}
+}).apply(Ajax);
+var Anzeigen = {};
+(function() {
+var b=true;
+this.ungeblockt = function() {
+b = false;
+}
+this.geblockt = function() {
+return b;
+}
+this.texte = function(id,p,n,m) {
+var r = new XMLHttpRequest();
+r.onload = function(e) {
+var d =  document.getElementById(id);
+if(e.target.status == 200) d.outerHTML = e.target.responseText;
+else d.outerHTML = e.target.responseURL + " (" + e.target.status + ": " + e.target.statusText + ")";
+}
+r.open('GET', '/anzeigen/anzeigen.txt?p=' + p + "&n=" + n + "&m=" + m + "&b=" + b, true);
+try { r.send(null); } catch(err) { }
+}
+}).apply(Anzeigen);
+var Verbformen = {};
+(function() {
+this.suchliste = function(w) {
+var r = new XMLHttpRequest();
+r.open("GET", "/suche/eingabe/?w=" + encodeURI(w) + "&a=VERB", true);
+r.timeout = 500;
+r.onload = function (e) { if (r.readyState == 4 && r.status == 200) { Eingabe.zeige(w,JSON.parse(r.responseText)); } };
+r.send(null);
+};
+}).apply(Verbformen);
+</script>
+<script type="text/javascript" src="/anzeigen/showads.js"></script>
+<script type="text/javascript">
+var Stimme = {};
+(function() {
+this.sprich = function(u) {
+s = document.getElementById("sTon");
+if(s.nodeName == "BGSOUND")
+s.src = u;
+else if(s && s.play) {
+s.src = u;
+s.play();
+} else
+document.location = u;
+}
+this.klick = function(e,i) {
+e.preventDefault();
+this.sprich(document.getElementById(i).href);
+return false;
+}
+}).apply(Stimme);
+</script>
+<style type="text/css">.rEin {text-align:left;}.rEin input {width:100%;}.rEin select {display:none;position:fixed;border:none;border-top:solid 1px #666666;padding:0 3px;color:#666666;z-index:7;}.rEin optgroup {background-color:#eeeeee;}.rEin optgroup option {background-color:#ffffff;}nav .rEin select {box-shadow:2px 2px 3px 0px rgba(0,0,0,0.40); }@font-face {font-family:'Open Sans';font-style:normal;font-weight:400;src:local('Open Sans'), local('OpenSans'), url('/rahmen/opensans.woff')format('woff');}body {margin:0;padding:0;font-family:open sans,sans-serif;font-weight:400;color:#111111;font-size:0.9em;}body>* {background-color:#f5f5f5;}body>*>div {max-width:940px;margin:0 auto;clear:both;padding:2px 8px;}body,body>footer {background-color:#444444;}body>footer {color:#e0e0e0;font-size:0.9em;}body>footer a {color:#80bfff;}body>nav {position:fixed;z-index:9;font-size:1.2em;width:100%;max-height:100vh;overflow:auto;box-shadow:0px 2px 3px 0px rgba(0,0,0,0.40); color:#ffffff;}body>nav+div {height:44px;}a {text-decoration:none;color:#0052d9;}h1,h2,h3 {font-weight:400;margin-top:10px;margin-bottom:10px;}h1:first-child,h2:first-child,h3:first-child {margin-top:0;}a h1,a h2,a h3 {color:#111111;}h1 {font-size:1.6em;}h2 {font-size:1.4em;}h3 {font-size:1.3em;}p {line-height:1.25;margin:10px 0;}input,select,textarea {font-family:open sans,sans-serif;font-size:inherit;line-height:inherit;border:none;box-shadow:1px 1px 1px 0px rgba(0,0,0,0.40); outline:none;box-sizing:border-box;}input,textarea {padding:1px 5px;}nav input,nav select,nav textarea {box-shadow:none;}input[type=submit],.rKnpf {padding:5px 10px;margin:0 10px 10px 0;background-color:#000000;color:#ffffff !important;}input[type=submit].rRechts,.rKnpf.rRechts {margin:0 0 10px 10px;}textarea {overflow:hidden;}select {appearance:none;-moz-appearance:none;-webkit-appearance:none;}svg,img {vertical-align:middle;margin:0;}img.rRechts {margin:4px 0 10px 10px;}img.rLinks {margin:4px 10px 10px 0;}button {background-color:transparent;padding:0;border:none;}table {border-spacing:0;border-collapse:collapse;}td,th {padding:0;vertical-align:top;text-align:left;}th a {color:inherit;}hr {border:none;border-top:solid 1px #dddddd;margin:0.75em 0;}b>u {color:#2a2abc;text-decoration:none;}b>i {color:#028b02;font-style:normal;}.rKnpf {box-shadow:1px 1px 1px 0px rgba(0,0,0,0.40); box-sizing:border-box;display:inline-block;}.rNav {height:36px;overflow:hidden;width:100%;padding:2px 0;}.rNav>* {height:36px;}.rMnRnd {margin-bottom:6px;}.rTab {display:table;}.rTab>div {display:table-cell;vertical-align:middle;}.r1Pxl {width:1px;}.rLinks {float:left;}.rRechts {float:right;}.rNobr {white-space:nowrap;}.rClear {clear:both;}.rDunkel {background-color:#000000;}.rHell {color:#f5f5f5;}.rZu {display:none;}.rAnkr {position:relative;top:-67px;}.rAuf {display:inline;}.rCntr {text-align:center;}.rInf,.rInf a {color:#aaaaaa;}.rKln {font-size:0.9em;}.rNoSelect {-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}.rImg {box-shadow:1px 1px 2px 0px rgba(0,0,0,0.25); border:solid 1px #cccccc;}@media (min-width:700px){article .rAbschnitt {margin-left:-340px;width:100%;float:left;}article .rAbschnitt>div {margin-left:340px;}article .rInfo {width:320px;float:right;}.rInfo .rBoxTrns {border-left:solid 1px #dddddd;border-top:none !important;padding:0 0 0 15px;}}.rBox {margin-bottom:20px;}.rBox header  {display:table;width:100%;}.rBox header>div {display:table-cell;text-align:left;}.rBoxWht {background-color:#ffffff;box-shadow:1px 1px 2px 0px rgba(0,0,0,0.25); padding:8px 10px 8px 15px;}.rBoxTrns {border-top:solid 1px #dddddd;}.rBoxText {vertical-align:middle;}.rBoxKnopf {vertical-align:top;width:1px;white-space:nowrap;}.rBoxWht textarea,.rBoxWht input,.rBoxWht select {background-color:#e9e9e9;}.rBox h2 {margin:0;display:inline;}.rHw {width:100%;padding:4px 0;background-color:#aaaaaa;color:#222222;box-shadow:1px 1px 2px 0px rgba(0,0,0,0.25); }.rHwObn {position:relative;top:0px;}.rHwUnt {position:fixed;bottom:0px;opacity:0.91;z-index:8;}.rHwBox>div {position:static;padding-right:10px;padding-left:13px;}.rHwFhlr {background-color:#efbbbb;color:#662222;}.rHwTpp {background-color:#ffe7ba;color:#665544;}.rHwOk {background-color:#bbefbb;color:#226622;}.rMenu,.rMenuOpt {margin-bottom:3px;text-align:right;}.rMenu {margin-top:10px;}.rMenu > div {border-top:solid 1px #9b9b9b;padding-top:8px;}.rMenuOpt {margin-top:0px;}.rMenuKat {color:#ffffff;}.rMnLnk {margin-right:10px;}@media (min-width:700px){.rMenu > div {display:inline-block;min-width:300px;}}nav.rKruemel {font-size:0.9em;color:#aaaaaa;clear:both;}nav.rKruemel a {color:inherit;}nav.rKruemel + h1 {margin-top:0px;}div.rKruemel {display:inline-block;}.kFrm select {box-shadow:none;background-color:transparent;}.kFrm textarea {width:100%;}.kBwrt {font-size:1.6em;}.kAn {color:#000000;}.kAus {color:#aaaaaa;}.aDesktop {display:none;}.aMobil {display:inline-block;}@media (min-width:700px){ .aDesktop {display:inline-block;} .aMobil {display:none;} }.aTxtLinks {float:left;display:inline-block;margin:0 15px 15px 0;}.aTxtRechts {float:right;display:inline-block;margin:0 0 15px 15px;}.rDunkel {background-color:#000084;}.rHell {color:#9999ce;}body>nav,body>nav a {color:#9999ce;}.rMenu > div {border-color:#5050a4;}h4 {display:inline;}nav .rEin {width:220px;font-size:1.1em;max-width:40vw;max-width:calc(100vw - 216px); }input[type=submit],.rKnpf {background-color:#000084;}.vLeg {font-size:0.9em;margin-top:8px;}.vDbg {background-color:#ffffcc;}div.vDbg {margin-right:10px;}.vFuss {width:280px;margin:0 15px 15px 0;}.vBlogImg {width:120px;}.vAuswahl {display:inline-block;margin-bottom:10px;}.vAuswahl .rKnpf {margin:5px auto;}.vEinText .rEin {font-size:1.4em;max-width:160px;margin:0 10px 10px 0;}.vUnd,.vUnd b>u,.vUnd b>i {color:#aaaaaa;}			.kAn {color:#000084;}.vkDiv {margin:0 0 8px 0;text-align:right;}.vkDiv p {color:#000000;}.vkStrn,.vkTxt {margin:0;}.vkStrn {font-size:1.8em;line-height:0.6em;}.vkTxt {margin-top:0.3em;}.vkAnt {margin-left:5%;}.vArbBltt {display:inline-block;margin:0 10px 10px 0;}				.vArbBltt img {max-width:300px;height:80px;}				.vVar {color:#ffffff;text-align:center;box-shadow:1px 1px 2px 0px rgba(0,0,0,0.25); background-color:#000086;padding:5px 10px;display:inline-block;margin:0 10px 10px 0;}.vVarAkt {background-color:#000086;font-weight:bold;}.vVarErr {background-color:#860000;font-weight:bold;}h2.vGrnd {font-size:2.1em;}p.vStm {font-size:1.55em;margin:8px 0px;}</style>
+<style type="text/css">h2.vVrb {font-size:2.1em;}p.vStm {font-size:1.55em;margin:8px 0px;}.vVor,.vZurueck {height:30px;width:12px;margin-top:7px;}.vVor {padding-right:7px;padding-left:5px;}.vZurueck {padding-right:5px;}div.vBsp {margin:1px 0 10px 0;box-sizing:border-box;width:100%;float:left;}.vBsp ul {margin:0;padding:0;}.vBsp li {list-style-type:none;margin-left:11px;text-indent:-11px;}.vBsp table {width:100%;}td.vBspV {padding-right:10px;white-space:nowrap;width:30%;}td.vBspB {width:70%;}td.vKpfZ {padding-right:5px;}div.vTbl {float:left;min-width:30%;margin:1px 0 10px 0;padding-right:15px;box-sizing:border-box;}.vTbl td {padding-right:5px;white-space:nowrap;}.vTbl h3,.vBsp h3 {display:inline;}@media (max-width:900px){ div.vTbl {min-width:45%;} }@media (max-width:700px){ div.vTbl {min-width:30%;} }@media (max-width:500px){ div.vTbl {min-width:45%;} }</style>
+</head>
+<body>
+<nav class="rDunkel"><div>
+<div class="rNav">
+<div class="rRechts" id="rMenuImg" onclick="Rahmen.aufzu(['rMenu','rMenuNav'])"><svg fill="#ffffff" fill-opacity="0.6" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" style="display: none;" d="m11.41 15.41 4.59-4.58 4.59 4.58 1.41-1.41-6-6l-6 6 1.41 1.41z"></path>
+<path class="rZu" style="display: inline;" d="m8 4.667h16v2h-16m0 4h16v2h-16m-2e-7 4h16v2h-16z"></path>
+</svg></div>
+<div class="rLinks"><a href="/"><svg fill="#ffffff" fill-opacity="0.6" height="36" viewBox="0 0 24 24" width="42" xmlns="http://www.w3.org/2000/svg">
+<path d="m 8.5366045,10.887553 -4.275913,-8.997564 -5.833396,0 10.109309,20.21502 9.8204705,-20.21502 -5.456371,0.085295 z"></path>
+</svg></a></div>
+<form class="rLinks rTab" action="/konjugation/" method="get">
+<div>
+<div class="rEin ">
+<input autofocus="autofocus" onfocus="this.setSelectionRange(0, this.value.length)" id="733f5" name="w" value="liegen" placeholder="" title="" autocomplete="off" onkeydown="Eingabe.taste('733f5','733f5Liste', event)" oninput="Eingabe.an('733f5','733f5Liste',Verbformen.suchliste)" onblur="Eingabe.aus('733f5','733f5Liste')"><br>
+<select id="733f5Liste" onchange="Eingabe.uebernahme('733f5','733f5Liste')" onblur="Eingabe.aus('733f5','733f5Liste')"></select>
+</div></div>
+<div class="r1Pxl"><button type="submit"><svg fill="#ffffff" fill-opacity="0.6" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" ></path>
+</svg></button></div>
+<div class="r1Pxl"><button type="submit" formaction="/suche/"><svg fill="#ffffff" fill-opacity="0.6" height="33" viewBox="0 0 24 24" width="33" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"></path>
+</svg></button></div>
+</form>
+<div class="rRechts" onclick="Rahmen.aufzu(['rMenu'])"><svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" fill-opacity=".6" height="36" width="36" version="1.1" viewBox="0 0 24 24">
+<path d="m16.7 14.6c-0.582 0.0087-1.11 0.227-1.52 0.564l-5.34-2.84c0.045-0.162 0.0823-0.324 0.0892-0.493 0.00693-0.169-0.017-0.33-0.0487-0.491l5.52-2.97c0.399 0.345 0.934 0.555 1.54 0.546a2.09 2.32 74 0 0 2.38 -2.14 2.09 2.32 74 0 0 -2.22 -2.08 2.09 2.32 74 0 0 -2.38 2.14c-0.0069 0.169 0.017 0.33 0.0487 0.491l-5.52 2.97c-0.399-0.343-0.934-0.553-1.54-0.544a2.09 2.32 74 0 0 -2.38 2.14 2.09 2.32 74 0 0 2.21 2.08c0.605-0.009 1.16-0.235 1.59-0.593l5.33 2.84c-0.0444 0.148-0.0738 0.303-0.0804 0.465-0.0466 1.13 0.919 2.03 2.15 2.01 1.23-0.0185 2.27-0.948 2.32-2.08a2.04 2.25 74 0 0 -2.15 -2.02z"></path>
+</svg>
+</div>
+<div class="rRechts rTab rNoSelect rMnLnk" onClick="Rahmen.aufzu(['vLng', 'rMenu'])">
+<div>
+Deutsch
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+<div class="rRechts rTab rNoSelect rMnLnk" onClick="Rahmen.aufzu(['vGns', 'rMenu'])">
+<div>
+Aktiv
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+<div class="rRechts rTab rNoSelect rMnLnk" onClick="Rahmen.aufzu(['vStz', 'rMenu'])">
+<div>
+Hauptsatz
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+</div>
+<div class="rClear"></div>
+<div class="rZu" id="rMenu">
+<div class="rMenu rNoSelect" onClick="Rahmen.aufzu('rMenuNav')">
+<div>
+<span class="rMenuKat">Navigation:</span> Konjugation
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+<div class="rZu" id="rMenuNav">
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/">
+Flexion
+</a>
+</div>		
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/konjugation/">
+Konjugation
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/konjugation/beispiele/">
+Beispiele
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/konjugation/arbeitsblaetter-uebungen/">
+Arbeitsblätter
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/konjugation/liegen.htm">
+&raquo;
+Konjugation › liegen
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/konjugation/beispiele/liegen.htm">
+Beispiele › liegen
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/konjugation/arbeitsblaetter-uebungen/liegen.htm">
+Arbeitsblätter › liegen
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/suche/">
+Suche
+</a>
+</div>
+</div>
+<div class="rMenu rNoSelect" onClick="Rahmen.aufzu('vLng')">
+<div>
+<span class="rMenuKat">Sprache:</span> Deutsch
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+<div class="rZu" id="vLng">
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/konjugation/liegen.htm">
+&raquo;
+Deutsch
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.com/conjugation/liegen.htm">
+English
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.ru/sprjazhenie/liegen.htm">
+Русский
+</a>
+</div>
+</div>
+<div class="rMenu rNoSelect" onClick="Rahmen.aufzu('vGns')">
+<div>
+<span class="rMenuKat">Aktionsform:</span> Aktiv
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+<div class="rZu" id="vGns">
+<div class="rMenuOpt rNoSelect">
+<a href="/konjugation/aktiv/liegen_hat.htm">
+&raquo;
+Aktiv
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="/konjugation/vpassiv/liegen_hat.htm">
+Vorgangspassiv
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="/konjugation/zpassiv/liegen_hat.htm">
+Zustandspassiv
+</a>
+</div>	
+</div>
+<div class="rMenu rNoSelect" onClick="Rahmen.aufzu('vStz')">
+<div>
+<span class="rMenuKat">Satzart:</span> Hauptsatz
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+<div class="rZu" id="vStz">
+<div class="rMenuOpt rNoSelect">
+<a href="/konjugation/aussagesatz/liegen_hat.htm">
+&raquo;
+Hauptsatz
+</a>
+</div>	
+<div class="rMenuOpt rNoSelect">
+<a href="/konjugation/fragesatz/liegen_hat.htm">
+Fragesatz
+</a>
+</div>	
+<div class="rMenuOpt rNoSelect">
+<a href="/konjugation/nebensatz/liegen_hat.htm">
+Nebensatz
+</a>
+</div>	
+</div>
+<div>
+<br>
+<div class="rMenu">
+<div>
+<span class="rMenuKat">Teilen: </span>
+<a rel="nofollow" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.verbformen.de%2Fkonjugation%2F%3Fw%3Dliegt" title="Teilen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path>
+</svg></a>
+<a rel="nofollow" href="https://twitter.com/home?status=https%3A%2F%2Fwww.verbformen.de%2Fkonjugation%2F%3Fw%3Dliegt" title="Teilen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path>
+</svg></a>
+<a rel="nofollow" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.verbformen.de%2Fkonjugation%2F%3Fw%3Dliegt" title="Teilen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M23,11H21V9H19V11H17V13H19V15H21V13H23M8,11V13.4H12C11.8,14.4 10.8,16.4 8,16.4C5.6,16.4 3.7,14.4 3.7,12C3.7,9.6 5.6,7.6 8,7.6C9.4,7.6 10.3,8.2 10.8,8.7L12.7,6.9C11.5,5.7 9.9,5 8,5C4.1,5 1,8.1 1,12C1,15.9 4.1,19 8,19C12,19 14.7,16.2 14.7,12.2C14.7,11.7 14.7,11.4 14.6,11H8Z"></path>
+</svg></a>
+&nbsp;&nbsp;&nbsp;
+<span class="rMenuKat">Folgen: </span>
+<a rel="nofollow" href="https://www.facebook.com/Netzverb" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path>
+</svg></a>
+<a rel="nofollow" href="https://twitter.com/Netzverb" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path>
+</svg></a>
+<a rel="nofollow" href="https://plus.google.com/+NetzverbDe" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M23,11H21V9H19V11H17V13H19V15H21V13H23M8,11V13.4H12C11.8,14.4 10.8,16.4 8,16.4C5.6,16.4 3.7,14.4 3.7,12C3.7,9.6 5.6,7.6 8,7.6C9.4,7.6 10.3,8.2 10.8,8.7L12.7,6.9C11.5,5.7 9.9,5 8,5C4.1,5 1,8.1 1,12C1,15.9 4.1,19 8,19C12,19 14.7,16.2 14.7,12.2C14.7,11.7 14.7,11.4 14.6,11H8Z"></path>
+</svg></a>
+</div>
+</div>
+</div>
+<div class="rMnRnd rClear"></div>
+</div>
+</div></nav>
+<div></div>
+<aside class="rHw rHwTpp rHwObn" id="20171121_sprachassistent">
+<div>
+<div class="rRechts" onclick="Hinweis.weg('20171121_sprachassistent')">
+<svg fill="#505050" fill-opacity="0.6" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+<path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
+</svg>
+</div>
+🗪 <i><b>„Ok Google, konjugiere laufen“</b></i>   über <a href="https://assistant.google.com/services/a/id/0d6a90c5e47fa7eb">Google</a> und <a href="https://www.messenger.com/t/DeutschVerben">Facebook</a>  (<a href="/hilfe/sprachassistenten.htm">Hilfe</a>)
+</div>
+</aside>
+<article class=""><div>
+<nav class="rKruemel" itemscope itemtype="http://schema.org/BreadcrumbList">
+<div class="rKruemel" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+<a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://www.verbformen.de/" id="https://www.verbformen.de/">
+<span itemprop="name">Flexion</span>
+</a>
+<meta itemprop="position" content="1"/>
+</div>
+› 	
+<div class="rKruemel" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+<a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://www.verbformen.de/konjugation/" id="https://www.verbformen.de/konjugation/">
+<span itemprop="name">Konjugation</span>
+</a>
+<meta itemprop="position" content="2"/>
+</div>
+› 	
+<div class="rKruemel" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+<a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://www.verbformen.de/konjugation/liegen.htm" id="https://www.verbformen.de/konjugation/liegen.htm">
+<span itemprop="name">liegen</span>
+</a>
+<meta itemprop="position" content="3"/>
+</div>
+</nav>
+<header>
+<h1>Konjugation des deutschen Verbs liegen</h1>
+<a href="https://www.verbformen.de/konjugation/liegen.htm">
+<img class="rImg rRechts" height="80" src="https://www.verbformen.de/konjugation/steckbrief/liegen_hat.png" title="Konjugation des deutschen Verbs liegen">
+</a>
+<p>
+Die <a  href="https://www.verbformen.de/konjugation/liegen.htm" title="liegen Konjugation">Konjugation des Verbs liegen</a> erfolgt unregelmäßig.
+Die Stammformen sind <i>liegt</i>, <i>lag</i> und <i>hat gelegen</i>.
+Der Ablaut erfolgt mit den Stammvokalen ie
+- a
+- e.
+Als Hilfsverb von liegen wird "haben" verwendet.
+Es gibt jedoch auch Formen mit dem Hilfsverb "<a  href="/konjugation/liegen_ist.htm">sein</a>".
+<span id="0b65b">
+Die Beugung erfolgt im Aktiv und die Darstellung als Hauptsatz.
+Man kann nicht nur liegen konjugieren, sondern alle <a  href="/konjugation/">deutschen Verben</a>.
+Zum besseren Verständnis stehen unzählige <a href="/konjugation/beispiele/liegen.htm" title="liegen Beispiele">Beispiele für das Verb liegen</a> zur Verfügung.
+Zum Üben und Festigen gibt es außerdem <a href="/konjugation/arbeitsblaetter-uebungen/liegen.htm" title="liegen Arbeitsblätter und Übungen">kostenlose Arbeitsblätter für liegen</a>.
+</span>
+<span id="0b65bImg" onclick="Rahmen.aufzu('0b65b')"><svg fill="#333333" width="18px" height="18px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
+</svg></span>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('0b65b');
+</script>
+</p>
+</header>
+<div id="varianten"></div>
+<nav class="rClear">
+<a href="#kommentare">
+<div class="rRechts vkDiv rNoSelect">
+<p class="vkStrn">
+<span class="kAn">★★★★★</span></p>
+<p class="rKln vkTxt">Deine Meinung? </p>
+</div>
+</a>
+<a href="/konjugation/liegen_hat.htm" title="liegen (hat)">
+<div class="vVar vVarAkt">
+liegen (hat)
+</div>
+</a>
+<a href="/konjugation/liegen_ist.htm" title="liegen (ist)">
+<div class="vVar ">
+(ist)
+</div>
+</a>
+<div id="vVarMenuImg" class="vVar rNoSelect" onclick="Rahmen.aufzu('vVarMenu')">
+<svg fill="#ffffff" height="10" viewBox="0 0 14 14" width="12" xmlns="http://www.w3.org/2000/svg">
+<path style="display: none;" class="rAuf" d="m11.5 1.41-1.43-1.41-7.07 7 7.07 7 1.43-1.41-5.65-5.59z"></path>
+<path style="display: inline;" class="rZu" d="m3 1.41 1.425-1.41 7.075 7l-7.075 7-1.425-1.41 5.65-5.59z"></path>
+</svg>
+</div>
+<div id="vVarMenu" class="rZu">
+<a href="/konjugation/mag_liegen.htm" title="mag liegen (hat)">
+<div class="vVar">mag</div>
+</a>
+<a href="/konjugation/kann_liegen.htm" title="kann liegen (hat)">
+<div class="vVar">kann</div>
+</a>
+<a href="/konjugation/soll_liegen.htm" title="soll liegen (hat)">
+<div class="vVar">soll</div>
+</a>
+<a href="/konjugation/muss_liegen.htm" title="muss liegen (hat)">
+<div class="vVar">muss</div>
+</a>
+<a href="/konjugation/darf_liegen.htm" title="darf liegen (hat)">
+<div class="vVar">darf</div>
+</a>
+<a href="/konjugation/will_liegen.htm" title="will liegen (hat)">
+<div class="vVar">will</div>
+</a>
+<a href="/konjugation/mo:chte_liegen.htm" title="möchte liegen (hat)">
+<div class="vVar">möchte</div>
+</a>
+<a href="/konjugation/nicht_liegen.htm" title="nicht liegen (hat)">
+<div class="vVar">nicht</div>
+</a>	
+</div>
+</nav>
+<div class="rClear"></div>
+<div class="rAbschnitt "><div>
+<nav class="rBox rBoxWht" id="1a9a6Box">
+<header>
+<div class="rInf">
+unregelmäßig
+· haben
+</div><div class="rBoxKnopf">
+<button type="button" id="1a9a6Img" onclick="Rahmen.alleaufzu('1a9a6','rAufZu')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M7.41,18.41L6,17L12,11L18,17L16.59,18.41L12,13.83L7.41,18.41M7.41,12.41L6,11L12,5L18,11L16.59,12.41L12,7.83L7.41,12.41Z"></path>
+<path class="rZu" d="M16.59,5.59L18,7L12,13L6,7L7.41,5.59L12,10.17L16.59,5.59M16.59,11.59L18,13L12,19L6,13L7.41,11.59L12,16.17L16.59,11.59Z"></path>
+</svg>
+</button></div>
+</header>
+<div class="rClear"></div>
+<div class="rCntr">
+<a href="/konjugation/liefern.htm">
+<div class="rKnpf rLinks" style="margin-top: 6px;"><svg fill="#ffffff" height="10" viewBox="0 0 14 14" width="12" xmlns="http://www.w3.org/2000/svg">
+<path d="m11.5 1.41-1.43-1.41-7.07 7 7.07 7 1.43-1.41-5.65-5.59z"></path>
+</svg></div>
+</a>
+<a href="/konjugation/liegenbleiben.htm">
+<div class="rKnpf rRechts" style="margin-top: 6px;"><svg fill="#ffffff" height="10" viewBox="0 0 14 14" width="12" xmlns="http://www.w3.org/2000/svg">
+<path d="m3 1.41 1.425-1.41 7.075 7l-7.075 7-1.425-1.41 5.65-5.59z"></path>
+</svg></div>
+</a>
+<h2 class="vGrnd"><b>lieg<i>en</i></b> <a class="" href="/konjugation/infinitiv/liegen_hat.wav" id="ef8ee" onclick="Stimme.klick(event,'ef8ee')" rel="nofollow"><svg fill="#dddddd" height="32" viewBox="0 0 14 20" width="22" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 5.286v6h4l5 5v-16l-5 4.996m9.5 3c0-1.77-1-3.29-2.5-4.03v8.03c1.5-0.71 2.5-2.24 2.5-4z"></path>
+</svg></a> </h2>
+<p class="vStm">
+<b>lieg<i>t</i></b> ·
+<b>l<u>a</u>g</b> ·
+<i>hat</i> <b><i>ge</i>l<u>e</u>g<i>en</i></b> <a class="" href="/konjugation/stammformen/liegen_hat.wav" id="77bd4" onclick="Stimme.klick(event,'77bd4')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+</p>
+</div><div id="1a9a6" class="rAufZu">
+<div class="rCntr">
+<p class="rInf">
+&nbsp;Wechsel des Stammvokals
+ie
+- a
+- e&nbsp;	 				
+</p>
+<div class="vBsp rClear">
+<hr>
+<ul>
+<li>
+» Sie <b>l</b><b>ie</b><b>g</b><b><i>t</i></b> zu einem Teil im benachbarten Jackson County.<span class="rBoxInfo">²</span>
+<a class="" href="/konjugation/beispiele/liegen_hat.wav?q=wikipedia&r=6868465" id="52fee" onclick="Stimme.klick(event,'52fee')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://de.wikipedia.org/wiki?curid=6868465" title="wikipedia.org"><span class="rBoxInfo">...</span></a>
+<a class="rInf" href="/konjugation/beispiele/liegen.htm">mehr&nbsp;</a>
+</li>				
+</ul>
+</div>
+</div>		
+</div>
+<div class="rClear"></div>
+</nav>
+<p style="margin-bottom: 18px;">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+style="display:block; text-align:center;"
+data-ad-layout="in-article"
+data-ad-format="fluid"
+data-ad-client="ca-pub-1536920203038272"
+data-ad-slot="9702240298"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<div id="b5988"></div>
+<script type="text/javascript">
+Anzeigen.texte('b5988','/konjugation','steckbrief',false);
+</script>
+<section class="rBox rBoxWht" id="72178Box">
+<div class="rAnkr" id="ueberblick"></div>
+<header>
+<div class="rBoxText">
+<h2>Überblick</h2>
+<br><span class="rInf">Die einfach konjugierten Verbformen Präsens, Präteritum, Imperativ und Konjunktiv von liegen</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="72178Img" onclick="Rahmen.aufzu('72178')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="72178" class="rAufZu">
+<hr>
+<div class="vTbl">
+<h3>Präsens</h3>
+<a class="" href="/konjugation/indikativ/praesens/liegen_hat.wav" id="6caaf" onclick="Stimme.klick(event,'6caaf')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>lieg</b>(<b><i>e</i></b>)⁵</td></tr><tr><td> du</td><td> <b>lieg<i>st</i></b></td></tr><tr><td> er</td><td> <b>lieg<i>t</i></b></td></tr><tr><td> wir</td><td> <b>lieg<i>en</i></b></td></tr><tr><td> ihr</td><td> <b>lieg<i>t</i></b></td></tr><tr><td> sie</td><td> <b>lieg<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Präteritum</h3>
+<a class="" href="/konjugation/indikativ/praeteritum/liegen_hat.wav" id="1513a" onclick="Stimme.klick(event,'1513a')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>l<u>a</u>g</b></td></tr><tr><td> du</td><td> <b>l<u>a</u>g<i>st</i></b></td></tr><tr><td> er</td><td> <b>l<u>a</u>g</b></td></tr><tr><td> wir</td><td> <b>l<u>a</u>g<i>en</i></b></td></tr><tr><td> ihr</td><td> <b>l<u>a</u>g<i>t</i></b></td></tr><tr><td> sie</td><td> <b>l<u>a</u>g<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Imperativ</h3>
+<a class="" href="/konjugation/imperativ/liegen_hat.wav" id="3f420" onclick="Stimme.klick(event,'3f420')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td>-</td></tr><tr><td><b>lieg</b>(<b><i>e</i></b>)⁵</td><td> (du)</td></tr><tr><td>-</td></tr><tr><td><b>lieg<i>en</i></b></td><td> wir</td></tr><tr><td><b>lieg<i>t</i></b></td><td> ihr</td></tr><tr><td><b>lieg<i>en</i></b></td><td> Sie</td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Konjunktiv I</h3>
+<a class="" href="/konjugation/konjunktiv/praesens/liegen_hat.wav" id="796c3" onclick="Stimme.klick(event,'796c3')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>lieg<i>e</i></b></td></tr><tr><td> du</td><td> <b>lieg<i>est</i></b></td></tr><tr><td> er</td><td> <b>lieg<i>e</i></b></td></tr><tr><td> wir</td><td> <b>lieg<i>en</i></b></td></tr><tr><td> ihr</td><td> <b>lieg<i>et</i></b></td></tr><tr><td> sie</td><td> <b>lieg<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Konjunktiv II</h3>
+<a class="" href="/konjugation/konjunktiv/praeteritum/liegen_hat.wav" id="eb270" onclick="Stimme.klick(event,'eb270')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>l<u>ä</u>g<i>e</i></b></td></tr><tr><td> du</td><td> <b>l<u>ä</u>g<i>est</i></b></td></tr><tr><td> er</td><td> <b>l<u>ä</u>g<i>e</i></b></td></tr><tr><td> wir</td><td> <b>l<u>ä</u>g<i>en</i></b></td></tr><tr><td> ihr</td><td> <b>l<u>ä</u>g<i>et</i></b></td></tr><tr><td> sie</td><td> <b>l<u>ä</u>g<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Infinitiv</h3>
+<a class="" href="/konjugation/infinitive/liegen_hat.wav" id="87efd" onclick="Stimme.klick(event,'87efd')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table>
+<tr><td><b>lieg<i>en</i></b></td></tr>
+<tr><td><b><i>zu</i></b> <b>lieg<i>en</i></b></td></tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Partizip</h3>
+<a class="" href="/konjugation/partizipien/liegen_hat.wav" id="35f72" onclick="Stimme.klick(event,'35f72')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table>					
+<tr><td><b>lieg<i>end</i></b></td></tr>
+<tr><td><b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr>
+</table>
+</div>
+<div class="rClear"></div>
+<hr>
+Detaillierte Regeln zur Konjugation:
+&cir;&nbsp;<a href="/konjugation/indikativ/praesens/liegen.htm">Bildung Präsens von liegen</a>
+&cir;&nbsp;<a href="/konjugation/indikativ/praeteritum/liegen.htm">Bildung Präteritum von liegen</a>
+&cir;&nbsp;<a href="http://verben.de/deutsch/verb/bildung_der_deutschen_verbformen" target="_blank">Wie konjugiert man Verben im Deutschen</a>?
+<div class="rClear"></div>
+<hr>
+<a target="_blank" href="/konjugation/liegen_hat.pdf" onclick="ga('send', 'pageview', '/konjugation/liegen_hat.pdf')">
+<div class="rKnpf">Verbtabelle PDF</div>
+</a>	
+<a target="_blank" href="/konjugation/steckbrief/liegen_hat.png"  onclick="ga('send', 'pageview', '/konjugation/steckbrief/liegen_hat.png')">
+<div class="rKnpf">PNG</div>
+</a>		
+<a target="_blank" href="/konjugation/liegen_hat.docx"  onclick="ga('send', 'pageview', '/konjugation/liegen_hat.docx')">
+<div class="rKnpf">DOCX</div>
+</a>
+<a href="/konjugation/beispiele/liegen.htm"  title="Beispiele zur Konjugation des Verbs liegen">
+<div class="rKnpf">Beispiele</div>
+</a>		
+<a href="/konjugation/arbeitsblaetter-uebungen/liegen.htm" title="Arbeitsblätter zur Konjugation des  Verbs liegen">
+<div class="rKnpf">Arbeitsblätter</div>
+</a>
+</div>
+<div class="rClear"></div>
+</section>
+<p style="margin-bottom: 18px;">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+style="display:block; text-align:center;"
+data-ad-layout="in-article"
+data-ad-format="fluid"
+data-ad-client="ca-pub-1536920203038272"
+data-ad-slot="9678304502"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<div id="9dc75"></div>
+<script type="text/javascript">
+Anzeigen.texte('9dc75','/konjugation','ueberblick',false);
+</script>
+<section class="rBox rBoxWht" id="77a25Box">
+<div class="rAnkr" id="indikativ"></div>
+<header>
+<div class="rBoxText">
+<h2>Indikativ</h2>
+<br><span class="rInf">Das Verb liegen konjugiert im Indikativ Aktiv in den Zeitformen Gegenwart, Vergangenheit und Zukunft
+</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="77a25Img" onclick="Rahmen.aufzu('77a25')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="77a25" class="rAufZu">
+<hr>
+<div class="vTbl">
+<h3>Präsens</h3>
+<a class="" href="/konjugation/indikativ/praesens/liegen_hat.wav" id="c3349" onclick="Stimme.klick(event,'c3349')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>lieg</b>(<b><i>e</i></b>)⁵</td></tr><tr><td> du</td><td> <b>lieg<i>st</i></b></td></tr><tr><td> er</td><td> <b>lieg<i>t</i></b></td></tr><tr><td> wir</td><td> <b>lieg<i>en</i></b></td></tr><tr><td> ihr</td><td> <b>lieg<i>t</i></b></td></tr><tr><td> sie</td><td> <b>lieg<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Präteritum</h3>
+<a class="" href="/konjugation/indikativ/praeteritum/liegen_hat.wav" id="cd655" onclick="Stimme.klick(event,'cd655')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>l<u>a</u>g</b></td></tr><tr><td> du</td><td> <b>l<u>a</u>g<i>st</i></b></td></tr><tr><td> er</td><td> <b>l<u>a</u>g</b></td></tr><tr><td> wir</td><td> <b>l<u>a</u>g<i>en</i></b></td></tr><tr><td> ihr</td><td> <b>l<u>a</u>g<i>t</i></b></td></tr><tr><td> sie</td><td> <b>l<u>a</u>g<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Perfekt</h3>
+<a class="" href="/konjugation/indikativ/perfekt/liegen_hat.wav" id="c8711" onclick="Stimme.klick(event,'c8711')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>habe</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr><tr><td> du</td><td> <i>hast</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr><tr><td> er</td><td> <i>hat</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr><tr><td> wir</td><td> <i>haben</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr><tr><td> ihr</td><td> <i>habt</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr><tr><td> sie</td><td> <i>haben</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Plusquam</h3>
+<a class="" href="/konjugation/indikativ/plusquamperfekt/liegen_hat.wav" id="2ca84" onclick="Stimme.klick(event,'2ca84')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>hatte</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr><tr><td> du</td><td> <i>hattest</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr><tr><td> er</td><td> <i>hatte</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr><tr><td> wir</td><td> <i>hatten</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr><tr><td> ihr</td><td> <i>hattet</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr><tr><td> sie</td><td> <i>hatten</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Futur I</h3>
+<a class="" href="/konjugation/indikativ/futur1/liegen_hat.wav" id="681cf" onclick="Stimme.klick(event,'681cf')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>werde</i></td><td> <b>lieg<i>en</i></b></td></tr><tr><td> du</td><td> <i>wirst</i></td><td> <b>lieg<i>en</i></b></td></tr><tr><td> er</td><td> <i>wird</i></td><td> <b>lieg<i>en</i></b></td></tr><tr><td> wir</td><td> <i>werden</i></td><td> <b>lieg<i>en</i></b></td></tr><tr><td> ihr</td><td> <i>werdet</i></td><td> <b>lieg<i>en</i></b></td></tr><tr><td> sie</td><td> <i>werden</i></td><td> <b>lieg<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Futur II</h3>
+<a class="" href="/konjugation/indikativ/futur2/liegen_hat.wav" id="6c19c" onclick="Stimme.klick(event,'6c19c')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>werde</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> du</td><td> <i>wirst</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> er</td><td> <i>wird</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> wir</td><td> <i>werden</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> ihr</td><td> <i>werdet</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> sie</td><td> <i>werden</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td><td> <i>haben</i></td></tr></table>
+</div>
+<div class="vBsp rClear">
+<hr>
+<ul>
+<li>
+» Er <b>l</b><b>ie</b><b>g</b><b><i>t</i></b> im Sterben.<span class="rBoxInfo">¹</span>
+<a class="" href="/konjugation/beispiele/liegen_hat.wav?q=tatoeba&r=1748516" id="17fa0" onclick="Stimme.klick(event,'17fa0')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://tatoeba.org/sentences/show/1748516" title="tatoeba.org"><span class="rBoxInfo">...</span></a>
+</li>				
+<li>
+» Spannung <b>l</b><b>ie</b><b>g</b><b><i>t</i></b> in der Luft.<span class="rBoxInfo">¹</span>
+<a class="" href="/konjugation/beispiele/liegen_hat.wav?q=tatoeba&r=4908819" id="60abd" onclick="Stimme.klick(event,'60abd')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://tatoeba.org/sentences/show/4908819" title="tatoeba.org"><span class="rBoxInfo">...</span></a>
+<a class="rRechts rInf" href="/konjugation/beispiele/liegen.htm">mehr&nbsp;</a>
+</li>				
+</ul>
+</div>
+</div>
+<div class="rClear"></div>
+</section>
+<section class="rBox rBoxWht" id="53121Box">
+<div class="rAnkr" id="konjunktiv"></div>
+<header>
+<div class="rBoxText">
+<h2>Konjunktiv</h2>
+<br><span class="rInf">Die Konjugation im Konjunktiv I und II bzw. in den Zeiten Präsens, Präteritum, Perfekt, Plusquamperfekt und Futur für das Verb liegen</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="53121Img" onclick="Rahmen.aufzu('53121')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="53121" class="rAufZu">
+<hr>
+<div class="vTbl">
+<h3>Konjunktiv I</h3>
+<a class="" href="/konjugation/konjunktiv/praesens/liegen_hat.wav" id="44fd1" onclick="Stimme.klick(event,'44fd1')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>lieg<i>e</i></b></td></tr><tr><td> du</td><td> <b>lieg<i>est</i></b></td></tr><tr><td> er</td><td> <b>lieg<i>e</i></b></td></tr><tr><td> wir</td><td> <b>lieg<i>en</i></b></td></tr><tr><td> ihr</td><td> <b>lieg<i>et</i></b></td></tr><tr><td> sie</td><td> <b>lieg<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Konjunktiv II</h3>
+<a class="" href="/konjugation/konjunktiv/praeteritum/liegen_hat.wav" id="33418" onclick="Stimme.klick(event,'33418')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>l<u>ä</u>g<i>e</i></b></td></tr><tr><td> du</td><td> <b>l<u>ä</u>g<i>est</i></b></td></tr><tr><td> er</td><td> <b>l<u>ä</u>g<i>e</i></b></td></tr><tr><td> wir</td><td> <b>l<u>ä</u>g<i>en</i></b></td></tr><tr><td> ihr</td><td> <b>l<u>ä</u>g<i>et</i></b></td></tr><tr><td> sie</td><td> <b>l<u>ä</u>g<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Perfekt</h3>
+<a class="" href="/konjugation/konjunktiv/perfekt/liegen_hat.wav" id="0541b" onclick="Stimme.klick(event,'0541b')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>habe</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr><tr><td> du</td><td> <i>habest</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr><tr><td> er</td><td> <i>habe</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr><tr><td> wir</td><td> <i>haben</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr><tr><td> ihr</td><td> <i>habet</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr><tr><td> sie</td><td> <i>haben</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Plusquam</h3>
+<a class="" href="/konjugation/konjunktiv/plusquamperfekt/liegen_hat.wav" id="1bda5" onclick="Stimme.klick(event,'1bda5')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>hätte</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr><tr><td> du</td><td> <i>hättest</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr><tr><td> er</td><td> <i>hätte</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr><tr><td> wir</td><td> <i>hätten</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr><tr><td> ihr</td><td> <i>hättet</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr><tr><td> sie</td><td> <i>hätten</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Futur I</h3>
+<a class="" href="/konjugation/konjunktiv/futur1/liegen_hat.wav" id="74daa" onclick="Stimme.klick(event,'74daa')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>werde</i></td><td> <b>lieg<i>en</i></b></td></tr><tr><td> du</td><td> <i>werdest</i></td><td> <b>lieg<i>en</i></b></td></tr><tr><td> er</td><td> <i>werde</i></td><td> <b>lieg<i>en</i></b></td></tr><tr><td> wir</td><td> <i>werden</i></td><td> <b>lieg<i>en</i></b></td></tr><tr><td> ihr</td><td> <i>werdet</i></td><td> <b>lieg<i>en</i></b></td></tr><tr><td> sie</td><td> <i>werden</i></td><td> <b>lieg<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Futur II</h3>
+<a class="" href="/konjugation/konjunktiv/futur2/liegen_hat.wav" id="1c7c8" onclick="Stimme.klick(event,'1c7c8')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>werde</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> du</td><td> <i>werdest</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> er</td><td> <i>werde</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> wir</td><td> <i>werden</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> ihr</td><td> <i>werdet</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> sie</td><td> <i>werden</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td><td> <i>haben</i></td></tr></table>
+</div>
+<div class="vBsp rClear">
+<hr>
+<ul>
+<li>
+» Alle Gebäude <b>l</b><b><u>ä</u></b><b>g</b><b><i>en</i></b> am Rande oder im Herzen des Parks.<span class="rBoxInfo">²</span>
+<a class="" href="/konjugation/beispiele/liegen_hat.wav?q=wikipedia&r=1837368" id="ff4c5" onclick="Stimme.klick(event,'ff4c5')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://de.wikipedia.org/wiki?curid=1837368" title="wikipedia.org"><span class="rBoxInfo">...</span></a>
+<li>
+» Die Zukunft <b>l</b><b>ie</b><b>g</b><b><i>e</i></b> beim Internet und dem Satellitenradio.<span class="rBoxInfo">²</span>
+<a class="" href="/konjugation/beispiele/liegen_hat.wav?q=wikipedia&r=373848" id="b9d68" onclick="Stimme.klick(event,'b9d68')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://de.wikipedia.org/wiki?curid=373848" title="wikipedia.org"><span class="rBoxInfo">...</span></a>
+<a class="rRechts rInf" href="/konjugation/beispiele/liegen.htm">mehr&nbsp;</a>
+</ul>
+</div>
+</div>
+<div class="rClear"></div>
+</section>
+<section class="rBox rBoxWht" id="12240Box">
+<div class="rAnkr" id="konditional"></div>
+<header>
+<div class="rBoxText">
+<h2>Konjunktiv II (würde)</h2>
+<br><span class="rInf">Ersatzformen des Konjunktiv II konjugiert mit würde als finites Verb</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="12240Img" onclick="Rahmen.aufzu('12240')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="12240" class="rAufZu">
+<hr>
+<div class="vTbl">
+<h3>Prät (würde)</h3>
+<a class="" href="/konjugation/konditional/praeteritum/liegen_hat.wav" id="102a3" onclick="Stimme.klick(event,'102a3')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>würde</i></td><td> <b>lieg<i>en</i></b></td></tr><tr><td> du</td><td> <i>würdest</i></td><td> <b>lieg<i>en</i></b></td></tr><tr><td> er</td><td> <i>würde</i></td><td> <b>lieg<i>en</i></b></td></tr><tr><td> wir</td><td> <i>würden</i></td><td> <b>lieg<i>en</i></b></td></tr><tr><td> ihr</td><td> <i>würdet</i></td><td> <b>lieg<i>en</i></b></td></tr><tr><td> sie</td><td> <i>würden</i></td><td> <b>lieg<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Plusquam (würde)</h3>
+<a class="" href="/konjugation/konditional/plusquamperfekt/liegen_hat.wav" id="7373c" onclick="Stimme.klick(event,'7373c')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>würde</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> du</td><td> <i>würdest</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> er</td><td> <i>würde</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> wir</td><td> <i>würden</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> ihr</td><td> <i>würdet</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> sie</td><td> <i>würden</i></td><td> <b><i>ge</i>l<u>e</u>g<i>en</i></b></td><td> <i>haben</i></td></tr></table>
+</div>
+<div class="vBsp rClear">
+<hr>
+<ul>
+<li>
+» Nun <i>w</i><i>ü</i><i>rd</i><i>e</i> sie nach einem Nervenzusammenbruch in der psychiatrischen Abteilung des Krankenhauses <b>l</b><b>ie</b><b>g</b><b><i>en</i></b>.<span class="rBoxInfo">²</span>
+<a class="" href="/konjugation/beispiele/liegen_hat.wav?q=wikipedia&r=4919544" id="791cc" onclick="Stimme.klick(event,'791cc')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://de.wikipedia.org/wiki?curid=4919544" title="wikipedia.org"><span class="rBoxInfo">...</span></a>
+</li>			
+<li>
+» Im Jahr 2013 <i>w</i><i>ü</i><i>rd</i><i>e</i> er damit bei 407 Euro <b>l</b><b>ie</b><b>g</b><b><i>en</i></b>.<span class="rBoxInfo">²</span>
+<a class="" href="/konjugation/beispiele/liegen_hat.wav?q=wikipedia&r=6443359" id="c233a" onclick="Stimme.klick(event,'c233a')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://de.wikipedia.org/wiki?curid=6443359" title="wikipedia.org"><span class="rBoxInfo">...</span></a>
+<a class="rRechts rInf" href="/konjugation/beispiele/liegen.htm">mehr&nbsp;</a>
+</li>			
+</ul>
+</div>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+Rahmen.aufzu('12240');
+</script>
+</section>
+<section class="rBox rBoxWht" id="a2205Box">
+<div class="rAnkr" id="imperativ"></div>
+<header>
+<div class="rBoxText">
+<h2>Imperativ</h2>
+<br><span class="rInf">Die Konjugationsformen im Imperativ Aktiv Präsens für das Verb liegen</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="a2205Img" onclick="Rahmen.aufzu('a2205')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="a2205" class="rAufZu">
+<hr>
+<div class="vTbl">
+<h3>Präsens</h3>
+<a class="" href="/konjugation/imperativ/liegen_hat.wav" id="510f4" onclick="Stimme.klick(event,'510f4')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td><b>lieg</b>(<b><i>e</i></b>)⁵</td><td> (du)</td></tr><tr><td><b>lieg<i>en</i></b></td><td> wir</td></tr><tr><td><b>lieg<i>t</i></b></td><td> ihr</td></tr><tr><td><b>lieg<i>en</i></b></td><td> Sie</td></tr></table>
+</div>
+</div>
+<div class="rClear"></div>
+</section>
+<section class="rBox rBoxWht" id="d244fBox">
+<header>
+<div class="rBoxText">
+<h2>Infinitiv/Partizip</h2>
+<br><span class="rInf">Die infiniten Formen Partizip und Infinitiv (mit zu) im Aktiv für liegen
+</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="d244fImg" onclick="Rahmen.aufzu('d244f')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="d244f" class="rAufZu">
+<hr>
+<div class="vTbl">
+<h3>Infinitiv I</h3>
+<a class="" href="/konjugation/infinitiv1/liegen_hat.wav" id="99bf9" onclick="Stimme.klick(event,'99bf9')" rel="nofollow"><img src="/stimme.svg" alt=""></a><br>
+<table>
+<tr><td><b>lieg<i>en</i></b></td></tr>
+<tr><td><b><i>zu</i></b> <b>lieg<i>en</i></b></td></tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Infinitiv II</h3>
+<a class="" href="/konjugation/infinitiv2/liegen_hat.wav" id="c82c7" onclick="Stimme.klick(event,'c82c7')" rel="nofollow"><img src="/stimme.svg" alt=""></a><br>
+<table>
+<tr><td><b><i>ge</i>l<u>e</u>g<i>en</i></b> <i>haben</i></td></tr>
+<tr><td><b><i>ge</i>l<u>e</u>g<i>en</i></b> <i>zu</i> <i>haben</i></td></tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Partizip I</h3>
+<a class="" href="/konjugation/partizip1/liegen_hat.wav" id="df0ee" onclick="Stimme.klick(event,'df0ee')" rel="nofollow"><img src="/stimme.svg" alt=""></a><br>
+<table>
+<tr><td><b>lieg<i>end</i></b></td></tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Partizip II</h3>
+<a class="" href="/konjugation/partizip2/liegen_hat.wav" id="4a4d6" onclick="Stimme.klick(event,'4a4d6')" rel="nofollow"><img src="/stimme.svg" alt=""></a><br>
+<table>
+<tr><td><b><i>ge</i>l<u>e</u>g<i>en</i></b></td></tr>
+</table>
+</div>
+</div>
+<div class="rClear"></div>
+</section>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+style="display:block; text-align:center; margin-bottom:20px;"
+data-ad-layout="in-article"
+data-ad-format="fluid"
+data-ad-client="ca-pub-1536920203038272"
+data-ad-slot="4114995409"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<section class="rBox rBoxTrns" id="37395Box">
+<div class="rAnkr" id="kommentare"></div>
+<header>
+<div class="rBoxText">
+<h2>Kommentare</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="37395Img" onclick="Rahmen.aufzu('37395')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="37395" class="rAufZu">
+<p>
+<span class="rInf rKln">2017/11 ·</span> 
+<span class="rNoSelect rInf rKln" onclick="Rahmen.aufzu('vk8a7f2Ant')">Antworten</span>
+<br>						
+<b>Saskia meint:</b> Es ist gut behschrieben
+</p>
+<div class="vkAnt">	
+<div class="rZu" id="vk8a7f2Ant">
+<div class="kFrm" id="20eea">
+<form method="post" action="/kommentare/anlage.htm" onsubmit="Ajax.ersetze(event,'20eea')">
+<select class="kBwrt" name="bewertung">
+<option value="" selected="selected">★✰✰✰✰</option>
+<option value="5">★★★★★</option>
+<option value="4">★★★★</option>
+<option value="3">★★★</option>
+<option value="2">★★</option>
+<option value="1">★</option>
+</select> Kommentar:
+<br>
+<textarea maxlength="1000" rows="5" name="kommentar" required="required"></textarea><br>
+<br>
+Name:
+<input name="autor" required="required" maxlength="20"><br>
+<br>
+<input type="submit" value="Absenden">
+<input name="pfad" type="hidden" value="/konjugation/liegen.htm">
+<input name="url" type="hidden" value="https://www.verbformen.de/konjugation/?w=liegt">
+<input name="bezug" type="hidden" value="8a7f2">
+</form>
+</div>
+<br>
+</div>
+</div>
+<hr>
+<p>
+<span class="rInf rKln">2017/10 ·</span> 
+<span class="rNoSelect rInf rKln" onclick="Rahmen.aufzu('vkc174bAnt')">Antworten</span>
+· <span style="font-size: 1.2em;">
+<span class="kAn">★★★★★</span></span>
+<br>						
+<b>DerVerbenLehrer meint:</b> Diese Website ist der Hammer 
+</p>
+<div class="vkAnt">	
+<div class="rZu" id="vkc174bAnt">
+<div class="kFrm" id="1871f">
+<form method="post" action="/kommentare/anlage.htm" onsubmit="Ajax.ersetze(event,'1871f')">
+<select class="kBwrt" name="bewertung">
+<option value="" selected="selected">★✰✰✰✰</option>
+<option value="5">★★★★★</option>
+<option value="4">★★★★</option>
+<option value="3">★★★</option>
+<option value="2">★★</option>
+<option value="1">★</option>
+</select> Kommentar:
+<br>
+<textarea maxlength="1000" rows="5" name="kommentar" required="required"></textarea><br>
+<br>
+Name:
+<input name="autor" required="required" maxlength="20"><br>
+<br>
+<input type="submit" value="Absenden">
+<input name="pfad" type="hidden" value="/konjugation/liegen.htm">
+<input name="url" type="hidden" value="https://www.verbformen.de/konjugation/?w=liegt">
+<input name="bezug" type="hidden" value="c174b">
+</form>
+</div>
+<br>
+</div>
+</div>
+<hr>
+<p>
+<span class="rInf rKln">2017/06 ·</span> 
+<span class="rNoSelect rInf rKln" onclick="Rahmen.aufzu('vk291c2Ant')">Antworten</span>
+· <span style="font-size: 1.2em;">
+<span class="kAn">★★★★★</span></span>
+<br>						
+<b>Nada meint:</b> Ich bin sehr zufrieden 
+</p>
+<div class="vkAnt">	
+<div class="rZu" id="vk291c2Ant">
+<div class="kFrm" id="30dda">
+<form method="post" action="/kommentare/anlage.htm" onsubmit="Ajax.ersetze(event,'30dda')">
+<select class="kBwrt" name="bewertung">
+<option value="" selected="selected">★✰✰✰✰</option>
+<option value="5">★★★★★</option>
+<option value="4">★★★★</option>
+<option value="3">★★★</option>
+<option value="2">★★</option>
+<option value="1">★</option>
+</select> Kommentar:
+<br>
+<textarea maxlength="1000" rows="5" name="kommentar" required="required"></textarea><br>
+<br>
+Name:
+<input name="autor" required="required" maxlength="20"><br>
+<br>
+<input type="submit" value="Absenden">
+<input name="pfad" type="hidden" value="/konjugation/liegen.htm">
+<input name="url" type="hidden" value="https://www.verbformen.de/konjugation/?w=liegt">
+<input name="bezug" type="hidden" value="291c2">
+</form>
+</div>
+<br>
+</div>
+</div>
+<hr>
+<div class="kFrm" id="8af63">
+<form method="post" action="/kommentare/anlage.htm" onsubmit="Ajax.ersetze(event,'8af63')">
+<select class="kBwrt" name="bewertung">
+<option value="" selected="selected">★✰✰✰✰</option>
+<option value="5">★★★★★</option>
+<option value="4">★★★★</option>
+<option value="3">★★★</option>
+<option value="2">★★</option>
+<option value="1">★</option>
+</select> Kommentar:
+<br>
+<textarea maxlength="1000" rows="5" name="kommentar" required="required"></textarea><br>
+<br>
+Name:
+<input name="autor" required="required" maxlength="20"><br>
+<br>
+<input type="submit" value="Absenden">
+<input name="pfad" type="hidden" value="/konjugation/liegen.htm">
+<input name="url" type="hidden" value="https://www.verbformen.de/konjugation/?w=liegt">
+</form>
+</div>
+</div>
+<div class="rClear"></div>
+</section>
+</div></div>
+<div class="rInfo">
+<nav class="rBox rBoxTrns" id="736ffBox">
+<header>
+<div class="rBoxText">
+<a href="/konjugation/arbeitsblaetter-uebungen/liegen.htm" ><h2>Arbeitsblätter</h2><svg fill="#0052d9" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="m6.07 13.6 1.43 1.39 8.36-8.61-0.0584 4.76 2.01-0.0291 0.0088-8.19-8.18 0.0336 0.0291 2.01 4.76 0.0159z"></path>
+</svg></a>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="736ffImg" onclick="Rahmen.aufzu('736ff')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="736ff" class="rAufZu">
+<div class="rCntr">
+<div class="vArbBltt">
+<a target="_blank" href="/konjugation/liegen_hat.pdf"  onclick="ga('send', 'pageview', '/konjugation/liegen_hat.pdf')">
+<span class="rKln rInf">Verbtabelle PDF</span><br>
+<img class="rImg" alt="Konjugation des deutschen Verbs liegen (hat)" src="/konjugation/steckbrief/liegen_hat.png">
+</a>
+</div>
+</div>
+&cir;&nbsp;<a target="_blank" href="/konjugation/liegen_hat.pdf"  onclick="ga('send', 'pageview', '/konjugation/liegen_hat.pdf')">
+Verbtabelle PDF</a><br>
+&cir;&nbsp;<a target="_blank" href="/konjugation/arbeitsblaetter-uebungen/suchsel/liegen_hat.pdf" onclick="ga('send', 'pageview', '/konjugation/arbeitsblaetter-uebungen/suchsel/liegen_hat.pdf')">
+Wortsuchrätsel PDF </a><br>
+&cir;&nbsp;<a target="_blank" href="/konjugation/arbeitsblaetter-uebungen/lernkarten/liegen_hat.pdf" onclick="ga('send', 'pageview', '/konjugation/arbeitsblaetter-uebungen/lernkarten/liegen_hat.pdf')">
+Lernkarten PDF </a>
+<div class="rClear rKln"><br></div>
+<a href="/konjugation/arbeitsblaetter-uebungen/liegen.htm" title="Arbeitsblätter zur Konjugation des  Verbs liegen">
+<div class="rKnpf">Zu den Arbeitsblättern</div>
+</a>
+</div>
+<div class="rClear"></div>
+</nav>
+<nav class="rBox rBoxTrns" id="32c5bBox">
+<header>
+<div class="rBoxText">
+<a href="/konjugation/beispiele/liegen.htm" ><h2>Beispiele</h2><svg fill="#0052d9" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="m6.07 13.6 1.43 1.39 8.36-8.61-0.0584 4.76 2.01-0.0291 0.0088-8.19-8.18 0.0336 0.0291 2.01 4.76 0.0159z"></path>
+</svg></a>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="32c5bImg" onclick="Rahmen.aufzu('32c5b')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="32c5b" class="rAufZu">
+<div class="vBsp">
+<ul>
+<li>
+» Ein kleines Dorf <b>l</b><b>ie</b><b>g</b><b><i>t</i></b> zwischen den Städten.<span class="rBoxInfo">¹</span>
+<a class="" href="/konjugation/beispiele/liegen_hat.wav?q=tatoeba&r=1176684" id="e17e5" onclick="Stimme.klick(event,'e17e5')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://tatoeba.org/sentences/show/1176684" title="tatoeba.org"><span class="rBoxInfo">...</span></a>
+</li>
+<li>
+» Auf ihren Platten <i>h</i><i>a</i><i>t</i><i>ten</i> die meisten Bestatteten <b><i>ge</i></b><b>l</b><b><u>e</u></b><b>g</b><b><i>en</i></b>.<span class="rBoxInfo">²</span>
+<a class="" href="/konjugation/beispiele/liegen_hat.wav?q=wikipedia&r=5581098" id="6572a" onclick="Stimme.klick(event,'6572a')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://de.wikipedia.org/wiki?curid=5581098" title="wikipedia.org"><span class="rBoxInfo">...</span></a>
+</li>
+<li>
+» Der höchste Punkt <b>l</b><b>ie</b><b>g</b><b><i>t</i></b> zur Gänze in Italien.<span class="rBoxInfo">²</span>
+<a class="" href="/konjugation/beispiele/liegen_hat.wav?q=wikipedia&r=5621903" id="b06c2" onclick="Stimme.klick(event,'b06c2')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://de.wikipedia.org/wiki?curid=5621903" title="wikipedia.org"><span class="rBoxInfo">...</span></a>
+</li>
+</ul>
+</div>
+<div class="rClear rKln"><br></div>
+<a href="/konjugation/beispiele/liegen.htm"  title="Beispiele zur Konjugation des Verbs liegen">
+<div class="rKnpf">Zu den Beispielen</div>
+</a>
+</div>
+<div class="rClear"></div>
+</nav>
+<section class="rBox rBoxTrns" id="e3c08Box">
+<header>
+<div class="rBoxText">
+<h2>Bildungsregeln</h2>
+<br><span class="rInf">Detaillierte Regeln zur Konjugation</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="e3c08Img" onclick="Rahmen.aufzu('e3c08')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="e3c08" class="rAufZu">
+<p>
+&cir;&nbsp;<a href="/konjugation/indikativ/praesens/liegen.htm">Konjugation von liegen im Präsens </a>?<br>
+&cir;&nbsp;<a href="/konjugation/indikativ/praeteritum/liegen.htm">Konjugation von liegen im Präteritum </a>?<br>
+&cir;&nbsp;<a href="http://verben.de/deutsch/verb/bildung_der_deutschen_verbformen" target="_blank">Wie konjugiert man Verben im Deutschen</a>?
+</p>
+</div>
+<div class="rClear"></div>
+</section>
+<nav class="rBox rBoxTrns" id="fd1cbBox">
+<header>
+<div class="rBoxText">
+<h2>Präpositionen</h2>
+<br><span class="rInf">Alle verwendeten Präpositionen von liegen</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="fd1cbImg" onclick="Rahmen.aufzu('fd1cb')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="fd1cb" class="rAufZu">
+<p style="column-count: 4;">
+<a href="/konjugation/am_..._liegen.htm">am&nbsp;…</a><br>
+<a href="/konjugation/im_..._liegen.htm">im&nbsp;…</a><br>
+<a href="/konjugation/in_..._liegen.htm">in&nbsp;…</a><br>
+</p>
+</div>
+<div class="rClear"></div>
+</nav>
+<nav class="rBox rBoxTrns" id="24bdbBox">
+<header>
+<div class="rBoxText">
+<h2>Weitere Formen</h2>
+<br><span class="rInf">Modalformen und Negation von liegen</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="24bdbImg" onclick="Rahmen.aufzu('24bdb')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="24bdb" class="rAufZu">
+<table>
+<tr><td class="vKpfZ">Fähigkeit</td><td>
+&cir;&nbsp;<a href="/konjugation/kann_liegen.htm">kann liegen</a>
+<a class="" href="/konjugation/infinitiv/kann_liegen_hat.wav" id="d2966" onclick="Stimme.klick(event,'d2966')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+<tr><td class="vKpfZ">Erlaubnis</td><td>
+&cir;&nbsp;<a href="/konjugation/darf_liegen.htm">darf liegen</a>
+<a class="" href="/konjugation/infinitiv/darf_liegen_hat.wav" id="dac0d" onclick="Stimme.klick(event,'dac0d')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+<tr><td class="vKpfZ">Pflicht</td><td>
+&cir;&nbsp;<a href="/konjugation/muss_liegen.htm">muss liegen</a>
+<a class="" href="/konjugation/infinitiv/muss_liegen_hat.wav" id="4e2a7" onclick="Stimme.klick(event,'4e2a7')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+<tr><td class="vKpfZ">Absicht</td><td>
+&cir;&nbsp;<a href="/konjugation/will_liegen.htm">will liegen</a>
+<a class="" href="/konjugation/infinitiv/will_liegen_hat.wav" id="70a8c" onclick="Stimme.klick(event,'70a8c')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+<tr><td class="vKpfZ">Vorschrift</td><td>
+&cir;&nbsp;<a href="/konjugation/soll_liegen.htm">soll liegen</a>
+<a class="" href="/konjugation/infinitiv/soll_liegen_hat.wav" id="1f2e3" onclick="Stimme.klick(event,'1f2e3')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+<tr><td class="vKpfZ">Gefallen</td><td>
+&cir;&nbsp;<a href="/konjugation/mag_liegen.htm">mag liegen</a>
+<a class="" href="/konjugation/infinitiv/mag_liegen_hat.wav" id="bc4fc" onclick="Stimme.klick(event,'bc4fc')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+<tr><td class="vKpfZ">Wunsch</td><td>
+&cir;&nbsp;<a href="/konjugation/mo:chte_liegen.htm">möchte liegen</a>
+<a class="" href="/konjugation/infinitiv/mo:chte_liegen_hat.wav" id="52be8" onclick="Stimme.klick(event,'52be8')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+<tr><td class="vKpfZ">Verneinung&nbsp;</td><td>
+&cir;&nbsp;<a href="/konjugation/nicht_liegen.htm">nicht liegen</a>
+<a class="" href="/konjugation/infinitiv/nicht_liegen_hat.wav" id="0a756" onclick="Stimme.klick(event,'0a756')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+</table>					
+</div>
+<div class="rClear"></div>
+</nav>
+<nav class="rBox rBoxTrns" id="dac60Box">
+<header>
+<div class="rBoxText">
+<h2>Ableitungen</h2>
+<br><span class="rInf">Abgeleitete Formen von liegen</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="dac60Img" onclick="Rahmen.aufzu('dac60')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="dac60" class="rAufZu">
+<p style="column-count: 2;">
+&cir;&nbsp;<a href="/konjugation/abliegen.htm" title="abliegen">abliegen</a><br>
+&cir;&nbsp;<a href="/konjugation/anliegen.htm" title="anliegen">anliegen</a><br>
+&cir;&nbsp;<a href="/konjugation/ausliegen.htm" title="ausliegen">ausliegen</a><br>
+&cir;&nbsp;<a href="/konjugation/beiliegen.htm" title="beiliegen">beiliegen</a><br>
+&cir;&nbsp;<a href="/konjugation/blos:liegen.htm" title="bloßliegen">bloßliegen</a><br>
+&cir;&nbsp;<a href="/konjugation/brachliegen.htm" title="brachliegen">brachliegen</a><br>
+&cir;&nbsp;<a href="/konjugation/daliegen.htm" title="daliegen">daliegen</a><br>
+&cir;&nbsp;<a href="/konjugation/davorliegen.htm" title="davorliegen">davorliegen</a><br>
+&cir;&nbsp;<a href="/konjugation/durchliegen.htm" title="durchliegen">durchliegen</a><br>
+&cir;&nbsp;<a href="/konjugation/erliegen.htm" title="erliegen">erliegen</a><br>
+&cir;&nbsp;<a href="/konjugation/fernliegen.htm" title="fernliegen">fernliegen</a><br>
+&cir;&nbsp;<a href="/konjugation/festliegen.htm" title="festliegen">festliegen</a><br>
+&cir;&nbsp;<a href="/konjugation/flachliegen.htm" title="flachliegen">flachliegen</a><br>
+&cir;&nbsp;<a href="/konjugation/herumliegen.htm" title="herumliegen">herumliegen</a><br>
+&cir;&nbsp;<a href="/konjugation/langliegen.htm" title="langliegen">langliegen</a><br>
+&cir;&nbsp;<a href="/konjugation/na:herliegen.htm" title="näherliegen">näherliegen</a><br>
+&cir;&nbsp;<a href="/konjugation/naheliegen.htm" title="naheliegen">naheliegen</a><br>
+&cir;&nbsp;<a href="/konjugation/obliegen.htm" title="obliegen">obliegen</a><br>
+&cir;&nbsp;<a href="/konjugation/offenliegen.htm" title="offenliegen">offenliegen</a><br>
+&cir;&nbsp;<a href="/konjugation/stillliegen.htm" title="stillliegen">stillliegen</a><br>
+&cir;&nbsp;<a href="/konjugation/umherliegen.htm" title="umherliegen">umherliegen</a><br>
+&cir;&nbsp;<a href="/konjugation/vorliegen.htm" title="vorliegen">vorliegen</a><br>
+&cir;&nbsp;<a href="/konjugation/wundliegen.htm" title="wundliegen">wundliegen</a><br>
+</p>
+</div>
+<div class="rClear"></div>
+</nav>
+<section class="rBox rBoxTrns" id="6cb09Box">
+<header>
+<div class="rBoxText">
+<h2>Übersetzung</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="6cb09Img" onclick="Rahmen.aufzu('6cb09')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="6cb09" class="rAufZu">
+<p>
+Übersetzung
+&cir;&nbsp;лежать
+&cir;&nbsp;lie, located
+</p>
+</div>
+<div class="rClear"></div>
+</section>
+</div>
+<div class="rClear"></div>		
+<section class="rBox rBoxTrns" id="ad927Box">
+<header>
+<div class="rBoxText">
+<h2>Verbformen</h2>
+<br><span class="rInf">Zusammenfassung aller Verbformen des Zeitworts, Tätigkeitsworts bzw. Tuworts  liegen</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="ad927Img" onclick="Rahmen.aufzu('ad927')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="ad927" class="rAufZu">
+<p>
+Die <u>liegen Konjugation</u> online als Verbtabelle mit allen Verbformen in Singular (Einzahl) und Plural (Mehrzahl) in allen Personen (1. Person, 2.Person, 3. Person) übersichtlich dargestellt. Die Beugung bzw. Flexion des Verbs liegen ist somit eine Hilfestellung für Hausaufgaben, Prüfungen, Klausuren, für den Deutschuntericht der Schule, zum Deutsch Lernen, für das Studium, Deutsch als Fremdsprache (DaZ), Deutsch als Zweitsprache (DaZ) und für die Erwachsenenbildung. Gerade auch für Deutsch-lernende ist die korrekte Konjugation des Verbs bzw. die korrekt flektierten Formen (liegt - lag - hat gelegen) entscheidend. Weitere Informationen finden sich unter <a href="https://de.wiktionary.org/wiki/Flexion:liegen" rel="nofollow">Wiktionary liegen</a> und unter <a href="http://www.duden.de/rechtschreibung/liegen" rel="nofollow">liegen im Duden</a>.
+Das Verb gehört zum Wortschatz des Zertifikat Deutsch bzw. zur Stufe B2.
+</p>
+<h3>
+Indikativ
+Wirklichkeitsform /
+Aktiv
+Tatform
+</h3>
+<ul>
+<li>
+<b>Präsens
+Gegenwart</b>, ich lieg(e), du liegst, er liegt, wir liegen, ihr liegt, sie liegen
+</li>
+<li>
+<b>Präteritum	
+Vergangenheit</b>, ich lag, du lagst, er lag, wir lagen, ihr lagt, sie lagen
+</li>
+<li>
+<b>
+Perfekt
+Vorgegenwart</b>, ich habe gelegen, du hast gelegen, er hat gelegen, wir haben gelegen, ihr habt gelegen, sie haben gelegen
+</li>
+<li>
+<b>
+Plusquamperfekt
+Vorvergangenheit</b>, ich hatte gelegen, du hattest gelegen, er hatte gelegen, wir hatten gelegen, ihr hattet gelegen, sie hatten gelegen
+</li>
+<li>
+<b>
+Futur I
+Zukunft</b>, ich werde liegen, du wirst liegen, er wird liegen, wir werden liegen, ihr werdet liegen, sie werden liegen
+</li>	
+<li>
+<b>
+Futur II
+Vorzukunft</b>, ich werde gelegen haben, du wirst gelegen haben, er wird gelegen haben, wir werden gelegen haben, ihr werdet gelegen haben, sie werden gelegen haben
+</li>
+</ul>
+<h3>
+Konjunktiv
+Möglichkeitsform /
+Aktiv
+Tatform
+</h3>
+<ul>
+<li>
+<b>
+Präsens
+Gegenwart</b>, ich liege, du liegest, er liege, wir liegen, ihr lieget, sie liegen
+</li>	
+<li>
+<b>
+Präteritum
+Vergangenheit</b>, ich läge, du lägest, er läge, wir lägen, ihr läget, sie lägen
+</li>	
+<li>
+<b>
+Perfekt
+Vorgegenwart</b>, ich habe gelegen, du habest gelegen, er habe gelegen, wir haben gelegen, ihr habet gelegen, sie haben gelegen
+</li>	
+<li>						
+<b>
+Plusquamperfekt
+Vorvergangenheit</b>, ich hätte gelegen, du hättest gelegen, er hätte gelegen, wir hätten gelegen, ihr hättet gelegen, sie hätten gelegen
+</li>	
+<li>
+<b>
+Futur I
+Zukunft</b>, ich werde liegen, du werdest liegen, er werde liegen, wir werden liegen, ihr werdet liegen, sie werden liegen
+</li>	
+<li>
+<b>
+Futur II
+Vorzukunft</b>, ich werde gelegen haben, du werdest gelegen haben, er werde gelegen haben, wir werden gelegen haben, ihr werdet gelegen haben, sie werden gelegen haben
+</li>
+</ul>
+<h3>
+Konjunktiv II (würde)
+Bedingungsform /
+Aktiv
+Tatform
+</h3>
+<ul>
+<li>
+<b>
+Präteritum
+Vergangenheit</b>, ich würde liegen, du würdest liegen, er würde liegen, wir würden liegen, ihr würdet liegen, sie würden liegen
+</li>	
+<li>
+<b>
+Plusquamperfekt
+Vorvergangenheit</b>, ich würde gelegen haben, du würdest gelegen haben, er würde gelegen haben, wir würden gelegen haben, ihr würdet gelegen haben, sie würden gelegen haben
+</li>
+</ul>
+<h3>
+Imperativ
+Befehlsform /
+Aktiv
+Tatform
+</h3>
+<ul>
+<li>
+<b>
+Präsens
+Gegenwart</b>, lieg(e) (du), liegen wir, liegt ihr, liegen Sie
+</li>
+</ul>
+<h3>
+Infinitiv
+Grundform
+/
+Partizip
+Mittelwort
+/
+Aktiv
+Tatform
+</h3>
+<ul>
+<li>
+<b>
+Infinitiv I</b>, liegen
+, zu liegen
+</li>	
+<li>
+<b>
+Infinitiv II</b>, gelegen haben
+, gelegen zu haben
+</li>	
+<li>
+<b>Partizip I</b>, liegend
+</li>	
+<li>
+<b>Partizip II</b>, gelegen
+</li>
+</ul>
+</div>
+<div class="rClear"></div>
+</section>
+<footer class="rInf vLeg rClear">
+¹ Die Beispielsätze stammen von <a href="https://tatoeba.org" rel="nofollow" target="_blank">Tatoeba</a>. Sie sind unter der Lizenz <a href="https://creativecommons.org/licenses/by/2.0/" rel="nofollow" target="_blank">CC BY 2.0</a> <i>(creativecommons.org/licenses/by/2.0)</i> frei verfügbar. Die Urheber der Sätze sind über den Link ... direkt am Satz oder über folgende URLs jeweils unter <i>https://tatoeba.org/sentences/show</i> zu finden (die Reihenfolge entspricht dem Auftreten): 
+<i>/3137047</i>, 
+<i>/1748516</i>, 
+<i>/4908819</i>, 
+<i>/1176684</i>
+<br>
+² Die Beispielsätze stammen aus der <a href="https://de.wikipedia.org" rel="nofollow" target="_blank">Wikipedia</a>. Sie sind unter der Lizenz <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="nofollow" target="_blank">CC-BY-SA 3.0</a> <i>(creativecommons.org/licenses/by-sa/3.0)</i> frei verfügbar. Die Urheber der Sätze sind über den Link ... direkt am Satz oder über folgende URLs jeweils unter <i>https://de.wikipedia.org/wiki?curid=</i> zu finden (die Reihenfolge entspricht dem Auftreten): 
+<i>6868465 (Washington Township (Dubuque County, Iowa))</i>, 
+<i>1837368 (Stadthalle Bad Godesberg)</i>, 
+<i>373848 (Schweizer Radio International)</i>, 
+<i>4919544 (Der Campus)</i>, 
+<i>6443359 (Regelbedarfs-Ermittlungsgesetz)</i>, 
+<i>5581098 (Midhowe Cairn)</i>, 
+<i>5621903 (Tête Blanche)</i>
+<br>
+⁵ Umgangssprachlicher Gebrauch<br>
+<br>
+</footer>
+</div><div class="rClear"></div></article>
+<footer><div>
+<div class="rLinks vFuss">
+<h2>Kontakt</h2>
+<p>Netzverb Inh. Andreas Göbel<br>
+Alte Buchholzer Str. 8<br>
+D-09487 Schlettau</p>
+<p>Telefon: +49 3733 6196894<br>
+E-Mail: info@netzverb.de</p>
+<p>Facebook: <a href="https://www.facebook.com/Netzverb" rel="nofollow" target="_blank">facebook.com/Netzverb</a><br>
+Twitter: <a href="https://twitter.com/Netzverb" rel="nofollow" target="_blank">twitter.com/Netzverb</a><br>
+Google+: <a href="https://plus.google.com/+NetzverbDe" rel="nofollow" target="_blank">plus.google.com/+NetzverbDe</a></p>
+</div>
+<div class="rLinks vFuss">
+<h2>Netzverb</h2>
+<p>Netzwerk der deutschen Sprache<br>
+<a href="//www.netzverb.de">www.netzverb.de</a> · <a href="//www.netzverb.de/blog/">Blog</a></p>
+<p>Deutsche Flexion: <a href="//www.verbformen.de">verbformen.de</a><br>
+Deutsches Wörterbuch: <a href="//www.verblisten.de">verblisten.de</a><br>
+Sprachforum: <a href="http://www.konjugation.de">konjugation.de</a><br>
+Deutsche Grammatik: <a href="http://www.verben.de">verben.de</a></p>
+<a href="https://www.facebook.com/Netzverb" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path>
+</svg></a>
+<a href="https://twitter.com/Netzverb" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path>
+</svg></a>
+<a href="https://plus.google.com/+NetzverbDe" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M23,11H21V9H19V11H17V13H19V15H21V13H23M8,11V13.4H12C11.8,14.4 10.8,16.4 8,16.4C5.6,16.4 3.7,14.4 3.7,12C3.7,9.6 5.6,7.6 8,7.6C9.4,7.6 10.3,8.2 10.8,8.7L12.7,6.9C11.5,5.7 9.9,5 8,5C4.1,5 1,8.1 1,12C1,15.9 4.1,19 8,19C12,19 14.7,16.2 14.7,12.2C14.7,11.7 14.7,11.4 14.6,11H8Z"></path>
+</svg></a>		
+</div>
+<div class="rLinks vFuss">
+<h2>Hinweise</h2>
+<p><a href="//www.netzverb.de/impressum.htm">Impressum</a> ·
+<a href="//www.netzverb.de/impressum.htm">Nutzungsbedingungen</a><br>
+<a href="//www.netzverb.de/datenschutz.htm">Datenschutz</a> ·
+<a href="//www.netzverb.de/datenschutz.htm">Cookies</a></p>
+<h2>Hilfe</h2>
+<p><a href="/hilfe/">Hilfe und FAQ</a> · <a href="/kommentare.htm">Kommentare</a><br>
+<a href="//www.netzverb.de/links/">Links</a> · <a href="/hilfe/widgets.htm">Widgets</a> · <a href="/neuigkeiten.htm">Neuigkeiten</a></p>
+<a href="/nutzer/?anmelden">Anmelden</a>
+</div>
+<div class="rClear">
+<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow">
+<svg fill="#fff" fill-opacity="0.6" height="26" viewBox="0 0 26 26" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="m13 0c3.6 0 6.7 1.3 9.3 3.8 1.2 1.2 2.2 2.6 2.8 4.2 0.6 1.6 0.9 3.3 0.9 5 0 1.8-0.3 3.5-0.9 5 -0.6 1.6-1.5 2.9-2.8 4.1 -1.3 1.3-2.7 2.2-4.3 2.9 -1.6 0.7-3.3 1-5 1s-3.4-0.3-4.9-1c-1.6-0.6-3-1.6-4.3-2.9 -1.3-1.2-2.2-2.6-2.8-4.2 -0.6-1.5-1-3.2-1-4.9s0.3-3.4 1-5c0.7-1.6 1.6-3 2.9-4.3 2.5-2.5 5.5-3.8 9.1-3.8Zm0 2.3c-3 0-5.5 1-7.5 3.1 -1 1-1.8 2.2-2.3 3.5 -0.5 1.3-0.8 2.6-0.8 4 0 1.4 0.3 2.7 0.8 4 0.5 1.3 1.3 2.4 2.4 3.5s2.2 1.8 3.5 2.3c1.3 0.5 2.6 0.8 4 0.8 1.4 0 2.7-0.3 4.1-0.8s2.5-1.3 3.5-2.3c2-2 3-4.5 3-7.4 0-1.4-0.3-2.8-0.8-4.1 -0.5-1.3-1.2-2.4-2.2-3.4 -2.1-2.1-4.6-3.1-7.6-3.1Zm-0.2 8.5l-1.7 0.9c-0.2-0.4-0.4-0.7-0.7-0.8 -0.3-0.2-0.5-0.2-0.8-0.2 -1.2 0-1.7 0.8-1.7 2.3 0 0.7 0.1 1.3 0.4 1.7 0.3 0.4 0.7 0.6 1.3 0.6 0.8 0 1.3-0.4 1.6-1.1l1.6 0.8c-0.3 0.6-0.8 1.1-1.4 1.5 -0.6 0.4-1.3 0.5-2 0.5 -1.2 0-2.1-0.4-2.8-1.1 -0.7-0.7-1.1-1.7-1.1-3 0-1.2 0.4-2.2 1.1-2.9 0.7-0.7 1.6-1.1 2.7-1.1 1.6 0 2.8 0.6 3.5 1.9Zm7.5 0l-1.7 0.9c-0.2-0.4-0.4-0.7-0.7-0.8 -0.3-0.2-0.5-0.2-0.8-0.2 -1.2 0-1.7 0.8-1.7 2.3 0 0.7 0.1 1.3 0.4 1.7 0.3 0.4 0.7 0.6 1.3 0.6 0.8 0 1.3-0.4 1.6-1.1l1.6 0.8c-0.4 0.6-0.8 1.1-1.4 1.5 -0.6 0.4-1.3 0.5-2 0.5 -1.2 0-2.1-0.4-2.8-1.1 -0.7-0.7-1.1-1.7-1.1-3 0-1.2 0.4-2.2 1.1-2.9 0.7-0.7 1.6-1.1 2.7-1.1 1.6 0 2.8 0.6 3.4 1.9Z"></path>
+</svg>
+<svg fill="#fff" fill-opacity="0.6" height="26" viewBox="0 0 26 26" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="m13 0c3.7 0 6.7 1.3 9.2 3.8 2.5 2.6 3.8 5.6 3.8 9.2 0 3.7-1.2 6.7-3.7 9.1 -2.6 2.6-5.8 3.9-9.3 3.9 -3.6 0-6.6-1.3-9.2-3.8 -2.5-2.6-3.8-5.6-3.8-9.2 0-3.6 1.3-6.6 3.8-9.2 2.5-2.5 5.6-3.8 9.2-3.8Zm0.1 2.3c-3 0-5.4 1-7.5 3.1 -2.1 2.2-3.2 4.7-3.2 7.6 0 2.9 1.1 5.4 3.2 7.5 2 2 4.5 3.1 7.4 3.1 2.9 0 5.4-1.1 7.6-3.2 2-2 3.1-4.5 3.1-7.4s-1-5.5-3.1-7.6c-2-2.1-4.5-3.2-7.5-3.2Zm3.5 7.4v5.3h-1.5v6.3h-4v-6.3h-1.5v-5.3c0-0.2 0.1-0.4 0.2-0.6 0.2-0.2 0.4-0.2 0.6-0.2h5.3c0.2 0 0.4 0.1 0.6 0.2 0.2 0.2 0.3 0.4 0.3 0.6Zm-5.4-3.4c0-1.2 0.6-1.8 1.8-1.8s1.8 0.6 1.8 1.8c0 1.2-0.6 1.8-1.8 1.8 -1.2 0-1.8-0.6-1.8-1.8Z"></path>
+</svg>
+<svg fill="#fff" fill-opacity="0.6" height="26" viewBox="0 0 26 26" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="m13 0c3.6 0 6.7 1.3 9.2 3.8 2.5 2.5 3.8 5.6 3.8 9.2 0 3.6-1.2 6.7-3.7 9.1 -2.6 2.6-5.7 3.9-9.3 3.9 -3.5 0-6.6-1.3-9.2-3.8 -2.5-2.6-3.8-5.6-3.8-9.2 0-3.5 1.3-6.6 3.8-9.2 2.5-2.5 5.6-3.8 9.2-3.8Zm0 2.3c-3 0-5.4 1-7.5 3.1 -2.1 2.2-3.2 4.7-3.2 7.5 0 2.9 1.1 5.4 3.2 7.5 2.1 2.1 4.6 3.2 7.5 3.2 2.9 0 5.4-1.1 7.6-3.2 2.1-2 3.1-4.5 3.1-7.4 0-3-1-5.5-3.1-7.5 -2-2.2-4.5-3.2-7.4-3.2Zm-5.7 8.9c0.3-1.6 0.9-2.9 1.9-3.7 1-0.9 2.3-1.3 3.8-1.3 2.1 0 3.7 0.7 4.9 2 1.2 1.3 1.8 3 1.8 5.1 0 2-0.6 3.7-1.9 5 -1.3 1.3-2.9 2-4.9 2 -1.5 0-2.7-0.4-3.8-1.3s-1.7-2.1-1.9-3.8h3.3c0.1 1.6 1 2.4 2.9 2.4 0.9 0 1.7-0.4 2.2-1.2 0.6-0.8 0.8-1.8 0.8-3.2 0-1.4-0.3-2.4-0.8-3.1 -0.5-0.7-1.2-1.1-2.2-1.1 -1.7 0-2.7 0.8-2.9 2.3h1l-2.6 2.6 -2.6-2.6 1 0Z"></path>
+</svg>
+</a>
+<p>Alle originären Inhalte auf dieser Website sind, soweit nichts anderes vermerkt ist, unter der offenen Lizenz <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license nofollow" target="_blank">CC BY-SA 4.0</a> <em>(https://creativecommons.org/licenses/by-sa/4.0)</em> verfügbar. Die Inhalte dürfen somit frei und dauerhaft verwendet, kopiert und geändert werden und eignen sich im Rahmen von Open Educational Resources (OER) als Lehrmaterial. Bei einer Veröffentlichung ist als Urheber <em>"Netzverb (<a href="https://www.verbformen.de/">www.verbformen.de</a>)"</em> mit Verlinkung auf <em>https://www.verbformen.de/</em> zu nennen. Mehr Informationen stehen in den <a href="//www.netzverb.de/impressum.htm">Nutzungsbedingungen</a>.</p>
+</div>
+</div></footer>
+<aside class="rHw rHwUnt" id="20170317_cookie">
+<div>
+<div class="rRechts" onclick="Hinweis.weg('20170317_cookie')">
+<svg fill="#505050" fill-opacity="0.6" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+<path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
+</svg>
+</div>
+Es werden <a target="_blank"  href="//www.netzverb.de/datenschutz.htm">Cookies</a> verwendet. Nur weiter, wenn einverstanden!
+</div>
+</aside>
+<audio id="sTon" preload="auto" autoplay ></audio>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-1466848-8', 'auto');
+ga('send', 'pageview');
+ga('set', 'anonymizeIp', true);
+</script>
+<script type="application/ld+json">
+{
+"@id": "http://www.netzverb.de/",
+"@context": "http://schema.org",
+"@type": "Organization",
+"url": "http://www.netzverb.de/",
+"name": "Netzverb Inh. Andreas Göbel",
+"logo": {
+"@type": "ImageObject",
+"url": "http://www.netzverb.de/netzverb.png"
+}, 
+"sameAs": [
+"https://www.facebook.com/Netzverb",
+"https://twitter.com/Netzverb",
+"https://plus.google.com/+NetzverbDe"
+]
+}
+</script>
+<script type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "WebSite",
+"url": "https://www.verbformen.de/",
+"potentialAction": {
+"@type": "SearchAction",
+"target": "https://www.verbformen.de/suche/?w={search_term_string}",
+"query-input": "required name=search_term_string"
+},
+"author": { "@id": "http://www.netzverb.de/" },
+"publisher": { "@id": "http://www.netzverb.de/" }
+}
+</script>
+<script type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "Article",
+"mainEntityOfPage": {
+"@type": "WebPage",
+"@id": "https://www.verbformen.de/konjugation/liegen.htm"
+},
+"headline": "Konjugation des deutschen Verbs liegen",
+"image": {
+"@type": "ImageObject",
+"url": "https://www.verbformen.de/konjugation/steckbrief/liegen_hat.png",
+"height": 600,
+"width": 900
+},
+"datePublished": "2017-01-01T08:00:00+02:00",
+"dateModified": "2017-12-01T08:07:00+02:00",
+"author": {
+"@id": "http://www.netzverb.de/"
+},
+"publisher": {
+"@id": "http://www.netzverb.de/"
+}
+}
+</script>
+<script type="application/ld+json">
+[			
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"liegen (hat)",
+"url":"https://www.verbformen.de/konjugation/liegen_hat.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"liegen (ist)",
+"url":"https://www.verbformen.de/konjugation/liegen_ist.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"mag liegen",
+"url":"https://www.verbformen.de/konjugation/mag_liegen.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"kann liegen",
+"url":"https://www.verbformen.de/konjugation/kann_liegen.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"soll liegen",
+"url":"https://www.verbformen.de/konjugation/soll_liegen.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"muss liegen",
+"url":"https://www.verbformen.de/konjugation/muss_liegen.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"darf liegen",
+"url":"https://www.verbformen.de/konjugation/darf_liegen.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"will liegen",
+"url":"https://www.verbformen.de/konjugation/will_liegen.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"nicht liegen",
+"url":"https://www.verbformen.de/konjugation/nicht_liegen.htm"
+}
+]
+</script>
+141
+</body>
+</html>

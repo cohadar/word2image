@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<title>
+Konjugation | landen | Deutsche Verben konjugieren - Netzverb
+</title>
+<meta name="description" content="Konjugation des Verbs landen — landet, landete, gelandet usw. — Alle Formen von landen als Tabelle — Indikativ, Konjunktiv, Imperativ — Partizip, Infinitiv, Aktiv, Passiv — Präsens, Gegenwart, Präteritum, Vergangenheit, Perfekt, Plusquamperfekt, Futur, Zukunft — Beispiele, Pdf"/>
+<meta name="robots" content="noindex, follow" />
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<meta name=viewport content="width=device-width, initial-scale=1">	
+<meta name="HandheldFriendly" content="true"/>
+<meta name="MobileOptimized" content="width"/>
+<meta name="application-name" content="Netzverb" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000086">
+<meta name="theme-color" content="#000086">
+<script type="text/javascript">
+var Rahmen = {};
+(function() {
+function istauf(id) {
+var e = document.getElementById(id);
+var d = e.currentStyle ? e.currentStyle.display : getComputedStyle(e, null).display;
+return d != "none";
+}
+function aufzu(id, auf) {
+var e = document.getElementById(id);
+if(!e) return;
+e.style.display = auf ? "inline" : "none";
+var b = document.getElementById(id + "Img");
+if(!b) return;
+b.getElementsByClassName("rAuf")[0].style.display = auf ? "inline" : "none";
+b.getElementsByClassName("rZu")[0].style.display = auf ? "none" : "inline";
+}
+this.alleaufzu = function(id, k) {
+var ia = istauf(id);
+var es = document.getElementsByClassName(k);
+for (var i = 0; i < es.length; i++) aufzu(es[i].id, !ia);
+}
+this.aufzu = function(ids) {
+if(ids instanceof Array) { var ia = istauf(ids[0]); for (var id in ids)	aufzu(ids[id], !ia) }
+else aufzu(ids, !istauf(ids));
+}
+this.breite = function() {
+return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+}
+}).apply(Rahmen); 
+var Eingabe = {};
+(function() {
+function element(id) {
+return document.getElementById(id);
+}
+function sprung(ide, idl, start, schritt) {
+var e = element(ide);
+var l = element(idl);
+if(l.selectedIndex == -1) l.selectedIndex = start;
+else l.selectedIndex = l.selectedIndex + schritt;
+if(l.selectedIndex != -1) e.value = l.options[l.selectedIndex].text;
+}
+this.zeige = function(w, v) {
+if(this.w != w) { return; }
+var s=0;
+while(this.l.children.length > 0) this.l.removeChild(this.l.children[0]);
+for (i = 0; i < v.length; i++) {
+if(!v[i])
+continue;
+if(v[i] instanceof Array) {
+if(v[i].length <= 1)
+continue;
+var g = document.createElement('optgroup');	g.label = v[i][0]; s++;
+for (j = 1; j < v[i].length; j++) {	var o = document.createElement('option'); o.text = v[i][j];	g.appendChild(o);  s++; } 
+this.l.appendChild(g);
+} else {
+var o = document.createElement('option'); o.text = v[i]; this.l.appendChild(o); s++;
+}
+}
+if(s <= 1) { this.l.style.display = "none"; return; }
+this.l.style.top = (this.f.clientHeight + this.f.getBoundingClientRect().top) + "px";
+this.l.style.width = (this.f.clientWidth) + "px";
+this.l.style.display = "inline";
+this.l.size = s; 
+}
+this.an = function(ide, idl, fnkl) {
+var e = element(ide);
+this.l=element(idl); this.w = e.value; this.f=e.parentElement;
+if(this.w.length == 0) { this.l.style.display = "none"; return;	}
+var v=fnkl(this.w);
+};
+this.aus = function(ide, idl) {
+setTimeout(function() {
+var e = element(ide);
+var l = element(idl);
+if(document.activeElement == e || document.activeElement == l) return;
+l.style.display = "none";
+},50);
+};
+this.uebernahme = function(ide, idl) {
+var e = element(ide);
+var l = element(idl);
+e.value = l.options[l.selectedIndex].text;
+l.style.display = "none";
+l.form.submit();
+};
+this.taste = function(ide, idl, event) {
+var l = element(idl);
+keyCode = ('which' in event) ? event.which : event.keyCode;
+if(keyCode == 40) { sprung(ide, idl, 0, 1); event.preventDefault(); }
+if(keyCode == 38) { sprung(ide, idl, l.options.length - 1, -1); event.preventDefault(); }
+if(keyCode == 27) { l.style.display = "none"; }
+};
+}).apply(Eingabe);
+var Hinweis = {};
+(function() {
+this.weg = function(n) {
+var e=document.getElementById(n);
+e.style.display="none";
+document.cookie="de.netzverb.rahmen.hinweis_"+n+"=none" +
+";expires="+new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toUTCString() +
+";path=/";
+};
+}).apply(Hinweis);
+var Ajax = {};
+(function() {
+var a, v;
+function param(d) {
+var is = d.getElementsByTagName("input");
+var p = paar(p,a,v);
+a = null; v = null;
+for(var i=0; i<is.length; i++)
+if(!is[i].disabled && is[i].name && is[i].type != "submit")
+if(is[i].type != "radio" && is[i].type != "checkbox" || is[i].checked)
+p += paar(p, is[i].name, is[i].value);
+var tas = d.getElementsByTagName("textarea");
+for(var i=0; i<tas.length; i++)
+if(!tas[i].disabled && tas[i].name)
+p += paar(p, tas[i].name, tas[i].value);
+var ss = d.getElementsByTagName("select");
+for(var i=0; i<ss.length; i++)
+if(!ss[i].disabled && ss[i].name && ss[i].selectedIndex >= 0)
+p += paar(p, ss[i].name, ss[i].options[ss[i].selectedIndex].value);
+return p;
+}	
+function paar(p, n, v) {
+return (p ? "&" : "") + encodeURIComponent(n) + "=" + encodeURIComponent(v);
+}
+this.ersetze = function(e, id) {
+e.preventDefault();
+var f = e.target;
+if(f.tagName != "FORM")
+f = f.form;
+var p = param(f);
+var r = new XMLHttpRequest();
+r.onload = function() {
+var d =  document.getElementById(id);
+if(r.status == 200)
+d.outerHTML = r.responseText;
+else
+d.innerHTML = r.responseURL + " (" + r.status + ": " + r.statusText + ")";
+}
+r.open("POST", f.action, true);
+r.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
+r.send(p);
+return false;
+}
+this.aktion = function(x) {
+a = 'aktion';
+v = x;
+}
+this.klick = function(e) {
+a = e.currentTarget.name;
+v = e.currentTarget.value;
+}
+}).apply(Ajax);
+var Anzeigen = {};
+(function() {
+var b=true;
+this.ungeblockt = function() {
+b = false;
+}
+this.geblockt = function() {
+return b;
+}
+this.texte = function(id,p,n,m) {
+var r = new XMLHttpRequest();
+r.onload = function(e) {
+var d =  document.getElementById(id);
+if(e.target.status == 200) d.outerHTML = e.target.responseText;
+else d.outerHTML = e.target.responseURL + " (" + e.target.status + ": " + e.target.statusText + ")";
+}
+r.open('GET', '/anzeigen/anzeigen.txt?p=' + p + "&n=" + n + "&m=" + m + "&b=" + b, true);
+try { r.send(null); } catch(err) { }
+}
+}).apply(Anzeigen);
+var Verbformen = {};
+(function() {
+this.suchliste = function(w) {
+var r = new XMLHttpRequest();
+r.open("GET", "/suche/eingabe/?w=" + encodeURI(w) + "&a=VERB", true);
+r.timeout = 500;
+r.onload = function (e) { if (r.readyState == 4 && r.status == 200) { Eingabe.zeige(w,JSON.parse(r.responseText)); } };
+r.send(null);
+};
+}).apply(Verbformen);
+</script>
+<script type="text/javascript" src="/anzeigen/showads.js"></script>
+<script type="text/javascript">
+var Stimme = {};
+(function() {
+this.sprich = function(u) {
+s = document.getElementById("sTon");
+if(s.nodeName == "BGSOUND")
+s.src = u;
+else if(s && s.play) {
+s.src = u;
+s.play();
+} else
+document.location = u;
+}
+this.klick = function(e,i) {
+e.preventDefault();
+this.sprich(document.getElementById(i).href);
+return false;
+}
+}).apply(Stimme);
+</script>
+<style type="text/css">.rEin {text-align:left;}.rEin input {width:100%;}.rEin select {display:none;position:fixed;border:none;border-top:solid 1px #666666;padding:0 3px;color:#666666;z-index:7;}.rEin optgroup {background-color:#eeeeee;}.rEin optgroup option {background-color:#ffffff;}nav .rEin select {box-shadow:2px 2px 3px 0px rgba(0,0,0,0.40); }@font-face {font-family:'Open Sans';font-style:normal;font-weight:400;src:local('Open Sans'), local('OpenSans'), url('/rahmen/opensans.woff')format('woff');}body {margin:0;padding:0;font-family:open sans,sans-serif;font-weight:400;color:#111111;font-size:0.9em;}body>* {background-color:#f5f5f5;}body>*>div {max-width:940px;margin:0 auto;clear:both;padding:2px 8px;}body,body>footer {background-color:#444444;}body>footer {color:#e0e0e0;font-size:0.9em;}body>footer a {color:#80bfff;}body>nav {position:fixed;z-index:9;font-size:1.2em;width:100%;max-height:100vh;overflow:auto;box-shadow:0px 2px 3px 0px rgba(0,0,0,0.40); color:#ffffff;}body>nav+div {height:44px;}a {text-decoration:none;color:#0052d9;}h1,h2,h3 {font-weight:400;margin-top:10px;margin-bottom:10px;}h1:first-child,h2:first-child,h3:first-child {margin-top:0;}a h1,a h2,a h3 {color:#111111;}h1 {font-size:1.6em;}h2 {font-size:1.4em;}h3 {font-size:1.3em;}p {line-height:1.25;margin:10px 0;}input,select,textarea {font-family:open sans,sans-serif;font-size:inherit;line-height:inherit;border:none;box-shadow:1px 1px 1px 0px rgba(0,0,0,0.40); outline:none;box-sizing:border-box;}input,textarea {padding:1px 5px;}nav input,nav select,nav textarea {box-shadow:none;}input[type=submit],.rKnpf {padding:5px 10px;margin:0 10px 10px 0;background-color:#000000;color:#ffffff !important;}input[type=submit].rRechts,.rKnpf.rRechts {margin:0 0 10px 10px;}textarea {overflow:hidden;}select {appearance:none;-moz-appearance:none;-webkit-appearance:none;}svg,img {vertical-align:middle;margin:0;}img.rRechts {margin:4px 0 10px 10px;}img.rLinks {margin:4px 10px 10px 0;}button {background-color:transparent;padding:0;border:none;}table {border-spacing:0;border-collapse:collapse;}td,th {padding:0;vertical-align:top;text-align:left;}th a {color:inherit;}hr {border:none;border-top:solid 1px #dddddd;margin:0.75em 0;}b>u {color:#2a2abc;text-decoration:none;}b>i {color:#028b02;font-style:normal;}.rKnpf {box-shadow:1px 1px 1px 0px rgba(0,0,0,0.40); box-sizing:border-box;display:inline-block;}.rNav {height:36px;overflow:hidden;width:100%;padding:2px 0;}.rNav>* {height:36px;}.rMnRnd {margin-bottom:6px;}.rTab {display:table;}.rTab>div {display:table-cell;vertical-align:middle;}.r1Pxl {width:1px;}.rLinks {float:left;}.rRechts {float:right;}.rNobr {white-space:nowrap;}.rClear {clear:both;}.rDunkel {background-color:#000000;}.rHell {color:#f5f5f5;}.rZu {display:none;}.rAnkr {position:relative;top:-67px;}.rAuf {display:inline;}.rCntr {text-align:center;}.rInf,.rInf a {color:#aaaaaa;}.rKln {font-size:0.9em;}.rNoSelect {-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}.rImg {box-shadow:1px 1px 2px 0px rgba(0,0,0,0.25); border:solid 1px #cccccc;}@media (min-width:700px){article .rAbschnitt {margin-left:-340px;width:100%;float:left;}article .rAbschnitt>div {margin-left:340px;}article .rInfo {width:320px;float:right;}.rInfo .rBoxTrns {border-left:solid 1px #dddddd;border-top:none !important;padding:0 0 0 15px;}}.rBox {margin-bottom:20px;}.rBox header  {display:table;width:100%;}.rBox header>div {display:table-cell;text-align:left;}.rBoxWht {background-color:#ffffff;box-shadow:1px 1px 2px 0px rgba(0,0,0,0.25); padding:8px 10px 8px 15px;}.rBoxTrns {border-top:solid 1px #dddddd;}.rBoxText {vertical-align:middle;}.rBoxKnopf {vertical-align:top;width:1px;white-space:nowrap;}.rBoxWht textarea,.rBoxWht input,.rBoxWht select {background-color:#e9e9e9;}.rBox h2 {margin:0;display:inline;}.rHw {width:100%;padding:4px 0;background-color:#aaaaaa;color:#222222;box-shadow:1px 1px 2px 0px rgba(0,0,0,0.25); }.rHwObn {position:relative;top:0px;}.rHwUnt {position:fixed;bottom:0px;opacity:0.91;z-index:8;}.rHwBox>div {position:static;padding-right:10px;padding-left:13px;}.rHwFhlr {background-color:#efbbbb;color:#662222;}.rHwTpp {background-color:#ffe7ba;color:#665544;}.rHwOk {background-color:#bbefbb;color:#226622;}.rMenu,.rMenuOpt {margin-bottom:3px;text-align:right;}.rMenu {margin-top:10px;}.rMenu > div {border-top:solid 1px #9b9b9b;padding-top:8px;}.rMenuOpt {margin-top:0px;}.rMenuKat {color:#ffffff;}.rMnLnk {margin-right:10px;}@media (min-width:700px){.rMenu > div {display:inline-block;min-width:300px;}}nav.rKruemel {font-size:0.9em;color:#aaaaaa;clear:both;}nav.rKruemel a {color:inherit;}nav.rKruemel + h1 {margin-top:0px;}div.rKruemel {display:inline-block;}.kFrm select {box-shadow:none;background-color:transparent;}.kFrm textarea {width:100%;}.kBwrt {font-size:1.6em;}.kAn {color:#000000;}.kAus {color:#aaaaaa;}.aDesktop {display:none;}.aMobil {display:inline-block;}@media (min-width:700px){ .aDesktop {display:inline-block;} .aMobil {display:none;} }.aTxtLinks {float:left;display:inline-block;margin:0 15px 15px 0;}.aTxtRechts {float:right;display:inline-block;margin:0 0 15px 15px;}.rDunkel {background-color:#000084;}.rHell {color:#9999ce;}body>nav,body>nav a {color:#9999ce;}.rMenu > div {border-color:#5050a4;}h4 {display:inline;}nav .rEin {width:220px;font-size:1.1em;max-width:40vw;max-width:calc(100vw - 216px); }input[type=submit],.rKnpf {background-color:#000084;}.vLeg {font-size:0.9em;margin-top:8px;}.vDbg {background-color:#ffffcc;}div.vDbg {margin-right:10px;}.vFuss {width:280px;margin:0 15px 15px 0;}.vBlogImg {width:120px;}.vAuswahl {display:inline-block;margin-bottom:10px;}.vAuswahl .rKnpf {margin:5px auto;}.vEinText .rEin {font-size:1.4em;max-width:160px;margin:0 10px 10px 0;}.vUnd,.vUnd b>u,.vUnd b>i {color:#aaaaaa;}			.kAn {color:#000084;}.vkDiv {margin:0 0 8px 0;text-align:right;}.vkDiv p {color:#000000;}.vkStrn,.vkTxt {margin:0;}.vkStrn {font-size:1.8em;line-height:0.6em;}.vkTxt {margin-top:0.3em;}.vkAnt {margin-left:5%;}.vArbBltt {display:inline-block;margin:0 10px 10px 0;}				.vArbBltt img {max-width:300px;height:80px;}				.vVar {color:#ffffff;text-align:center;box-shadow:1px 1px 2px 0px rgba(0,0,0,0.25); background-color:#000086;padding:5px 10px;display:inline-block;margin:0 10px 10px 0;}.vVarAkt {background-color:#000086;font-weight:bold;}.vVarErr {background-color:#860000;font-weight:bold;}h2.vGrnd {font-size:2.1em;}p.vStm {font-size:1.55em;margin:8px 0px;}</style>
+<style type="text/css">h2.vVrb {font-size:2.1em;}p.vStm {font-size:1.55em;margin:8px 0px;}.vVor,.vZurueck {height:30px;width:12px;margin-top:7px;}.vVor {padding-right:7px;padding-left:5px;}.vZurueck {padding-right:5px;}div.vBsp {margin:1px 0 10px 0;box-sizing:border-box;width:100%;float:left;}.vBsp ul {margin:0;padding:0;}.vBsp li {list-style-type:none;margin-left:11px;text-indent:-11px;}.vBsp table {width:100%;}td.vBspV {padding-right:10px;white-space:nowrap;width:30%;}td.vBspB {width:70%;}td.vKpfZ {padding-right:5px;}div.vTbl {float:left;min-width:30%;margin:1px 0 10px 0;padding-right:15px;box-sizing:border-box;}.vTbl td {padding-right:5px;white-space:nowrap;}.vTbl h3,.vBsp h3 {display:inline;}@media (max-width:900px){ div.vTbl {min-width:45%;} }@media (max-width:700px){ div.vTbl {min-width:30%;} }@media (max-width:500px){ div.vTbl {min-width:45%;} }</style>
+</head>
+<body>
+<nav class="rDunkel"><div>
+<div class="rNav">
+<div class="rRechts" id="rMenuImg" onclick="Rahmen.aufzu(['rMenu','rMenuNav'])"><svg fill="#ffffff" fill-opacity="0.6" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" style="display: none;" d="m11.41 15.41 4.59-4.58 4.59 4.58 1.41-1.41-6-6l-6 6 1.41 1.41z"></path>
+<path class="rZu" style="display: inline;" d="m8 4.667h16v2h-16m0 4h16v2h-16m-2e-7 4h16v2h-16z"></path>
+</svg></div>
+<div class="rLinks"><a href="/"><svg fill="#ffffff" fill-opacity="0.6" height="36" viewBox="0 0 24 24" width="42" xmlns="http://www.w3.org/2000/svg">
+<path d="m 8.5366045,10.887553 -4.275913,-8.997564 -5.833396,0 10.109309,20.21502 9.8204705,-20.21502 -5.456371,0.085295 z"></path>
+</svg></a></div>
+<form class="rLinks rTab" action="/konjugation/" method="get">
+<div>
+<div class="rEin ">
+<input autofocus="autofocus" onfocus="this.setSelectionRange(0, this.value.length)" id="3a4c5" name="w" value="landen" placeholder="" title="" autocomplete="off" onkeydown="Eingabe.taste('3a4c5','3a4c5Liste', event)" oninput="Eingabe.an('3a4c5','3a4c5Liste',Verbformen.suchliste)" onblur="Eingabe.aus('3a4c5','3a4c5Liste')"><br>
+<select id="3a4c5Liste" onchange="Eingabe.uebernahme('3a4c5','3a4c5Liste')" onblur="Eingabe.aus('3a4c5','3a4c5Liste')"></select>
+</div></div>
+<div class="r1Pxl"><button type="submit"><svg fill="#ffffff" fill-opacity="0.6" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" ></path>
+</svg></button></div>
+<div class="r1Pxl"><button type="submit" formaction="/suche/"><svg fill="#ffffff" fill-opacity="0.6" height="33" viewBox="0 0 24 24" width="33" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"></path>
+</svg></button></div>
+</form>
+<div class="rRechts" onclick="Rahmen.aufzu(['rMenu'])"><svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" fill-opacity=".6" height="36" width="36" version="1.1" viewBox="0 0 24 24">
+<path d="m16.7 14.6c-0.582 0.0087-1.11 0.227-1.52 0.564l-5.34-2.84c0.045-0.162 0.0823-0.324 0.0892-0.493 0.00693-0.169-0.017-0.33-0.0487-0.491l5.52-2.97c0.399 0.345 0.934 0.555 1.54 0.546a2.09 2.32 74 0 0 2.38 -2.14 2.09 2.32 74 0 0 -2.22 -2.08 2.09 2.32 74 0 0 -2.38 2.14c-0.0069 0.169 0.017 0.33 0.0487 0.491l-5.52 2.97c-0.399-0.343-0.934-0.553-1.54-0.544a2.09 2.32 74 0 0 -2.38 2.14 2.09 2.32 74 0 0 2.21 2.08c0.605-0.009 1.16-0.235 1.59-0.593l5.33 2.84c-0.0444 0.148-0.0738 0.303-0.0804 0.465-0.0466 1.13 0.919 2.03 2.15 2.01 1.23-0.0185 2.27-0.948 2.32-2.08a2.04 2.25 74 0 0 -2.15 -2.02z"></path>
+</svg>
+</div>
+<div class="rRechts rTab rNoSelect rMnLnk" onClick="Rahmen.aufzu(['vLng', 'rMenu'])">
+<div>
+Deutsch
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+<div class="rRechts rTab rNoSelect rMnLnk" onClick="Rahmen.aufzu(['vGns', 'rMenu'])">
+<div>
+Aktiv
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+<div class="rRechts rTab rNoSelect rMnLnk" onClick="Rahmen.aufzu(['vStz', 'rMenu'])">
+<div>
+Hauptsatz
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+</div>
+<div class="rClear"></div>
+<div class="rZu" id="rMenu">
+<div class="rMenu rNoSelect" onClick="Rahmen.aufzu('rMenuNav')">
+<div>
+<span class="rMenuKat">Navigation:</span> Konjugation
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+<div class="rZu" id="rMenuNav">
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/">
+Flexion
+</a>
+</div>		
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/konjugation/">
+Konjugation
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/konjugation/beispiele/">
+Beispiele
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/konjugation/arbeitsblaetter-uebungen/">
+Arbeitsblätter
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/konjugation/landen.htm">
+&raquo;
+Konjugation › landen
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/konjugation/beispiele/landen.htm">
+Beispiele › landen
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/konjugation/arbeitsblaetter-uebungen/landen.htm">
+Arbeitsblätter › landen
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/suche/">
+Suche
+</a>
+</div>
+</div>
+<div class="rMenu rNoSelect" onClick="Rahmen.aufzu('vLng')">
+<div>
+<span class="rMenuKat">Sprache:</span> Deutsch
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+<div class="rZu" id="vLng">
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/konjugation/landen.htm">
+&raquo;
+Deutsch
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.com/conjugation/landen.htm">
+English
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.ru/sprjazhenie/landen.htm">
+Русский
+</a>
+</div>
+</div>
+<div class="rMenu rNoSelect" onClick="Rahmen.aufzu('vGns')">
+<div>
+<span class="rMenuKat">Aktionsform:</span> Aktiv
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+<div class="rZu" id="vGns">
+<div class="rMenuOpt rNoSelect">
+<a href="/konjugation/aktiv/landen_ist.htm">
+&raquo;
+Aktiv
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="/konjugation/vpassiv/landen_ist.htm">
+Vorgangspassiv
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="/konjugation/zpassiv/landen_ist.htm">
+Zustandspassiv
+</a>
+</div>	
+</div>
+<div class="rMenu rNoSelect" onClick="Rahmen.aufzu('vStz')">
+<div>
+<span class="rMenuKat">Satzart:</span> Hauptsatz
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+<div class="rZu" id="vStz">
+<div class="rMenuOpt rNoSelect">
+<a href="/konjugation/aussagesatz/landen_ist.htm">
+&raquo;
+Hauptsatz
+</a>
+</div>	
+<div class="rMenuOpt rNoSelect">
+<a href="/konjugation/fragesatz/landen_ist.htm">
+Fragesatz
+</a>
+</div>	
+<div class="rMenuOpt rNoSelect">
+<a href="/konjugation/nebensatz/landen_ist.htm">
+Nebensatz
+</a>
+</div>	
+</div>
+<div>
+<br>
+<div class="rMenu">
+<div>
+<span class="rMenuKat">Teilen: </span>
+<a rel="nofollow" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.verbformen.de%2Fkonjugation%2F%3Fw%3Dlanden" title="Teilen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path>
+</svg></a>
+<a rel="nofollow" href="https://twitter.com/home?status=https%3A%2F%2Fwww.verbformen.de%2Fkonjugation%2F%3Fw%3Dlanden" title="Teilen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path>
+</svg></a>
+<a rel="nofollow" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.verbformen.de%2Fkonjugation%2F%3Fw%3Dlanden" title="Teilen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M23,11H21V9H19V11H17V13H19V15H21V13H23M8,11V13.4H12C11.8,14.4 10.8,16.4 8,16.4C5.6,16.4 3.7,14.4 3.7,12C3.7,9.6 5.6,7.6 8,7.6C9.4,7.6 10.3,8.2 10.8,8.7L12.7,6.9C11.5,5.7 9.9,5 8,5C4.1,5 1,8.1 1,12C1,15.9 4.1,19 8,19C12,19 14.7,16.2 14.7,12.2C14.7,11.7 14.7,11.4 14.6,11H8Z"></path>
+</svg></a>
+&nbsp;&nbsp;&nbsp;
+<span class="rMenuKat">Folgen: </span>
+<a rel="nofollow" href="https://www.facebook.com/Netzverb" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path>
+</svg></a>
+<a rel="nofollow" href="https://twitter.com/Netzverb" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path>
+</svg></a>
+<a rel="nofollow" href="https://plus.google.com/+NetzverbDe" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M23,11H21V9H19V11H17V13H19V15H21V13H23M8,11V13.4H12C11.8,14.4 10.8,16.4 8,16.4C5.6,16.4 3.7,14.4 3.7,12C3.7,9.6 5.6,7.6 8,7.6C9.4,7.6 10.3,8.2 10.8,8.7L12.7,6.9C11.5,5.7 9.9,5 8,5C4.1,5 1,8.1 1,12C1,15.9 4.1,19 8,19C12,19 14.7,16.2 14.7,12.2C14.7,11.7 14.7,11.4 14.6,11H8Z"></path>
+</svg></a>
+</div>
+</div>
+</div>
+<div class="rMnRnd rClear"></div>
+</div>
+</div></nav>
+<div></div>
+<aside class="rHw rHwTpp rHwObn" id="20171121_sprachassistent">
+<div>
+<div class="rRechts" onclick="Hinweis.weg('20171121_sprachassistent')">
+<svg fill="#505050" fill-opacity="0.6" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+<path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
+</svg>
+</div>
+🗪 <i><b>„Ok Google, konjugiere laufen“</b></i>   über <a href="https://assistant.google.com/services/a/id/0d6a90c5e47fa7eb">Google</a> und <a href="https://www.messenger.com/t/DeutschVerben">Facebook</a>  (<a href="/hilfe/sprachassistenten.htm">Hilfe</a>)
+</div>
+</aside>
+<article class=""><div>
+<nav class="rKruemel" itemscope itemtype="http://schema.org/BreadcrumbList">
+<div class="rKruemel" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+<a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://www.verbformen.de/" id="https://www.verbformen.de/">
+<span itemprop="name">Flexion</span>
+</a>
+<meta itemprop="position" content="1"/>
+</div>
+› 	
+<div class="rKruemel" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+<a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://www.verbformen.de/konjugation/" id="https://www.verbformen.de/konjugation/">
+<span itemprop="name">Konjugation</span>
+</a>
+<meta itemprop="position" content="2"/>
+</div>
+› 	
+<div class="rKruemel" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+<a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://www.verbformen.de/konjugation/landen.htm" id="https://www.verbformen.de/konjugation/landen.htm">
+<span itemprop="name">landen</span>
+</a>
+<meta itemprop="position" content="3"/>
+</div>
+</nav>
+<header>
+<h1>Konjugation des deutschen Verbs landen</h1>
+<a href="https://www.verbformen.de/konjugation/landen.htm">
+<img class="rImg rRechts" height="80" src="https://www.verbformen.de/konjugation/steckbrief/landen_ist.png" title="Konjugation des deutschen Verbs landen">
+</a>
+<p>
+Die <a  href="https://www.verbformen.de/konjugation/landen.htm" title="landen Konjugation">Konjugation des Verbs landen</a> erfolgt regelmäßig.
+Die Stammformen sind <i>landet</i>, <i>landete</i> und <i>ist gelandet</i>.
+Als Hilfsverb von landen wird "sein" verwendet.
+Es gibt jedoch auch Formen mit dem Hilfsverb "<a  href="/konjugation/landen_hat.htm">haben</a>".
+<span id="e02a9">
+Die Beugung erfolgt im Aktiv und die Darstellung als Hauptsatz.
+Man kann nicht nur landen konjugieren, sondern alle <a  href="/konjugation/">deutschen Verben</a>.
+Zum besseren Verständnis stehen unzählige <a href="/konjugation/beispiele/landen.htm" title="landen Beispiele">Beispiele für das Verb landen</a> zur Verfügung.
+Zum Üben und Festigen gibt es außerdem <a href="/konjugation/arbeitsblaetter-uebungen/landen.htm" title="landen Arbeitsblätter und Übungen">kostenlose Arbeitsblätter für landen</a>.
+</span>
+<span id="e02a9Img" onclick="Rahmen.aufzu('e02a9')"><svg fill="#333333" width="18px" height="18px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
+</svg></span>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('e02a9');
+</script>
+</p>
+</header>
+<div id="varianten"></div>
+<nav class="rClear">
+<a href="#kommentare">
+<div class="rRechts vkDiv rNoSelect">
+<p class="vkStrn">
+<span class="kAus">★★★★★</span>
+</p>
+<p class="rKln vkTxt">Deine Meinung? </p>
+</div>
+</a>
+<a href="/konjugation/landen_ist.htm" title="landen (ist)">
+<div class="vVar vVarAkt">
+landen (ist)
+</div>
+</a>
+<a href="/konjugation/landen_hat.htm" title="landen (hat)">
+<div class="vVar ">
+(hat)
+</div>
+</a>
+<div id="vVarMenuImg" class="vVar rNoSelect" onclick="Rahmen.aufzu('vVarMenu')">
+<svg fill="#ffffff" height="10" viewBox="0 0 14 14" width="12" xmlns="http://www.w3.org/2000/svg">
+<path style="display: none;" class="rAuf" d="m11.5 1.41-1.43-1.41-7.07 7 7.07 7 1.43-1.41-5.65-5.59z"></path>
+<path style="display: inline;" class="rZu" d="m3 1.41 1.425-1.41 7.075 7l-7.075 7-1.425-1.41 5.65-5.59z"></path>
+</svg>
+</div>
+<div id="vVarMenu" class="rZu">
+<a href="/konjugation/mag_landen.htm" title="mag landen (ist)">
+<div class="vVar">mag</div>
+</a>
+<a href="/konjugation/kann_landen.htm" title="kann landen (ist)">
+<div class="vVar">kann</div>
+</a>
+<a href="/konjugation/soll_landen.htm" title="soll landen (ist)">
+<div class="vVar">soll</div>
+</a>
+<a href="/konjugation/muss_landen.htm" title="muss landen (ist)">
+<div class="vVar">muss</div>
+</a>
+<a href="/konjugation/darf_landen.htm" title="darf landen (ist)">
+<div class="vVar">darf</div>
+</a>
+<a href="/konjugation/will_landen.htm" title="will landen (ist)">
+<div class="vVar">will</div>
+</a>
+<a href="/konjugation/mo:chte_landen.htm" title="möchte landen (ist)">
+<div class="vVar">möchte</div>
+</a>
+<a href="/konjugation/nicht_landen.htm" title="nicht landen (ist)">
+<div class="vVar">nicht</div>
+</a>	
+</div>
+</nav>
+<div class="rClear"></div>
+<div class="rAbschnitt "><div>
+<nav class="rBox rBoxWht" id="6226bBox">
+<header>
+<div class="rInf">
+regelmäßig
+· sein
+</div><div class="rBoxKnopf">
+<button type="button" id="6226bImg" onclick="Rahmen.alleaufzu('6226b','rAufZu')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M7.41,18.41L6,17L12,11L18,17L16.59,18.41L12,13.83L7.41,18.41M7.41,12.41L6,11L12,5L18,11L16.59,12.41L12,7.83L7.41,12.41Z"></path>
+<path class="rZu" d="M16.59,5.59L18,7L12,13L6,7L7.41,5.59L12,10.17L16.59,5.59M16.59,11.59L18,13L12,19L6,13L7.41,11.59L12,16.17L16.59,11.59Z"></path>
+</svg>
+</button></div>
+</header>
+<div class="rClear"></div>
+<div class="rCntr">
+<a href="/konjugation/langen.htm">
+<div class="rKnpf rLinks" style="margin-top: 6px;"><svg fill="#ffffff" height="10" viewBox="0 0 14 14" width="12" xmlns="http://www.w3.org/2000/svg">
+<path d="m11.5 1.41-1.43-1.41-7.07 7 7.07 7 1.43-1.41-5.65-5.59z"></path>
+</svg></div>
+</a>
+<a href="/konjugation/langgehen.htm">
+<div class="rKnpf rRechts" style="margin-top: 6px;"><svg fill="#ffffff" height="10" viewBox="0 0 14 14" width="12" xmlns="http://www.w3.org/2000/svg">
+<path d="m3 1.41 1.425-1.41 7.075 7l-7.075 7-1.425-1.41 5.65-5.59z"></path>
+</svg></div>
+</a>
+<h2 class="vGrnd"><b>land<i>en</i></b> <a class="" href="/konjugation/infinitiv/landen_ist.wav" id="6bccc" onclick="Stimme.klick(event,'6bccc')" rel="nofollow"><svg fill="#dddddd" height="32" viewBox="0 0 14 20" width="22" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 5.286v6h4l5 5v-16l-5 4.996m9.5 3c0-1.77-1-3.29-2.5-4.03v8.03c1.5-0.71 2.5-2.24 2.5-4z"></path>
+</svg></a> </h2>
+<p class="vStm">
+<b>land<i>et</i></b> ·
+<b>land<i>ete</i></b> ·
+<i>ist</i> <b><i>ge</i>land<i>et</i></b> <a class="" href="/konjugation/stammformen/landen_ist.wav" id="65254" onclick="Stimme.klick(event,'65254')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+</p>
+</div><div id="6226b" class="rAufZu">
+<div class="rCntr">
+<p class="rInf">
+&nbsp;e-Erweiterung&nbsp;
+</p>
+<div class="vBsp rClear">
+<hr>
+<ul>
+<li>
+» Die Kapsel <i>w</i><i>ä</i><i>r</i><i>e</i> daraufhin wie nach einem normalen Wiedereintritt an ihren Fallschirmen <b><i>ge</i></b><b>l</b><b>a</b><b>nd</b><b><i>e</i></b><b><i>t</i></b>.<span class="rBoxInfo">²</span>
+<a class="" href="/konjugation/beispiele/landen_ist.wav?q=wikipedia&r=238858" id="b8276" onclick="Stimme.klick(event,'b8276')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://de.wikipedia.org/wiki?curid=238858" title="wikipedia.org"><span class="rBoxInfo">...</span></a>
+<a class="rInf" href="/konjugation/beispiele/landen.htm">mehr&nbsp;</a>
+</li>				
+</ul>
+</div>
+</div>		
+</div>
+<div class="rClear"></div>
+</nav>
+<p style="margin-bottom: 18px;">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+style="display:block; text-align:center;"
+data-ad-layout="in-article"
+data-ad-format="fluid"
+data-ad-client="ca-pub-1536920203038272"
+data-ad-slot="9702240298"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<div id="969c1"></div>
+<script type="text/javascript">
+Anzeigen.texte('969c1','/konjugation','steckbrief',false);
+</script>
+<section class="rBox rBoxWht" id="04562Box">
+<div class="rAnkr" id="ueberblick"></div>
+<header>
+<div class="rBoxText">
+<h2>Überblick</h2>
+<br><span class="rInf">Die einfach konjugierten Verbformen Präsens, Präteritum, Imperativ und Konjunktiv von landen</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="04562Img" onclick="Rahmen.aufzu('04562')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="04562" class="rAufZu">
+<hr>
+<div class="vTbl">
+<h3>Präsens</h3>
+<a class="" href="/konjugation/indikativ/praesens/landen_ist.wav" id="8421b" onclick="Stimme.klick(event,'8421b')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>land</b>(<b><i>e</i></b>)⁵</td></tr><tr><td> du</td><td> <b>land<i>est</i></b></td></tr><tr><td> er</td><td> <b>land<i>et</i></b></td></tr><tr><td> wir</td><td> <b>land<i>en</i></b></td></tr><tr><td> ihr</td><td> <b>land<i>et</i></b></td></tr><tr><td> sie</td><td> <b>land<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Präteritum</h3>
+<a class="" href="/konjugation/indikativ/praeteritum/landen_ist.wav" id="9ad4d" onclick="Stimme.klick(event,'9ad4d')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>land<i>ete</i></b></td></tr><tr><td> du</td><td> <b>land<i>etest</i></b></td></tr><tr><td> er</td><td> <b>land<i>ete</i></b></td></tr><tr><td> wir</td><td> <b>land<i>eten</i></b></td></tr><tr><td> ihr</td><td> <b>land<i>etet</i></b></td></tr><tr><td> sie</td><td> <b>land<i>eten</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Imperativ</h3>
+<a class="" href="/konjugation/imperativ/landen_ist.wav" id="dbc5d" onclick="Stimme.klick(event,'dbc5d')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td>-</td></tr><tr><td><b>land</b>(<b><i>e</i></b>)⁵</td><td> (du)</td></tr><tr><td>-</td></tr><tr><td><b>land<i>en</i></b></td><td> wir</td></tr><tr><td><b>land<i>et</i></b></td><td> ihr</td></tr><tr><td><b>land<i>en</i></b></td><td> Sie</td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Konjunktiv I</h3>
+<a class="" href="/konjugation/konjunktiv/praesens/landen_ist.wav" id="75406" onclick="Stimme.klick(event,'75406')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>land<i>e</i></b></td></tr><tr><td> du</td><td> <b>land<i>est</i></b></td></tr><tr><td> er</td><td> <b>land<i>e</i></b></td></tr><tr><td> wir</td><td> <b>land<i>en</i></b></td></tr><tr><td> ihr</td><td> <b>land<i>et</i></b></td></tr><tr><td> sie</td><td> <b>land<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Konjunktiv II</h3>
+<a class="" href="/konjugation/konjunktiv/praeteritum/landen_ist.wav" id="73832" onclick="Stimme.klick(event,'73832')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>land<i>ete</i></b></td></tr><tr><td> du</td><td> <b>land<i>etest</i></b></td></tr><tr><td> er</td><td> <b>land<i>ete</i></b></td></tr><tr><td> wir</td><td> <b>land<i>eten</i></b></td></tr><tr><td> ihr</td><td> <b>land<i>etet</i></b></td></tr><tr><td> sie</td><td> <b>land<i>eten</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Infinitiv</h3>
+<a class="" href="/konjugation/infinitive/landen_ist.wav" id="d42a5" onclick="Stimme.klick(event,'d42a5')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table>
+<tr><td><b>land<i>en</i></b></td></tr>
+<tr><td><b><i>zu</i></b> <b>land<i>en</i></b></td></tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Partizip</h3>
+<a class="" href="/konjugation/partizipien/landen_ist.wav" id="65c75" onclick="Stimme.klick(event,'65c75')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table>					
+<tr><td><b>land<i>end</i></b></td></tr>
+<tr><td><b><i>ge</i>land<i>et</i></b></td></tr>
+</table>
+</div>
+<div class="rClear"></div>
+<hr>
+Detaillierte Regeln zur Konjugation:
+&cir;&nbsp;<a href="/konjugation/indikativ/praesens/landen.htm">Bildung Präsens von landen</a>
+&cir;&nbsp;<a href="/konjugation/indikativ/praeteritum/landen.htm">Bildung Präteritum von landen</a>
+&cir;&nbsp;<a href="http://verben.de/deutsch/verb/bildung_der_deutschen_verbformen" target="_blank">Wie konjugiert man Verben im Deutschen</a>?
+<div class="rClear"></div>
+<hr>
+<a target="_blank" href="/konjugation/landen_ist.pdf" onclick="ga('send', 'pageview', '/konjugation/landen_ist.pdf')">
+<div class="rKnpf">Verbtabelle PDF</div>
+</a>	
+<a target="_blank" href="/konjugation/steckbrief/landen_ist.png"  onclick="ga('send', 'pageview', '/konjugation/steckbrief/landen_ist.png')">
+<div class="rKnpf">PNG</div>
+</a>		
+<a target="_blank" href="/konjugation/landen_ist.docx"  onclick="ga('send', 'pageview', '/konjugation/landen_ist.docx')">
+<div class="rKnpf">DOCX</div>
+</a>
+<a href="/konjugation/arbeitsblaetter-uebungen/landen.htm" title="Arbeitsblätter zur Konjugation des  Verbs landen">
+<div class="rKnpf">Arbeitsblätter</div>
+</a>
+</div>
+<div class="rClear"></div>
+</section>
+<p style="margin-bottom: 18px;">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+style="display:block; text-align:center;"
+data-ad-layout="in-article"
+data-ad-format="fluid"
+data-ad-client="ca-pub-1536920203038272"
+data-ad-slot="9678304502"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<div id="25d96"></div>
+<script type="text/javascript">
+Anzeigen.texte('25d96','/konjugation','ueberblick',false);
+</script>
+<section class="rBox rBoxWht" id="95bb7Box">
+<div class="rAnkr" id="indikativ"></div>
+<header>
+<div class="rBoxText">
+<h2>Indikativ</h2>
+<br><span class="rInf">Das Verb landen konjugiert im Indikativ Aktiv in den Zeitformen Gegenwart, Vergangenheit und Zukunft
+</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="95bb7Img" onclick="Rahmen.aufzu('95bb7')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="95bb7" class="rAufZu">
+<hr>
+<div class="vTbl">
+<h3>Präsens</h3>
+<a class="" href="/konjugation/indikativ/praesens/landen_ist.wav" id="a9299" onclick="Stimme.klick(event,'a9299')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>land</b>(<b><i>e</i></b>)⁵</td></tr><tr><td> du</td><td> <b>land<i>est</i></b></td></tr><tr><td> er</td><td> <b>land<i>et</i></b></td></tr><tr><td> wir</td><td> <b>land<i>en</i></b></td></tr><tr><td> ihr</td><td> <b>land<i>et</i></b></td></tr><tr><td> sie</td><td> <b>land<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Präteritum</h3>
+<a class="" href="/konjugation/indikativ/praeteritum/landen_ist.wav" id="3064b" onclick="Stimme.klick(event,'3064b')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>land<i>ete</i></b></td></tr><tr><td> du</td><td> <b>land<i>etest</i></b></td></tr><tr><td> er</td><td> <b>land<i>ete</i></b></td></tr><tr><td> wir</td><td> <b>land<i>eten</i></b></td></tr><tr><td> ihr</td><td> <b>land<i>etet</i></b></td></tr><tr><td> sie</td><td> <b>land<i>eten</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Perfekt</h3>
+<a class="" href="/konjugation/indikativ/perfekt/landen_ist.wav" id="7d57b" onclick="Stimme.klick(event,'7d57b')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>bin</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr><tr><td> du</td><td> <i>bist</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr><tr><td> er</td><td> <i>ist</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr><tr><td> wir</td><td> <i>sind</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr><tr><td> ihr</td><td> <i>seid</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr><tr><td> sie</td><td> <i>sind</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Plusquam</h3>
+<a class="" href="/konjugation/indikativ/plusquamperfekt/landen_ist.wav" id="c38a8" onclick="Stimme.klick(event,'c38a8')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>war</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr><tr><td> du</td><td> <i>warst</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr><tr><td> er</td><td> <i>war</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr><tr><td> wir</td><td> <i>waren</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr><tr><td> ihr</td><td> <i>wart</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr><tr><td> sie</td><td> <i>waren</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Futur I</h3>
+<a class="" href="/konjugation/indikativ/futur1/landen_ist.wav" id="33967" onclick="Stimme.klick(event,'33967')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>werde</i></td><td> <b>land<i>en</i></b></td></tr><tr><td> du</td><td> <i>wirst</i></td><td> <b>land<i>en</i></b></td></tr><tr><td> er</td><td> <i>wird</i></td><td> <b>land<i>en</i></b></td></tr><tr><td> wir</td><td> <i>werden</i></td><td> <b>land<i>en</i></b></td></tr><tr><td> ihr</td><td> <i>werdet</i></td><td> <b>land<i>en</i></b></td></tr><tr><td> sie</td><td> <i>werden</i></td><td> <b>land<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Futur II</h3>
+<a class="" href="/konjugation/indikativ/futur2/landen_ist.wav" id="1e294" onclick="Stimme.klick(event,'1e294')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>werde</i></td><td> <b><i>ge</i>land<i>et</i></b></td><td> <i>sein</i></td></tr><tr><td> du</td><td> <i>wirst</i></td><td> <b><i>ge</i>land<i>et</i></b></td><td> <i>sein</i></td></tr><tr><td> er</td><td> <i>wird</i></td><td> <b><i>ge</i>land<i>et</i></b></td><td> <i>sein</i></td></tr><tr><td> wir</td><td> <i>werden</i></td><td> <b><i>ge</i>land<i>et</i></b></td><td> <i>sein</i></td></tr><tr><td> ihr</td><td> <i>werdet</i></td><td> <b><i>ge</i>land<i>et</i></b></td><td> <i>sein</i></td></tr><tr><td> sie</td><td> <i>werden</i></td><td> <b><i>ge</i>land<i>et</i></b></td><td> <i>sein</i></td></tr></table>
+</div>
+<div class="vBsp rClear">
+<hr>
+<ul>
+<li>
+» Das Flugzeug <i>i</i><i>st</i> in Narita <b><i>ge</i></b><b>l</b><b>a</b><b>nd</b><b><i>e</i></b><b><i>t</i></b>.<span class="rBoxInfo">¹</span>
+<a class="" href="/konjugation/beispiele/landen_ist.wav?q=tatoeba&r=4055129" id="cf153" onclick="Stimme.klick(event,'cf153')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://tatoeba.org/sentences/show/4055129" title="tatoeba.org"><span class="rBoxInfo">...</span></a>
+</li>				
+<li>
+» Das schwedische Entsatzheer unter der Führung des Generalmajor Georg Johann Maydell <i>w</i><i>a</i><i>r</i> in der Nähe von Riga <b><i>ge</i></b><b>l</b><b>a</b><b>nd</b><b><i>e</i></b><b><i>t</i></b>.<span class="rBoxInfo">²</span>
+<a class="" href="/konjugation/beispiele/landen_ist.wav?q=wikipedia&r=7087815" id="38ac3" onclick="Stimme.klick(event,'38ac3')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://de.wikipedia.org/wiki?curid=7087815" title="wikipedia.org"><span class="rBoxInfo">...</span></a>
+<a class="rRechts rInf" href="/konjugation/beispiele/landen.htm">mehr&nbsp;</a>
+</li>				
+</ul>
+</div>
+</div>
+<div class="rClear"></div>
+</section>
+<section class="rBox rBoxWht" id="76fa9Box">
+<div class="rAnkr" id="konjunktiv"></div>
+<header>
+<div class="rBoxText">
+<h2>Konjunktiv</h2>
+<br><span class="rInf">Die Konjugation im Konjunktiv I und II bzw. in den Zeiten Präsens, Präteritum, Perfekt, Plusquamperfekt und Futur für das Verb landen</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="76fa9Img" onclick="Rahmen.aufzu('76fa9')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="76fa9" class="rAufZu">
+<hr>
+<div class="vTbl">
+<h3>Konjunktiv I</h3>
+<a class="" href="/konjugation/konjunktiv/praesens/landen_ist.wav" id="ee88f" onclick="Stimme.klick(event,'ee88f')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>land<i>e</i></b></td></tr><tr><td> du</td><td> <b>land<i>est</i></b></td></tr><tr><td> er</td><td> <b>land<i>e</i></b></td></tr><tr><td> wir</td><td> <b>land<i>en</i></b></td></tr><tr><td> ihr</td><td> <b>land<i>et</i></b></td></tr><tr><td> sie</td><td> <b>land<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Konjunktiv II</h3>
+<a class="" href="/konjugation/konjunktiv/praeteritum/landen_ist.wav" id="f613d" onclick="Stimme.klick(event,'f613d')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>land<i>ete</i></b></td></tr><tr><td> du</td><td> <b>land<i>etest</i></b></td></tr><tr><td> er</td><td> <b>land<i>ete</i></b></td></tr><tr><td> wir</td><td> <b>land<i>eten</i></b></td></tr><tr><td> ihr</td><td> <b>land<i>etet</i></b></td></tr><tr><td> sie</td><td> <b>land<i>eten</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Perfekt</h3>
+<a class="" href="/konjugation/konjunktiv/perfekt/landen_ist.wav" id="5e644" onclick="Stimme.klick(event,'5e644')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>sei</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr><tr><td> du</td><td> <i>seiest</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr><tr><td> er</td><td> <i>sei</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr><tr><td> wir</td><td> <i>seien</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr><tr><td> ihr</td><td> <i>seiet</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr><tr><td> sie</td><td> <i>seien</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Plusquam</h3>
+<a class="" href="/konjugation/konjunktiv/plusquamperfekt/landen_ist.wav" id="dd6bd" onclick="Stimme.klick(event,'dd6bd')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>wäre</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr><tr><td> du</td><td> <i>wärest</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr><tr><td> er</td><td> <i>wäre</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr><tr><td> wir</td><td> <i>wären</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr><tr><td> ihr</td><td> <i>wäret</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr><tr><td> sie</td><td> <i>wären</i></td><td> <b><i>ge</i>land<i>et</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Futur I</h3>
+<a class="" href="/konjugation/konjunktiv/futur1/landen_ist.wav" id="03773" onclick="Stimme.klick(event,'03773')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>werde</i></td><td> <b>land<i>en</i></b></td></tr><tr><td> du</td><td> <i>werdest</i></td><td> <b>land<i>en</i></b></td></tr><tr><td> er</td><td> <i>werde</i></td><td> <b>land<i>en</i></b></td></tr><tr><td> wir</td><td> <i>werden</i></td><td> <b>land<i>en</i></b></td></tr><tr><td> ihr</td><td> <i>werdet</i></td><td> <b>land<i>en</i></b></td></tr><tr><td> sie</td><td> <i>werden</i></td><td> <b>land<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Futur II</h3>
+<a class="" href="/konjugation/konjunktiv/futur2/landen_ist.wav" id="ef811" onclick="Stimme.klick(event,'ef811')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>werde</i></td><td> <b><i>ge</i>land<i>et</i></b></td><td> <i>sein</i></td></tr><tr><td> du</td><td> <i>werdest</i></td><td> <b><i>ge</i>land<i>et</i></b></td><td> <i>sein</i></td></tr><tr><td> er</td><td> <i>werde</i></td><td> <b><i>ge</i>land<i>et</i></b></td><td> <i>sein</i></td></tr><tr><td> wir</td><td> <i>werden</i></td><td> <b><i>ge</i>land<i>et</i></b></td><td> <i>sein</i></td></tr><tr><td> ihr</td><td> <i>werdet</i></td><td> <b><i>ge</i>land<i>et</i></b></td><td> <i>sein</i></td></tr><tr><td> sie</td><td> <i>werden</i></td><td> <b><i>ge</i>land<i>et</i></b></td><td> <i>sein</i></td></tr></table>
+</div>
+<div class="vBsp rClear">
+<hr>
+<ul>
+<li>
+» Nach türkischen Quellen <i>w</i><i>ä</i><i>r</i><i>en</i> 6 Flugzeuge im August 2015 in Damaskus <b><i>ge</i></b><b>l</b><b>a</b><b>nd</b><b><i>e</i></b><b><i>t</i></b>.<span class="rBoxInfo">²</span>
+<a class="" href="/konjugation/beispiele/landen_ist.wav?q=wikipedia&r=2701065" id="62621" onclick="Stimme.klick(event,'62621')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://de.wikipedia.org/wiki?curid=2701065" title="wikipedia.org"><span class="rBoxInfo">...</span></a>
+<li>
+» Die Kapsel <i>w</i><i>ä</i><i>r</i><i>e</i> daraufhin wie nach einem normalen Wiedereintritt an ihren Fallschirmen <b><i>ge</i></b><b>l</b><b>a</b><b>nd</b><b><i>e</i></b><b><i>t</i></b>.<span class="rBoxInfo">²</span>
+<a class="" href="/konjugation/beispiele/landen_ist.wav?q=wikipedia&r=238858" id="56bb1" onclick="Stimme.klick(event,'56bb1')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://de.wikipedia.org/wiki?curid=238858" title="wikipedia.org"><span class="rBoxInfo">...</span></a>
+<a class="rRechts rInf" href="/konjugation/beispiele/landen.htm">mehr&nbsp;</a>
+</ul>
+</div>
+</div>
+<div class="rClear"></div>
+</section>
+<section class="rBox rBoxWht" id="6146fBox">
+<div class="rAnkr" id="konditional"></div>
+<header>
+<div class="rBoxText">
+<h2>Konjunktiv II (würde)</h2>
+<br><span class="rInf">Ersatzformen des Konjunktiv II konjugiert mit würde als finites Verb</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="6146fImg" onclick="Rahmen.aufzu('6146f')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="6146f" class="rAufZu">
+<hr>
+<div class="vTbl">
+<h3>Prät (würde)</h3>
+<a class="" href="/konjugation/konditional/praeteritum/landen_ist.wav" id="8195a" onclick="Stimme.klick(event,'8195a')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>würde</i></td><td> <b>land<i>en</i></b></td></tr><tr><td> du</td><td> <i>würdest</i></td><td> <b>land<i>en</i></b></td></tr><tr><td> er</td><td> <i>würde</i></td><td> <b>land<i>en</i></b></td></tr><tr><td> wir</td><td> <i>würden</i></td><td> <b>land<i>en</i></b></td></tr><tr><td> ihr</td><td> <i>würdet</i></td><td> <b>land<i>en</i></b></td></tr><tr><td> sie</td><td> <i>würden</i></td><td> <b>land<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Plusquam (würde)</h3>
+<a class="" href="/konjugation/konditional/plusquamperfekt/landen_ist.wav" id="725e3" onclick="Stimme.klick(event,'725e3')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>würde</i></td><td> <b><i>ge</i>land<i>et</i></b></td><td> <i>sein</i></td></tr><tr><td> du</td><td> <i>würdest</i></td><td> <b><i>ge</i>land<i>et</i></b></td><td> <i>sein</i></td></tr><tr><td> er</td><td> <i>würde</i></td><td> <b><i>ge</i>land<i>et</i></b></td><td> <i>sein</i></td></tr><tr><td> wir</td><td> <i>würden</i></td><td> <b><i>ge</i>land<i>et</i></b></td><td> <i>sein</i></td></tr><tr><td> ihr</td><td> <i>würdet</i></td><td> <b><i>ge</i>land<i>et</i></b></td><td> <i>sein</i></td></tr><tr><td> sie</td><td> <i>würden</i></td><td> <b><i>ge</i>land<i>et</i></b></td><td> <i>sein</i></td></tr></table>
+</div>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+Rahmen.aufzu('6146f');
+</script>
+</section>
+<section class="rBox rBoxWht" id="3e0efBox">
+<div class="rAnkr" id="imperativ"></div>
+<header>
+<div class="rBoxText">
+<h2>Imperativ</h2>
+<br><span class="rInf">Die Konjugationsformen im Imperativ Aktiv Präsens für das Verb landen</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="3e0efImg" onclick="Rahmen.aufzu('3e0ef')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="3e0ef" class="rAufZu">
+<hr>
+<div class="vTbl">
+<h3>Präsens</h3>
+<a class="" href="/konjugation/imperativ/landen_ist.wav" id="09682" onclick="Stimme.klick(event,'09682')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td><b>land</b>(<b><i>e</i></b>)⁵</td><td> (du)</td></tr><tr><td><b>land<i>en</i></b></td><td> wir</td></tr><tr><td><b>land<i>et</i></b></td><td> ihr</td></tr><tr><td><b>land<i>en</i></b></td><td> Sie</td></tr></table>
+</div>
+</div>
+<div class="rClear"></div>
+</section>
+<section class="rBox rBoxWht" id="2c25fBox">
+<header>
+<div class="rBoxText">
+<h2>Infinitiv/Partizip</h2>
+<br><span class="rInf">Die infiniten Formen Partizip und Infinitiv (mit zu) im Aktiv für landen
+</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="2c25fImg" onclick="Rahmen.aufzu('2c25f')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="2c25f" class="rAufZu">
+<hr>
+<div class="vTbl">
+<h3>Infinitiv I</h3>
+<a class="" href="/konjugation/infinitiv1/landen_ist.wav" id="9c7af" onclick="Stimme.klick(event,'9c7af')" rel="nofollow"><img src="/stimme.svg" alt=""></a><br>
+<table>
+<tr><td><b>land<i>en</i></b></td></tr>
+<tr><td><b><i>zu</i></b> <b>land<i>en</i></b></td></tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Infinitiv II</h3>
+<a class="" href="/konjugation/infinitiv2/landen_ist.wav" id="589c1" onclick="Stimme.klick(event,'589c1')" rel="nofollow"><img src="/stimme.svg" alt=""></a><br>
+<table>
+<tr><td><b><i>ge</i>land<i>et</i></b> <i>sein</i></td></tr>
+<tr><td><b><i>ge</i>land<i>et</i></b> <i>zu</i> <i>sein</i></td></tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Partizip I</h3>
+<a class="" href="/konjugation/partizip1/landen_ist.wav" id="192bf" onclick="Stimme.klick(event,'192bf')" rel="nofollow"><img src="/stimme.svg" alt=""></a><br>
+<table>
+<tr><td><b>land<i>end</i></b></td></tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Partizip II</h3>
+<a class="" href="/konjugation/partizip2/landen_ist.wav" id="c5882" onclick="Stimme.klick(event,'c5882')" rel="nofollow"><img src="/stimme.svg" alt=""></a><br>
+<table>
+<tr><td><b><i>ge</i>land<i>et</i></b></td></tr>
+</table>
+</div>
+</div>
+<div class="rClear"></div>
+</section>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+style="display:block; text-align:center; margin-bottom:20px;"
+data-ad-layout="in-article"
+data-ad-format="fluid"
+data-ad-client="ca-pub-1536920203038272"
+data-ad-slot="4114995409"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<section class="rBox rBoxTrns" id="cc37cBox">
+<div class="rAnkr" id="kommentare"></div>
+<header>
+<div class="rBoxText">
+<h2>Kommentare</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="cc37cImg" onclick="Rahmen.aufzu('cc37c')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="cc37c" class="rAufZu">
+<div class="kFrm" id="4f832">
+<form method="post" action="/kommentare/anlage.htm" onsubmit="Ajax.ersetze(event,'4f832')">
+<select class="kBwrt" name="bewertung">
+<option value="" selected="selected">★✰✰✰✰</option>
+<option value="5">★★★★★</option>
+<option value="4">★★★★</option>
+<option value="3">★★★</option>
+<option value="2">★★</option>
+<option value="1">★</option>
+</select> Kommentar:
+<br>
+<textarea maxlength="1000" rows="5" name="kommentar" required="required"></textarea><br>
+<br>
+Name:
+<input name="autor" required="required" maxlength="20"><br>
+<br>
+<input type="submit" value="Absenden">
+<input name="pfad" type="hidden" value="/konjugation/landen.htm">
+<input name="url" type="hidden" value="https://www.verbformen.de/konjugation/?w=landen">
+</form>
+</div>
+</div>
+<div class="rClear"></div>
+</section>
+</div></div>
+<div class="rInfo">
+<nav class="rBox rBoxTrns" id="3ccafBox">
+<header>
+<div class="rBoxText">
+<a href="/konjugation/arbeitsblaetter-uebungen/landen.htm" ><h2>Arbeitsblätter</h2><svg fill="#0052d9" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="m6.07 13.6 1.43 1.39 8.36-8.61-0.0584 4.76 2.01-0.0291 0.0088-8.19-8.18 0.0336 0.0291 2.01 4.76 0.0159z"></path>
+</svg></a>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="3ccafImg" onclick="Rahmen.aufzu('3ccaf')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="3ccaf" class="rAufZu">
+<div class="rCntr">
+<div class="vArbBltt">
+<a target="_blank" href="/konjugation/landen_ist.pdf"  onclick="ga('send', 'pageview', '/konjugation/landen_ist.pdf')">
+<span class="rKln rInf">Verbtabelle PDF</span><br>
+<img class="rImg" alt="Konjugation des deutschen Verbs landen (ist)" src="/konjugation/steckbrief/landen_ist.png">
+</a>
+</div>
+</div>
+&cir;&nbsp;<a target="_blank" href="/konjugation/landen_ist.pdf"  onclick="ga('send', 'pageview', '/konjugation/landen_ist.pdf')">
+Verbtabelle PDF</a><br>
+&cir;&nbsp;<a target="_blank" href="/konjugation/arbeitsblaetter-uebungen/suchsel/landen_ist.pdf" onclick="ga('send', 'pageview', '/konjugation/arbeitsblaetter-uebungen/suchsel/landen_ist.pdf')">
+Wortsuchrätsel PDF </a><br>
+&cir;&nbsp;<a target="_blank" href="/konjugation/arbeitsblaetter-uebungen/lernkarten/landen_ist.pdf" onclick="ga('send', 'pageview', '/konjugation/arbeitsblaetter-uebungen/lernkarten/landen_ist.pdf')">
+Lernkarten PDF </a>
+<div class="rClear rKln"><br></div>
+<a href="/konjugation/arbeitsblaetter-uebungen/landen.htm" title="Arbeitsblätter zur Konjugation des  Verbs landen">
+<div class="rKnpf">Zu den Arbeitsblättern</div>
+</a>
+</div>
+<div class="rClear"></div>
+</nav>
+<nav class="rBox rBoxTrns" id="0f05dBox">
+<header>
+<div class="rBoxText">
+<a href="/konjugation/beispiele/landen.htm" ><h2>Beispiele</h2><svg fill="#0052d9" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="m6.07 13.6 1.43 1.39 8.36-8.61-0.0584 4.76 2.01-0.0291 0.0088-8.19-8.18 0.0336 0.0291 2.01 4.76 0.0159z"></path>
+</svg></a>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="0f05dImg" onclick="Rahmen.aufzu('0f05d')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="0f05d" class="rAufZu">
+<div class="vBsp">
+<ul>
+<li>
+» Tom <i>i</i><i>st</i> mit seinem Hubschrauber auf dem Dach <b><i>ge</i></b><b>l</b><b>a</b><b>nd</b><b><i>e</i></b><b><i>t</i></b>.<span class="rBoxInfo">¹</span>
+<a class="" href="/konjugation/beispiele/landen_ist.wav?q=tatoeba&r=1550503" id="17dad" onclick="Stimme.klick(event,'17dad')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://tatoeba.org/sentences/show/1550503" title="tatoeba.org"><span class="rBoxInfo">...</span></a>
+</li>
+<li>
+» Auch Fernand und Henri <i>s</i><i>i</i><i>nd</i> in der Schänke <b><i>ge</i></b><b>l</b><b>a</b><b>nd</b><b><i>e</i></b><b><i>t</i></b>.<span class="rBoxInfo">²</span>
+<a class="" href="/konjugation/beispiele/landen_ist.wav?q=wikipedia&r=6945637" id="76654" onclick="Stimme.klick(event,'76654')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://de.wikipedia.org/wiki?curid=6945637" title="wikipedia.org"><span class="rBoxInfo">...</span></a>
+</li>
+<li>
+» Das schwedische Entsatzheer unter der Führung des Generalmajor Georg Johann Maydell <i>w</i><i>a</i><i>r</i> in der Nähe von Riga <b><i>ge</i></b><b>l</b><b>a</b><b>nd</b><b><i>e</i></b><b><i>t</i></b>.<span class="rBoxInfo">²</span>
+<a class="" href="/konjugation/beispiele/landen_ist.wav?q=wikipedia&r=7087815" id="66ef8" onclick="Stimme.klick(event,'66ef8')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://de.wikipedia.org/wiki?curid=7087815" title="wikipedia.org"><span class="rBoxInfo">...</span></a>
+</li>
+</ul>
+</div>
+<div class="rClear rKln"><br></div>
+<a href="/konjugation/beispiele/landen.htm"  title="Beispiele zur Konjugation des Verbs landen">
+<div class="rKnpf">Zu den Beispielen</div>
+</a>
+</div>
+<div class="rClear"></div>
+</nav>
+<section class="rBox rBoxTrns" id="9830dBox">
+<header>
+<div class="rBoxText">
+<h2>Bildungsregeln</h2>
+<br><span class="rInf">Detaillierte Regeln zur Konjugation</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="9830dImg" onclick="Rahmen.aufzu('9830d')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="9830d" class="rAufZu">
+<p>
+&cir;&nbsp;<a href="/konjugation/indikativ/praesens/landen.htm">Konjugation von landen im Präsens </a>?<br>
+&cir;&nbsp;<a href="/konjugation/indikativ/praeteritum/landen.htm">Konjugation von landen im Präteritum </a>?<br>
+&cir;&nbsp;<a href="http://verben.de/deutsch/verb/bildung_der_deutschen_verbformen" target="_blank">Wie konjugiert man Verben im Deutschen</a>?
+</p>
+</div>
+<div class="rClear"></div>
+</section>
+<nav class="rBox rBoxTrns" id="bb0b9Box">
+<header>
+<div class="rBoxText">
+<h2>Präpositionen</h2>
+<br><span class="rInf">Alle verwendeten Präpositionen von landen</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="bb0b9Img" onclick="Rahmen.aufzu('bb0b9')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="bb0b9" class="rAufZu">
+<p style="column-count: 4;">
+<a href="/konjugation/auf_..._landen.htm">auf&nbsp;…</a><br>
+</p>
+</div>
+<div class="rClear"></div>
+</nav>
+<nav class="rBox rBoxTrns" id="4ebb6Box">
+<header>
+<div class="rBoxText">
+<h2>Weitere Formen</h2>
+<br><span class="rInf">Modalformen und Negation von landen</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="4ebb6Img" onclick="Rahmen.aufzu('4ebb6')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="4ebb6" class="rAufZu">
+<table>
+<tr><td class="vKpfZ">Fähigkeit</td><td>
+&cir;&nbsp;<a href="/konjugation/kann_landen.htm">kann landen</a>
+<a class="" href="/konjugation/infinitiv/kann_landen_ist.wav" id="208f9" onclick="Stimme.klick(event,'208f9')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+<tr><td class="vKpfZ">Erlaubnis</td><td>
+&cir;&nbsp;<a href="/konjugation/darf_landen.htm">darf landen</a>
+<a class="" href="/konjugation/infinitiv/darf_landen_ist.wav" id="41ee1" onclick="Stimme.klick(event,'41ee1')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+<tr><td class="vKpfZ">Pflicht</td><td>
+&cir;&nbsp;<a href="/konjugation/muss_landen.htm">muss landen</a>
+<a class="" href="/konjugation/infinitiv/muss_landen_ist.wav" id="36b5b" onclick="Stimme.klick(event,'36b5b')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+<tr><td class="vKpfZ">Absicht</td><td>
+&cir;&nbsp;<a href="/konjugation/will_landen.htm">will landen</a>
+<a class="" href="/konjugation/infinitiv/will_landen_ist.wav" id="8bc1d" onclick="Stimme.klick(event,'8bc1d')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+<tr><td class="vKpfZ">Vorschrift</td><td>
+&cir;&nbsp;<a href="/konjugation/soll_landen.htm">soll landen</a>
+<a class="" href="/konjugation/infinitiv/soll_landen_ist.wav" id="f118d" onclick="Stimme.klick(event,'f118d')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+<tr><td class="vKpfZ">Gefallen</td><td>
+&cir;&nbsp;<a href="/konjugation/mag_landen.htm">mag landen</a>
+<a class="" href="/konjugation/infinitiv/mag_landen_ist.wav" id="ef42b" onclick="Stimme.klick(event,'ef42b')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+<tr><td class="vKpfZ">Wunsch</td><td>
+&cir;&nbsp;<a href="/konjugation/mo:chte_landen.htm">möchte landen</a>
+<a class="" href="/konjugation/infinitiv/mo:chte_landen_ist.wav" id="12263" onclick="Stimme.klick(event,'12263')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+<tr><td class="vKpfZ">Verneinung&nbsp;</td><td>
+&cir;&nbsp;<a href="/konjugation/nicht_landen.htm">nicht landen</a>
+<a class="" href="/konjugation/infinitiv/nicht_landen_ist.wav" id="b272b" onclick="Stimme.klick(event,'b272b')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+</table>					
+</div>
+<div class="rClear"></div>
+</nav>
+<nav class="rBox rBoxTrns" id="61ef0Box">
+<header>
+<div class="rBoxText">
+<h2>Ableitungen</h2>
+<br><span class="rInf">Abgeleitete Formen von landen</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="61ef0Img" onclick="Rahmen.aufzu('61ef0')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="61ef0" class="rAufZu">
+<p style="column-count: 2;">
+&cir;&nbsp;<a href="/konjugation/anlanden.htm" title="anlanden">anlanden</a><br>
+&cir;&nbsp;<a href="/konjugation/bruchlanden.htm" title="bruchlanden">bruchlanden</a><br>
+&cir;&nbsp;<a href="/konjugation/notlanden.htm" title="notlanden">notlanden</a><br>
+&cir;&nbsp;<a href="/konjugation/verlanden.htm" title="verlanden">verlanden</a><br>
+</p>
+</div>
+<div class="rClear"></div>
+</nav>
+<section class="rBox rBoxTrns" id="6403cBox">
+<header>
+<div class="rBoxText">
+<h2>Übersetzung</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="6403cImg" onclick="Rahmen.aufzu('6403c')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="6403c" class="rAufZu">
+<p>
+Übersetzung
+&cir;&nbsp;land, alight, debark, disembark, end up
+</p>
+</div>
+<div class="rClear"></div>
+</section>
+</div>
+<div class="rClear"></div>		
+<section class="rBox rBoxTrns" id="ddbcaBox">
+<header>
+<div class="rBoxText">
+<h2>Verbformen</h2>
+<br><span class="rInf">Zusammenfassung aller Verbformen des Zeitworts, Tätigkeitsworts bzw. Tuworts  landen</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="ddbcaImg" onclick="Rahmen.aufzu('ddbca')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="ddbca" class="rAufZu">
+<p>
+Die <u>landen Konjugation</u> online als Verbtabelle mit allen Verbformen in Singular (Einzahl) und Plural (Mehrzahl) in allen Personen (1. Person, 2.Person, 3. Person) übersichtlich dargestellt. Die Beugung bzw. Flexion des Verbs landen ist somit eine Hilfestellung für Hausaufgaben, Prüfungen, Klausuren, für den Deutschuntericht der Schule, zum Deutsch Lernen, für das Studium, Deutsch als Fremdsprache (DaZ), Deutsch als Zweitsprache (DaZ) und für die Erwachsenenbildung. Gerade auch für Deutsch-lernende ist die korrekte Konjugation des Verbs bzw. die korrekt flektierten Formen (landet - landete - ist gelandet) entscheidend. Weitere Informationen finden sich unter <a href="https://de.wiktionary.org/wiki/Flexion:landen" rel="nofollow">Wiktionary landen</a> und unter <a href="http://www.duden.de/rechtschreibung/landen" rel="nofollow">landen im Duden</a>.
+Das Verb gehört zum Wortschatz des Zertifikat Deutsch bzw. zur Stufe B2.
+</p>
+<h3>
+Indikativ
+Wirklichkeitsform /
+Aktiv
+Tatform
+</h3>
+<ul>
+<li>
+<b>Präsens
+Gegenwart</b>, ich land(e), du landest, er landet, wir landen, ihr landet, sie landen
+</li>
+<li>
+<b>Präteritum	
+Vergangenheit</b>, ich landete, du landetest, er landete, wir landeten, ihr landetet, sie landeten
+</li>
+<li>
+<b>
+Perfekt
+Vorgegenwart</b>, ich bin gelandet, du bist gelandet, er ist gelandet, wir sind gelandet, ihr seid gelandet, sie sind gelandet
+</li>
+<li>
+<b>
+Plusquamperfekt
+Vorvergangenheit</b>, ich war gelandet, du warst gelandet, er war gelandet, wir waren gelandet, ihr wart gelandet, sie waren gelandet
+</li>
+<li>
+<b>
+Futur I
+Zukunft</b>, ich werde landen, du wirst landen, er wird landen, wir werden landen, ihr werdet landen, sie werden landen
+</li>	
+<li>
+<b>
+Futur II
+Vorzukunft</b>, ich werde gelandet sein, du wirst gelandet sein, er wird gelandet sein, wir werden gelandet sein, ihr werdet gelandet sein, sie werden gelandet sein
+</li>
+</ul>
+<h3>
+Konjunktiv
+Möglichkeitsform /
+Aktiv
+Tatform
+</h3>
+<ul>
+<li>
+<b>
+Präsens
+Gegenwart</b>, ich lande, du landest, er lande, wir landen, ihr landet, sie landen
+</li>	
+<li>
+<b>
+Präteritum
+Vergangenheit</b>, ich landete, du landetest, er landete, wir landeten, ihr landetet, sie landeten
+</li>	
+<li>
+<b>
+Perfekt
+Vorgegenwart</b>, ich sei gelandet, du seiest gelandet, er sei gelandet, wir seien gelandet, ihr seiet gelandet, sie seien gelandet
+</li>	
+<li>						
+<b>
+Plusquamperfekt
+Vorvergangenheit</b>, ich wäre gelandet, du wärest gelandet, er wäre gelandet, wir wären gelandet, ihr wäret gelandet, sie wären gelandet
+</li>	
+<li>
+<b>
+Futur I
+Zukunft</b>, ich werde landen, du werdest landen, er werde landen, wir werden landen, ihr werdet landen, sie werden landen
+</li>	
+<li>
+<b>
+Futur II
+Vorzukunft</b>, ich werde gelandet sein, du werdest gelandet sein, er werde gelandet sein, wir werden gelandet sein, ihr werdet gelandet sein, sie werden gelandet sein
+</li>
+</ul>
+<h3>
+Konjunktiv II (würde)
+Bedingungsform /
+Aktiv
+Tatform
+</h3>
+<ul>
+<li>
+<b>
+Präteritum
+Vergangenheit</b>, ich würde landen, du würdest landen, er würde landen, wir würden landen, ihr würdet landen, sie würden landen
+</li>	
+<li>
+<b>
+Plusquamperfekt
+Vorvergangenheit</b>, ich würde gelandet sein, du würdest gelandet sein, er würde gelandet sein, wir würden gelandet sein, ihr würdet gelandet sein, sie würden gelandet sein
+</li>
+</ul>
+<h3>
+Imperativ
+Befehlsform /
+Aktiv
+Tatform
+</h3>
+<ul>
+<li>
+<b>
+Präsens
+Gegenwart</b>, land(e) (du), landen wir, landet ihr, landen Sie
+</li>
+</ul>
+<h3>
+Infinitiv
+Grundform
+/
+Partizip
+Mittelwort
+/
+Aktiv
+Tatform
+</h3>
+<ul>
+<li>
+<b>
+Infinitiv I</b>, landen
+, zu landen
+</li>	
+<li>
+<b>
+Infinitiv II</b>, gelandet sein
+, gelandet zu sein
+</li>	
+<li>
+<b>Partizip I</b>, landend
+</li>	
+<li>
+<b>Partizip II</b>, gelandet
+</li>
+</ul>
+</div>
+<div class="rClear"></div>
+</section>
+<footer class="rInf vLeg rClear">
+¹ Die Beispielsätze stammen von <a href="https://tatoeba.org" rel="nofollow" target="_blank">Tatoeba</a>. Sie sind unter der Lizenz <a href="https://creativecommons.org/licenses/by/2.0/" rel="nofollow" target="_blank">CC BY 2.0</a> <i>(creativecommons.org/licenses/by/2.0)</i> frei verfügbar. Die Urheber der Sätze sind über den Link ... direkt am Satz oder über folgende URLs jeweils unter <i>https://tatoeba.org/sentences/show</i> zu finden (die Reihenfolge entspricht dem Auftreten): 
+<i>/4055129</i>, 
+<i>/1550503</i>
+<br>
+² Die Beispielsätze stammen aus der <a href="https://de.wikipedia.org" rel="nofollow" target="_blank">Wikipedia</a>. Sie sind unter der Lizenz <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="nofollow" target="_blank">CC-BY-SA 3.0</a> <i>(creativecommons.org/licenses/by-sa/3.0)</i> frei verfügbar. Die Urheber der Sätze sind über den Link ... direkt am Satz oder über folgende URLs jeweils unter <i>https://de.wikipedia.org/wiki?curid=</i> zu finden (die Reihenfolge entspricht dem Auftreten): 
+<i>238858 (Apollo-Rettungsrakete)</i>, 
+<i>7087815 (Belagerung von Riga (1700))</i>, 
+<i>2701065 (Mikojan-Gurewitsch MiG-31)</i>, 
+<i>238858 (Apollo-Rettungsrakete)</i>, 
+<i>6945637 (Capriccio (1938))</i>, 
+<i>7087815 (Belagerung von Riga (1700))</i>
+<br>
+⁵ Umgangssprachlicher Gebrauch<br>
+<br>
+</footer>
+</div><div class="rClear"></div></article>
+<footer><div>
+<div class="rLinks vFuss">
+<h2>Kontakt</h2>
+<p>Netzverb Inh. Andreas Göbel<br>
+Alte Buchholzer Str. 8<br>
+D-09487 Schlettau</p>
+<p>Telefon: +49 3733 6196894<br>
+E-Mail: info@netzverb.de</p>
+<p>Facebook: <a href="https://www.facebook.com/Netzverb" rel="nofollow" target="_blank">facebook.com/Netzverb</a><br>
+Twitter: <a href="https://twitter.com/Netzverb" rel="nofollow" target="_blank">twitter.com/Netzverb</a><br>
+Google+: <a href="https://plus.google.com/+NetzverbDe" rel="nofollow" target="_blank">plus.google.com/+NetzverbDe</a></p>
+</div>
+<div class="rLinks vFuss">
+<h2>Netzverb</h2>
+<p>Netzwerk der deutschen Sprache<br>
+<a href="//www.netzverb.de">www.netzverb.de</a> · <a href="//www.netzverb.de/blog/">Blog</a></p>
+<p>Deutsche Flexion: <a href="//www.verbformen.de">verbformen.de</a><br>
+Deutsches Wörterbuch: <a href="//www.verblisten.de">verblisten.de</a><br>
+Sprachforum: <a href="http://www.konjugation.de">konjugation.de</a><br>
+Deutsche Grammatik: <a href="http://www.verben.de">verben.de</a></p>
+<a href="https://www.facebook.com/Netzverb" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path>
+</svg></a>
+<a href="https://twitter.com/Netzverb" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path>
+</svg></a>
+<a href="https://plus.google.com/+NetzverbDe" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M23,11H21V9H19V11H17V13H19V15H21V13H23M8,11V13.4H12C11.8,14.4 10.8,16.4 8,16.4C5.6,16.4 3.7,14.4 3.7,12C3.7,9.6 5.6,7.6 8,7.6C9.4,7.6 10.3,8.2 10.8,8.7L12.7,6.9C11.5,5.7 9.9,5 8,5C4.1,5 1,8.1 1,12C1,15.9 4.1,19 8,19C12,19 14.7,16.2 14.7,12.2C14.7,11.7 14.7,11.4 14.6,11H8Z"></path>
+</svg></a>		
+</div>
+<div class="rLinks vFuss">
+<h2>Hinweise</h2>
+<p><a href="//www.netzverb.de/impressum.htm">Impressum</a> ·
+<a href="//www.netzverb.de/impressum.htm">Nutzungsbedingungen</a><br>
+<a href="//www.netzverb.de/datenschutz.htm">Datenschutz</a> ·
+<a href="//www.netzverb.de/datenschutz.htm">Cookies</a></p>
+<h2>Hilfe</h2>
+<p><a href="/hilfe/">Hilfe und FAQ</a> · <a href="/kommentare.htm">Kommentare</a><br>
+<a href="//www.netzverb.de/links/">Links</a> · <a href="/hilfe/widgets.htm">Widgets</a> · <a href="/neuigkeiten.htm">Neuigkeiten</a></p>
+<a href="/nutzer/?anmelden">Anmelden</a>
+</div>
+<div class="rClear">
+<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow">
+<svg fill="#fff" fill-opacity="0.6" height="26" viewBox="0 0 26 26" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="m13 0c3.6 0 6.7 1.3 9.3 3.8 1.2 1.2 2.2 2.6 2.8 4.2 0.6 1.6 0.9 3.3 0.9 5 0 1.8-0.3 3.5-0.9 5 -0.6 1.6-1.5 2.9-2.8 4.1 -1.3 1.3-2.7 2.2-4.3 2.9 -1.6 0.7-3.3 1-5 1s-3.4-0.3-4.9-1c-1.6-0.6-3-1.6-4.3-2.9 -1.3-1.2-2.2-2.6-2.8-4.2 -0.6-1.5-1-3.2-1-4.9s0.3-3.4 1-5c0.7-1.6 1.6-3 2.9-4.3 2.5-2.5 5.5-3.8 9.1-3.8Zm0 2.3c-3 0-5.5 1-7.5 3.1 -1 1-1.8 2.2-2.3 3.5 -0.5 1.3-0.8 2.6-0.8 4 0 1.4 0.3 2.7 0.8 4 0.5 1.3 1.3 2.4 2.4 3.5s2.2 1.8 3.5 2.3c1.3 0.5 2.6 0.8 4 0.8 1.4 0 2.7-0.3 4.1-0.8s2.5-1.3 3.5-2.3c2-2 3-4.5 3-7.4 0-1.4-0.3-2.8-0.8-4.1 -0.5-1.3-1.2-2.4-2.2-3.4 -2.1-2.1-4.6-3.1-7.6-3.1Zm-0.2 8.5l-1.7 0.9c-0.2-0.4-0.4-0.7-0.7-0.8 -0.3-0.2-0.5-0.2-0.8-0.2 -1.2 0-1.7 0.8-1.7 2.3 0 0.7 0.1 1.3 0.4 1.7 0.3 0.4 0.7 0.6 1.3 0.6 0.8 0 1.3-0.4 1.6-1.1l1.6 0.8c-0.3 0.6-0.8 1.1-1.4 1.5 -0.6 0.4-1.3 0.5-2 0.5 -1.2 0-2.1-0.4-2.8-1.1 -0.7-0.7-1.1-1.7-1.1-3 0-1.2 0.4-2.2 1.1-2.9 0.7-0.7 1.6-1.1 2.7-1.1 1.6 0 2.8 0.6 3.5 1.9Zm7.5 0l-1.7 0.9c-0.2-0.4-0.4-0.7-0.7-0.8 -0.3-0.2-0.5-0.2-0.8-0.2 -1.2 0-1.7 0.8-1.7 2.3 0 0.7 0.1 1.3 0.4 1.7 0.3 0.4 0.7 0.6 1.3 0.6 0.8 0 1.3-0.4 1.6-1.1l1.6 0.8c-0.4 0.6-0.8 1.1-1.4 1.5 -0.6 0.4-1.3 0.5-2 0.5 -1.2 0-2.1-0.4-2.8-1.1 -0.7-0.7-1.1-1.7-1.1-3 0-1.2 0.4-2.2 1.1-2.9 0.7-0.7 1.6-1.1 2.7-1.1 1.6 0 2.8 0.6 3.4 1.9Z"></path>
+</svg>
+<svg fill="#fff" fill-opacity="0.6" height="26" viewBox="0 0 26 26" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="m13 0c3.7 0 6.7 1.3 9.2 3.8 2.5 2.6 3.8 5.6 3.8 9.2 0 3.7-1.2 6.7-3.7 9.1 -2.6 2.6-5.8 3.9-9.3 3.9 -3.6 0-6.6-1.3-9.2-3.8 -2.5-2.6-3.8-5.6-3.8-9.2 0-3.6 1.3-6.6 3.8-9.2 2.5-2.5 5.6-3.8 9.2-3.8Zm0.1 2.3c-3 0-5.4 1-7.5 3.1 -2.1 2.2-3.2 4.7-3.2 7.6 0 2.9 1.1 5.4 3.2 7.5 2 2 4.5 3.1 7.4 3.1 2.9 0 5.4-1.1 7.6-3.2 2-2 3.1-4.5 3.1-7.4s-1-5.5-3.1-7.6c-2-2.1-4.5-3.2-7.5-3.2Zm3.5 7.4v5.3h-1.5v6.3h-4v-6.3h-1.5v-5.3c0-0.2 0.1-0.4 0.2-0.6 0.2-0.2 0.4-0.2 0.6-0.2h5.3c0.2 0 0.4 0.1 0.6 0.2 0.2 0.2 0.3 0.4 0.3 0.6Zm-5.4-3.4c0-1.2 0.6-1.8 1.8-1.8s1.8 0.6 1.8 1.8c0 1.2-0.6 1.8-1.8 1.8 -1.2 0-1.8-0.6-1.8-1.8Z"></path>
+</svg>
+<svg fill="#fff" fill-opacity="0.6" height="26" viewBox="0 0 26 26" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="m13 0c3.6 0 6.7 1.3 9.2 3.8 2.5 2.5 3.8 5.6 3.8 9.2 0 3.6-1.2 6.7-3.7 9.1 -2.6 2.6-5.7 3.9-9.3 3.9 -3.5 0-6.6-1.3-9.2-3.8 -2.5-2.6-3.8-5.6-3.8-9.2 0-3.5 1.3-6.6 3.8-9.2 2.5-2.5 5.6-3.8 9.2-3.8Zm0 2.3c-3 0-5.4 1-7.5 3.1 -2.1 2.2-3.2 4.7-3.2 7.5 0 2.9 1.1 5.4 3.2 7.5 2.1 2.1 4.6 3.2 7.5 3.2 2.9 0 5.4-1.1 7.6-3.2 2.1-2 3.1-4.5 3.1-7.4 0-3-1-5.5-3.1-7.5 -2-2.2-4.5-3.2-7.4-3.2Zm-5.7 8.9c0.3-1.6 0.9-2.9 1.9-3.7 1-0.9 2.3-1.3 3.8-1.3 2.1 0 3.7 0.7 4.9 2 1.2 1.3 1.8 3 1.8 5.1 0 2-0.6 3.7-1.9 5 -1.3 1.3-2.9 2-4.9 2 -1.5 0-2.7-0.4-3.8-1.3s-1.7-2.1-1.9-3.8h3.3c0.1 1.6 1 2.4 2.9 2.4 0.9 0 1.7-0.4 2.2-1.2 0.6-0.8 0.8-1.8 0.8-3.2 0-1.4-0.3-2.4-0.8-3.1 -0.5-0.7-1.2-1.1-2.2-1.1 -1.7 0-2.7 0.8-2.9 2.3h1l-2.6 2.6 -2.6-2.6 1 0Z"></path>
+</svg>
+</a>
+<p>Alle originären Inhalte auf dieser Website sind, soweit nichts anderes vermerkt ist, unter der offenen Lizenz <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license nofollow" target="_blank">CC BY-SA 4.0</a> <em>(https://creativecommons.org/licenses/by-sa/4.0)</em> verfügbar. Die Inhalte dürfen somit frei und dauerhaft verwendet, kopiert und geändert werden und eignen sich im Rahmen von Open Educational Resources (OER) als Lehrmaterial. Bei einer Veröffentlichung ist als Urheber <em>"Netzverb (<a href="https://www.verbformen.de/">www.verbformen.de</a>)"</em> mit Verlinkung auf <em>https://www.verbformen.de/</em> zu nennen. Mehr Informationen stehen in den <a href="//www.netzverb.de/impressum.htm">Nutzungsbedingungen</a>.</p>
+</div>
+</div></footer>
+<aside class="rHw rHwUnt" id="20170317_cookie">
+<div>
+<div class="rRechts" onclick="Hinweis.weg('20170317_cookie')">
+<svg fill="#505050" fill-opacity="0.6" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+<path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
+</svg>
+</div>
+Es werden <a target="_blank"  href="//www.netzverb.de/datenschutz.htm">Cookies</a> verwendet. Nur weiter, wenn einverstanden!
+</div>
+</aside>
+<audio id="sTon" preload="auto" autoplay ></audio>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-1466848-8', 'auto');
+ga('send', 'pageview');
+ga('set', 'anonymizeIp', true);
+</script>
+<script type="application/ld+json">
+{
+"@id": "http://www.netzverb.de/",
+"@context": "http://schema.org",
+"@type": "Organization",
+"url": "http://www.netzverb.de/",
+"name": "Netzverb Inh. Andreas Göbel",
+"logo": {
+"@type": "ImageObject",
+"url": "http://www.netzverb.de/netzverb.png"
+}, 
+"sameAs": [
+"https://www.facebook.com/Netzverb",
+"https://twitter.com/Netzverb",
+"https://plus.google.com/+NetzverbDe"
+]
+}
+</script>
+<script type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "WebSite",
+"url": "https://www.verbformen.de/",
+"potentialAction": {
+"@type": "SearchAction",
+"target": "https://www.verbformen.de/suche/?w={search_term_string}",
+"query-input": "required name=search_term_string"
+},
+"author": { "@id": "http://www.netzverb.de/" },
+"publisher": { "@id": "http://www.netzverb.de/" }
+}
+</script>
+<script type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "Article",
+"mainEntityOfPage": {
+"@type": "WebPage",
+"@id": "https://www.verbformen.de/konjugation/landen.htm"
+},
+"headline": "Konjugation des deutschen Verbs landen",
+"image": {
+"@type": "ImageObject",
+"url": "https://www.verbformen.de/konjugation/steckbrief/landen_ist.png",
+"height": 600,
+"width": 900
+},
+"datePublished": "2017-01-01T08:00:00+02:00",
+"dateModified": "2017-12-01T08:07:00+02:00",
+"author": {
+"@id": "http://www.netzverb.de/"
+},
+"publisher": {
+"@id": "http://www.netzverb.de/"
+}
+}
+</script>
+<script type="application/ld+json">
+[			
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"landen (ist)",
+"url":"https://www.verbformen.de/konjugation/landen_ist.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"landen (hat)",
+"url":"https://www.verbformen.de/konjugation/landen_hat.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"mag landen",
+"url":"https://www.verbformen.de/konjugation/mag_landen.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"kann landen",
+"url":"https://www.verbformen.de/konjugation/kann_landen.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"soll landen",
+"url":"https://www.verbformen.de/konjugation/soll_landen.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"muss landen",
+"url":"https://www.verbformen.de/konjugation/muss_landen.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"darf landen",
+"url":"https://www.verbformen.de/konjugation/darf_landen.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"will landen",
+"url":"https://www.verbformen.de/konjugation/will_landen.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"nicht landen",
+"url":"https://www.verbformen.de/konjugation/nicht_landen.htm"
+}
+]
+</script>
+51
+</body>
+</html>
