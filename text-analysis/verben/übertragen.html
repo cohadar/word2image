@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<title>
+Konjugation | übertragen | Deutsche Verben konjugieren - Netzverb
+</title>
+<meta name="description" content="Konjugation des Verbs übertragen — überträgt, übertrug, übertragen, sich übertragen usw. — Alle Formen von übertragen als Tabelle — Indikativ, Konjunktiv, Imperativ — Partizip, Infinitiv, Aktiv, Passiv — Präsens, Gegenwart, Präteritum, Vergangenheit, Perfekt, Plusquamperfekt, Futur, Zukunft — Beispiele, Pdf"/>
+<meta name="robots" content="noindex, follow" />
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<meta name=viewport content="width=device-width, initial-scale=1">	
+<meta name="HandheldFriendly" content="true"/>
+<meta name="MobileOptimized" content="width"/>
+<meta name="application-name" content="Netzverb" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000086">
+<meta name="theme-color" content="#000086">
+<script type="text/javascript">
+var Rahmen = {};
+(function() {
+function istauf(id) {
+var e = document.getElementById(id);
+var d = e.currentStyle ? e.currentStyle.display : getComputedStyle(e, null).display;
+return d != "none";
+}
+function aufzu(id, auf) {
+var e = document.getElementById(id);
+if(!e) return;
+e.style.display = auf ? "inline" : "none";
+var b = document.getElementById(id + "Img");
+if(!b) return;
+b.getElementsByClassName("rAuf")[0].style.display = auf ? "inline" : "none";
+b.getElementsByClassName("rZu")[0].style.display = auf ? "none" : "inline";
+}
+this.alleaufzu = function(id, k) {
+var ia = istauf(id);
+var es = document.getElementsByClassName(k);
+for (var i = 0; i < es.length; i++) aufzu(es[i].id, !ia);
+}
+this.aufzu = function(ids) {
+if(ids instanceof Array) { var ia = istauf(ids[0]); for (var id in ids)	aufzu(ids[id], !ia) }
+else aufzu(ids, !istauf(ids));
+}
+this.breite = function() {
+return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+}
+}).apply(Rahmen); 
+var Eingabe = {};
+(function() {
+function element(id) {
+return document.getElementById(id);
+}
+function sprung(ide, idl, start, schritt) {
+var e = element(ide);
+var l = element(idl);
+if(l.selectedIndex == -1) l.selectedIndex = start;
+else l.selectedIndex = l.selectedIndex + schritt;
+if(l.selectedIndex != -1) e.value = l.options[l.selectedIndex].text;
+}
+this.zeige = function(w, v) {
+if(this.w != w) { return; }
+var s=0;
+while(this.l.children.length > 0) this.l.removeChild(this.l.children[0]);
+for (i = 0; i < v.length; i++) {
+if(!v[i])
+continue;
+if(v[i] instanceof Array) {
+if(v[i].length <= 1)
+continue;
+var g = document.createElement('optgroup');	g.label = v[i][0]; s++;
+for (j = 1; j < v[i].length; j++) {	var o = document.createElement('option'); o.text = v[i][j];	g.appendChild(o);  s++; } 
+this.l.appendChild(g);
+} else {
+var o = document.createElement('option'); o.text = v[i]; this.l.appendChild(o); s++;
+}
+}
+if(s <= 1) { this.l.style.display = "none"; return; }
+this.l.style.top = (this.f.clientHeight + this.f.getBoundingClientRect().top) + "px";
+this.l.style.width = (this.f.clientWidth) + "px";
+this.l.style.display = "inline";
+this.l.size = s; 
+}
+this.an = function(ide, idl, fnkl) {
+var e = element(ide);
+this.l=element(idl); this.w = e.value; this.f=e.parentElement;
+if(this.w.length == 0) { this.l.style.display = "none"; return;	}
+var v=fnkl(this.w);
+};
+this.aus = function(ide, idl) {
+setTimeout(function() {
+var e = element(ide);
+var l = element(idl);
+if(document.activeElement == e || document.activeElement == l) return;
+l.style.display = "none";
+},50);
+};
+this.uebernahme = function(ide, idl) {
+var e = element(ide);
+var l = element(idl);
+e.value = l.options[l.selectedIndex].text;
+l.style.display = "none";
+l.form.submit();
+};
+this.taste = function(ide, idl, event) {
+var l = element(idl);
+keyCode = ('which' in event) ? event.which : event.keyCode;
+if(keyCode == 40) { sprung(ide, idl, 0, 1); event.preventDefault(); }
+if(keyCode == 38) { sprung(ide, idl, l.options.length - 1, -1); event.preventDefault(); }
+if(keyCode == 27) { l.style.display = "none"; }
+};
+}).apply(Eingabe);
+var Hinweis = {};
+(function() {
+this.weg = function(n) {
+var e=document.getElementById(n);
+e.style.display="none";
+document.cookie="de.netzverb.rahmen.hinweis_"+n+"=none" +
+";expires="+new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toUTCString() +
+";path=/";
+};
+}).apply(Hinweis);
+var Ajax = {};
+(function() {
+var a, v;
+function param(d) {
+var is = d.getElementsByTagName("input");
+var p = paar(p,a,v);
+a = null; v = null;
+for(var i=0; i<is.length; i++)
+if(!is[i].disabled && is[i].name && is[i].type != "submit")
+if(is[i].type != "radio" && is[i].type != "checkbox" || is[i].checked)
+p += paar(p, is[i].name, is[i].value);
+var tas = d.getElementsByTagName("textarea");
+for(var i=0; i<tas.length; i++)
+if(!tas[i].disabled && tas[i].name)
+p += paar(p, tas[i].name, tas[i].value);
+var ss = d.getElementsByTagName("select");
+for(var i=0; i<ss.length; i++)
+if(!ss[i].disabled && ss[i].name && ss[i].selectedIndex >= 0)
+p += paar(p, ss[i].name, ss[i].options[ss[i].selectedIndex].value);
+return p;
+}	
+function paar(p, n, v) {
+return (p ? "&" : "") + encodeURIComponent(n) + "=" + encodeURIComponent(v);
+}
+this.ersetze = function(e, id) {
+e.preventDefault();
+var f = e.target;
+if(f.tagName != "FORM")
+f = f.form;
+var p = param(f);
+var r = new XMLHttpRequest();
+r.onload = function() {
+var d =  document.getElementById(id);
+if(r.status == 200)
+d.outerHTML = r.responseText;
+else
+d.innerHTML = r.responseURL + " (" + r.status + ": " + r.statusText + ")";
+}
+r.open("POST", f.action, true);
+r.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
+r.send(p);
+return false;
+}
+this.aktion = function(x) {
+a = 'aktion';
+v = x;
+}
+this.klick = function(e) {
+a = e.currentTarget.name;
+v = e.currentTarget.value;
+}
+}).apply(Ajax);
+var Anzeigen = {};
+(function() {
+var b=true;
+this.ungeblockt = function() {
+b = false;
+}
+this.geblockt = function() {
+return b;
+}
+this.texte = function(id,p,n,m) {
+var r = new XMLHttpRequest();
+r.onload = function(e) {
+var d =  document.getElementById(id);
+if(e.target.status == 200) d.outerHTML = e.target.responseText;
+else d.outerHTML = e.target.responseURL + " (" + e.target.status + ": " + e.target.statusText + ")";
+}
+r.open('GET', '/anzeigen/anzeigen.txt?p=' + p + "&n=" + n + "&m=" + m + "&b=" + b, true);
+try { r.send(null); } catch(err) { }
+}
+}).apply(Anzeigen);
+var Verbformen = {};
+(function() {
+this.suchliste = function(w) {
+var r = new XMLHttpRequest();
+r.open("GET", "/suche/eingabe/?w=" + encodeURI(w) + "&a=VERB", true);
+r.timeout = 500;
+r.onload = function (e) { if (r.readyState == 4 && r.status == 200) { Eingabe.zeige(w,JSON.parse(r.responseText)); } };
+r.send(null);
+};
+}).apply(Verbformen);
+</script>
+<script type="text/javascript" src="/anzeigen/showads.js"></script>
+<script type="text/javascript">
+var Stimme = {};
+(function() {
+this.sprich = function(u) {
+s = document.getElementById("sTon");
+if(s.nodeName == "BGSOUND")
+s.src = u;
+else if(s && s.play) {
+s.src = u;
+s.play();
+} else
+document.location = u;
+}
+this.klick = function(e,i) {
+e.preventDefault();
+this.sprich(document.getElementById(i).href);
+return false;
+}
+}).apply(Stimme);
+</script>
+<style type="text/css">.rEin {text-align:left;}.rEin input {width:100%;}.rEin select {display:none;position:fixed;border:none;border-top:solid 1px #666666;padding:0 3px;color:#666666;z-index:7;}.rEin optgroup {background-color:#eeeeee;}.rEin optgroup option {background-color:#ffffff;}nav .rEin select {box-shadow:2px 2px 3px 0px rgba(0,0,0,0.40); }@font-face {font-family:'Open Sans';font-style:normal;font-weight:400;src:local('Open Sans'), local('OpenSans'), url('/rahmen/opensans.woff')format('woff');}body {margin:0;padding:0;font-family:open sans,sans-serif;font-weight:400;color:#111111;font-size:0.9em;}body>* {background-color:#f5f5f5;}body>*>div {max-width:940px;margin:0 auto;clear:both;padding:2px 8px;}body,body>footer {background-color:#444444;}body>footer {color:#e0e0e0;font-size:0.9em;}body>footer a {color:#80bfff;}body>nav {position:fixed;z-index:9;font-size:1.2em;width:100%;max-height:100vh;overflow:auto;box-shadow:0px 2px 3px 0px rgba(0,0,0,0.40); color:#ffffff;}body>nav+div {height:44px;}a {text-decoration:none;color:#0052d9;}h1,h2,h3 {font-weight:400;margin-top:10px;margin-bottom:10px;}h1:first-child,h2:first-child,h3:first-child {margin-top:0;}a h1,a h2,a h3 {color:#111111;}h1 {font-size:1.6em;}h2 {font-size:1.4em;}h3 {font-size:1.3em;}p {line-height:1.25;margin:10px 0;}input,select,textarea {font-family:open sans,sans-serif;font-size:inherit;line-height:inherit;border:none;box-shadow:1px 1px 1px 0px rgba(0,0,0,0.40); outline:none;box-sizing:border-box;}input,textarea {padding:1px 5px;}nav input,nav select,nav textarea {box-shadow:none;}input[type=submit],.rKnpf {padding:5px 10px;margin:0 10px 10px 0;background-color:#000000;color:#ffffff !important;}input[type=submit].rRechts,.rKnpf.rRechts {margin:0 0 10px 10px;}textarea {overflow:hidden;}select {appearance:none;-moz-appearance:none;-webkit-appearance:none;}svg,img {vertical-align:middle;margin:0;}img.rRechts {margin:4px 0 10px 10px;}img.rLinks {margin:4px 10px 10px 0;}button {background-color:transparent;padding:0;border:none;}table {border-spacing:0;border-collapse:collapse;}td,th {padding:0;vertical-align:top;text-align:left;}th a {color:inherit;}hr {border:none;border-top:solid 1px #dddddd;margin:0.75em 0;}b>u {color:#2a2abc;text-decoration:none;}b>i {color:#028b02;font-style:normal;}.rKnpf {box-shadow:1px 1px 1px 0px rgba(0,0,0,0.40); box-sizing:border-box;display:inline-block;}.rNav {height:36px;overflow:hidden;width:100%;padding:2px 0;}.rNav>* {height:36px;}.rMnRnd {margin-bottom:6px;}.rTab {display:table;}.rTab>div {display:table-cell;vertical-align:middle;}.r1Pxl {width:1px;}.rLinks {float:left;}.rRechts {float:right;}.rNobr {white-space:nowrap;}.rClear {clear:both;}.rDunkel {background-color:#000000;}.rHell {color:#f5f5f5;}.rZu {display:none;}.rAnkr {position:relative;top:-67px;}.rAuf {display:inline;}.rCntr {text-align:center;}.rInf,.rInf a {color:#aaaaaa;}.rKln {font-size:0.9em;}.rNoSelect {-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}.rImg {box-shadow:1px 1px 2px 0px rgba(0,0,0,0.25); border:solid 1px #cccccc;}@media (min-width:700px){article .rAbschnitt {margin-left:-340px;width:100%;float:left;}article .rAbschnitt>div {margin-left:340px;}article .rInfo {width:320px;float:right;}.rInfo .rBoxTrns {border-left:solid 1px #dddddd;border-top:none !important;padding:0 0 0 15px;}}.rBox {margin-bottom:20px;}.rBox header  {display:table;width:100%;}.rBox header>div {display:table-cell;text-align:left;}.rBoxWht {background-color:#ffffff;box-shadow:1px 1px 2px 0px rgba(0,0,0,0.25); padding:8px 10px 8px 15px;}.rBoxTrns {border-top:solid 1px #dddddd;}.rBoxText {vertical-align:middle;}.rBoxKnopf {vertical-align:top;width:1px;white-space:nowrap;}.rBoxWht textarea,.rBoxWht input,.rBoxWht select {background-color:#e9e9e9;}.rBox h2 {margin:0;display:inline;}.rHw {width:100%;padding:4px 0;background-color:#aaaaaa;color:#222222;box-shadow:1px 1px 2px 0px rgba(0,0,0,0.25); }.rHwObn {position:relative;top:0px;}.rHwUnt {position:fixed;bottom:0px;opacity:0.91;z-index:8;}.rHwBox>div {position:static;padding-right:10px;padding-left:13px;}.rHwFhlr {background-color:#efbbbb;color:#662222;}.rHwTpp {background-color:#ffe7ba;color:#665544;}.rHwOk {background-color:#bbefbb;color:#226622;}.rMenu,.rMenuOpt {margin-bottom:3px;text-align:right;}.rMenu {margin-top:10px;}.rMenu > div {border-top:solid 1px #9b9b9b;padding-top:8px;}.rMenuOpt {margin-top:0px;}.rMenuKat {color:#ffffff;}.rMnLnk {margin-right:10px;}@media (min-width:700px){.rMenu > div {display:inline-block;min-width:300px;}}nav.rKruemel {font-size:0.9em;color:#aaaaaa;clear:both;}nav.rKruemel a {color:inherit;}nav.rKruemel + h1 {margin-top:0px;}div.rKruemel {display:inline-block;}.kFrm select {box-shadow:none;background-color:transparent;}.kFrm textarea {width:100%;}.kBwrt {font-size:1.6em;}.kAn {color:#000000;}.kAus {color:#aaaaaa;}.aDesktop {display:none;}.aMobil {display:inline-block;}@media (min-width:700px){ .aDesktop {display:inline-block;} .aMobil {display:none;} }.aTxtLinks {float:left;display:inline-block;margin:0 15px 15px 0;}.aTxtRechts {float:right;display:inline-block;margin:0 0 15px 15px;}.rDunkel {background-color:#000084;}.rHell {color:#9999ce;}body>nav,body>nav a {color:#9999ce;}.rMenu > div {border-color:#5050a4;}h4 {display:inline;}nav .rEin {width:220px;font-size:1.1em;max-width:40vw;max-width:calc(100vw - 216px); }input[type=submit],.rKnpf {background-color:#000084;}.vLeg {font-size:0.9em;margin-top:8px;}.vDbg {background-color:#ffffcc;}div.vDbg {margin-right:10px;}.vFuss {width:280px;margin:0 15px 15px 0;}.vBlogImg {width:120px;}.vAuswahl {display:inline-block;margin-bottom:10px;}.vAuswahl .rKnpf {margin:5px auto;}.vEinText .rEin {font-size:1.4em;max-width:160px;margin:0 10px 10px 0;}.vUnd,.vUnd b>u,.vUnd b>i {color:#aaaaaa;}			.kAn {color:#000084;}.vkDiv {margin:0 0 8px 0;text-align:right;}.vkDiv p {color:#000000;}.vkStrn,.vkTxt {margin:0;}.vkStrn {font-size:1.8em;line-height:0.6em;}.vkTxt {margin-top:0.3em;}.vkAnt {margin-left:5%;}.vArbBltt {display:inline-block;margin:0 10px 10px 0;}				.vArbBltt img {max-width:300px;height:80px;}				.vVar {color:#ffffff;text-align:center;box-shadow:1px 1px 2px 0px rgba(0,0,0,0.25); background-color:#000086;padding:5px 10px;display:inline-block;margin:0 10px 10px 0;}.vVarAkt {background-color:#000086;font-weight:bold;}.vVarErr {background-color:#860000;font-weight:bold;}h2.vGrnd {font-size:2.1em;}p.vStm {font-size:1.55em;margin:8px 0px;}</style>
+<style type="text/css">h2.vVrb {font-size:2.1em;}p.vStm {font-size:1.55em;margin:8px 0px;}.vVor,.vZurueck {height:30px;width:12px;margin-top:7px;}.vVor {padding-right:7px;padding-left:5px;}.vZurueck {padding-right:5px;}div.vBsp {margin:1px 0 10px 0;box-sizing:border-box;width:100%;float:left;}.vBsp ul {margin:0;padding:0;}.vBsp li {list-style-type:none;margin-left:11px;text-indent:-11px;}.vBsp table {width:100%;}td.vBspV {padding-right:10px;white-space:nowrap;width:30%;}td.vBspB {width:70%;}td.vKpfZ {padding-right:5px;}div.vTbl {float:left;min-width:30%;margin:1px 0 10px 0;padding-right:15px;box-sizing:border-box;}.vTbl td {padding-right:5px;white-space:nowrap;}.vTbl h3,.vBsp h3 {display:inline;}@media (max-width:900px){ div.vTbl {min-width:45%;} }@media (max-width:700px){ div.vTbl {min-width:30%;} }@media (max-width:500px){ div.vTbl {min-width:45%;} }</style>
+</head>
+<body>
+<nav class="rDunkel"><div>
+<div class="rNav">
+<div class="rRechts" id="rMenuImg" onclick="Rahmen.aufzu(['rMenu','rMenuNav'])"><svg fill="#ffffff" fill-opacity="0.6" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" style="display: none;" d="m11.41 15.41 4.59-4.58 4.59 4.58 1.41-1.41-6-6l-6 6 1.41 1.41z"></path>
+<path class="rZu" style="display: inline;" d="m8 4.667h16v2h-16m0 4h16v2h-16m-2e-7 4h16v2h-16z"></path>
+</svg></div>
+<div class="rLinks"><a href="/"><svg fill="#ffffff" fill-opacity="0.6" height="36" viewBox="0 0 24 24" width="42" xmlns="http://www.w3.org/2000/svg">
+<path d="m 8.5366045,10.887553 -4.275913,-8.997564 -5.833396,0 10.109309,20.21502 9.8204705,-20.21502 -5.456371,0.085295 z"></path>
+</svg></a></div>
+<form class="rLinks rTab" action="/konjugation/" method="get">
+<div>
+<div class="rEin ">
+<input autofocus="autofocus" onfocus="this.setSelectionRange(0, this.value.length)" id="3266a" name="w" value="übertragen" placeholder="" title="" autocomplete="off" onkeydown="Eingabe.taste('3266a','3266aListe', event)" oninput="Eingabe.an('3266a','3266aListe',Verbformen.suchliste)" onblur="Eingabe.aus('3266a','3266aListe')"><br>
+<select id="3266aListe" onchange="Eingabe.uebernahme('3266a','3266aListe')" onblur="Eingabe.aus('3266a','3266aListe')"></select>
+</div></div>
+<div class="r1Pxl"><button type="submit"><svg fill="#ffffff" fill-opacity="0.6" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" ></path>
+</svg></button></div>
+<div class="r1Pxl"><button type="submit" formaction="/suche/"><svg fill="#ffffff" fill-opacity="0.6" height="33" viewBox="0 0 24 24" width="33" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"></path>
+</svg></button></div>
+</form>
+<div class="rRechts" onclick="Rahmen.aufzu(['rMenu'])"><svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" fill-opacity=".6" height="36" width="36" version="1.1" viewBox="0 0 24 24">
+<path d="m16.7 14.6c-0.582 0.0087-1.11 0.227-1.52 0.564l-5.34-2.84c0.045-0.162 0.0823-0.324 0.0892-0.493 0.00693-0.169-0.017-0.33-0.0487-0.491l5.52-2.97c0.399 0.345 0.934 0.555 1.54 0.546a2.09 2.32 74 0 0 2.38 -2.14 2.09 2.32 74 0 0 -2.22 -2.08 2.09 2.32 74 0 0 -2.38 2.14c-0.0069 0.169 0.017 0.33 0.0487 0.491l-5.52 2.97c-0.399-0.343-0.934-0.553-1.54-0.544a2.09 2.32 74 0 0 -2.38 2.14 2.09 2.32 74 0 0 2.21 2.08c0.605-0.009 1.16-0.235 1.59-0.593l5.33 2.84c-0.0444 0.148-0.0738 0.303-0.0804 0.465-0.0466 1.13 0.919 2.03 2.15 2.01 1.23-0.0185 2.27-0.948 2.32-2.08a2.04 2.25 74 0 0 -2.15 -2.02z"></path>
+</svg>
+</div>
+<div class="rRechts rTab rNoSelect rMnLnk" onClick="Rahmen.aufzu(['vLng', 'rMenu'])">
+<div>
+Deutsch
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+<div class="rRechts rTab rNoSelect rMnLnk" onClick="Rahmen.aufzu(['vGns', 'rMenu'])">
+<div>
+Aktiv
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+<div class="rRechts rTab rNoSelect rMnLnk" onClick="Rahmen.aufzu(['vStz', 'rMenu'])">
+<div>
+Hauptsatz
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+</div>
+<div class="rClear"></div>
+<div class="rZu" id="rMenu">
+<div class="rMenu rNoSelect" onClick="Rahmen.aufzu('rMenuNav')">
+<div>
+<span class="rMenuKat">Navigation:</span> Konjugation
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+<div class="rZu" id="rMenuNav">
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/">
+Flexion
+</a>
+</div>		
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/konjugation/">
+Konjugation
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/konjugation/beispiele/">
+Beispiele
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/konjugation/arbeitsblaetter-uebungen/">
+Arbeitsblätter
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/konjugation/u:bertragen.htm">
+&raquo;
+Konjugation › übertragen
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/konjugation/beispiele/u:bertragen.htm">
+Beispiele › übertragen
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/konjugation/arbeitsblaetter-uebungen/u:bertragen.htm">
+Arbeitsblätter › übertragen
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/suche/">
+Suche
+</a>
+</div>
+</div>
+<div class="rMenu rNoSelect" onClick="Rahmen.aufzu('vLng')">
+<div>
+<span class="rMenuKat">Sprache:</span> Deutsch
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+<div class="rZu" id="vLng">
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/konjugation/u:bertragen.htm">
+&raquo;
+Deutsch
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.com/conjugation/u:bertragen.htm">
+English
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.ru/sprjazhenie/u:bertragen.htm">
+Русский
+</a>
+</div>
+</div>
+<div class="rMenu rNoSelect" onClick="Rahmen.aufzu('vGns')">
+<div>
+<span class="rMenuKat">Aktionsform:</span> Aktiv
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+<div class="rZu" id="vGns">
+<div class="rMenuOpt rNoSelect">
+<a href="/konjugation/aktiv/u:bertragen.htm">
+&raquo;
+Aktiv
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="/konjugation/vpassiv/u:bertragen.htm">
+Vorgangspassiv
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="/konjugation/zpassiv/u:bertragen.htm">
+Zustandspassiv
+</a>
+</div>	
+</div>
+<div class="rMenu rNoSelect" onClick="Rahmen.aufzu('vStz')">
+<div>
+<span class="rMenuKat">Satzart:</span> Hauptsatz
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+<div class="rZu" id="vStz">
+<div class="rMenuOpt rNoSelect">
+<a href="/konjugation/aussagesatz/u:bertragen.htm">
+&raquo;
+Hauptsatz
+</a>
+</div>	
+<div class="rMenuOpt rNoSelect">
+<a href="/konjugation/fragesatz/u:bertragen.htm">
+Fragesatz
+</a>
+</div>	
+<div class="rMenuOpt rNoSelect">
+<a href="/konjugation/nebensatz/u:bertragen.htm">
+Nebensatz
+</a>
+</div>	
+</div>
+<div>
+<br>
+<div class="rMenu">
+<div>
+<span class="rMenuKat">Teilen: </span>
+<a rel="nofollow" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.verbformen.de%2Fkonjugation%2F%3Fw%3D%25C3%25BCbertragen" title="Teilen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path>
+</svg></a>
+<a rel="nofollow" href="https://twitter.com/home?status=https%3A%2F%2Fwww.verbformen.de%2Fkonjugation%2F%3Fw%3D%25C3%25BCbertragen" title="Teilen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path>
+</svg></a>
+<a rel="nofollow" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.verbformen.de%2Fkonjugation%2F%3Fw%3D%25C3%25BCbertragen" title="Teilen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M23,11H21V9H19V11H17V13H19V15H21V13H23M8,11V13.4H12C11.8,14.4 10.8,16.4 8,16.4C5.6,16.4 3.7,14.4 3.7,12C3.7,9.6 5.6,7.6 8,7.6C9.4,7.6 10.3,8.2 10.8,8.7L12.7,6.9C11.5,5.7 9.9,5 8,5C4.1,5 1,8.1 1,12C1,15.9 4.1,19 8,19C12,19 14.7,16.2 14.7,12.2C14.7,11.7 14.7,11.4 14.6,11H8Z"></path>
+</svg></a>
+&nbsp;&nbsp;&nbsp;
+<span class="rMenuKat">Folgen: </span>
+<a rel="nofollow" href="https://www.facebook.com/Netzverb" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path>
+</svg></a>
+<a rel="nofollow" href="https://twitter.com/Netzverb" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path>
+</svg></a>
+<a rel="nofollow" href="https://plus.google.com/+NetzverbDe" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M23,11H21V9H19V11H17V13H19V15H21V13H23M8,11V13.4H12C11.8,14.4 10.8,16.4 8,16.4C5.6,16.4 3.7,14.4 3.7,12C3.7,9.6 5.6,7.6 8,7.6C9.4,7.6 10.3,8.2 10.8,8.7L12.7,6.9C11.5,5.7 9.9,5 8,5C4.1,5 1,8.1 1,12C1,15.9 4.1,19 8,19C12,19 14.7,16.2 14.7,12.2C14.7,11.7 14.7,11.4 14.6,11H8Z"></path>
+</svg></a>
+</div>
+</div>
+</div>
+<div class="rMnRnd rClear"></div>
+</div>
+</div></nav>
+<div></div>
+<aside class="rHw rHwTpp rHwObn" id="20171121_sprachassistent">
+<div>
+<div class="rRechts" onclick="Hinweis.weg('20171121_sprachassistent')">
+<svg fill="#505050" fill-opacity="0.6" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+<path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
+</svg>
+</div>
+🗪 <i><b>„Ok Google, konjugiere laufen“</b></i>   über <a href="https://assistant.google.com/services/a/id/0d6a90c5e47fa7eb">Google</a> und <a href="https://www.messenger.com/t/DeutschVerben">Facebook</a>  (<a href="/hilfe/sprachassistenten.htm">Hilfe</a>)
+</div>
+</aside>
+<article class=""><div>
+<nav class="rKruemel" itemscope itemtype="http://schema.org/BreadcrumbList">
+<div class="rKruemel" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+<a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://www.verbformen.de/" id="https://www.verbformen.de/">
+<span itemprop="name">Flexion</span>
+</a>
+<meta itemprop="position" content="1"/>
+</div>
+› 	
+<div class="rKruemel" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+<a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://www.verbformen.de/konjugation/" id="https://www.verbformen.de/konjugation/">
+<span itemprop="name">Konjugation</span>
+</a>
+<meta itemprop="position" content="2"/>
+</div>
+› 	
+<div class="rKruemel" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+<a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://www.verbformen.de/konjugation/u:bertragen.htm" id="https://www.verbformen.de/konjugation/u:bertragen.htm">
+<span itemprop="name">übertragen</span>
+</a>
+<meta itemprop="position" content="3"/>
+</div>
+</nav>
+<header>
+<h1>Konjugation des deutschen Verbs übertragen</h1>
+<a href="https://www.verbformen.de/konjugation/u:bertragen.htm">
+<img class="rImg rRechts" height="80" src="https://www.verbformen.de/konjugation/steckbrief/u:bertragen.png" title="Konjugation des deutschen Verbs übertragen">
+</a>
+<p>
+Die <a  href="https://www.verbformen.de/konjugation/u:bertragen.htm" title="übertragen Konjugation">Konjugation des Verbs übertragen</a> erfolgt unregelmäßig.
+Die Stammformen sind <i>überträgt</i>, <i>übertrug</i> und <i>hat übertragen</i>.
+Der Ablaut erfolgt mit den Stammvokalen a
+- u
+- a.
+Als Hilfsverb von übertragen wird "haben" verwendet.
+Das Verb übertragen kann <a  href="/konjugation/sich_u:bertragen.htm">reflexiv</a> genutzt werden.
+Die Vorsilbe über- von übertragen ist untrennbar.
+<span id="0fbc3">
+Die Beugung erfolgt im Aktiv und die Darstellung als Hauptsatz.
+Man kann nicht nur übertragen konjugieren, sondern alle <a  href="/konjugation/">deutschen Verben</a>.
+Zum besseren Verständnis stehen unzählige <a href="/konjugation/beispiele/u:bertragen.htm" title="übertragen Beispiele">Beispiele für das Verb übertragen</a> zur Verfügung.
+Zum Üben und Festigen gibt es außerdem <a href="/konjugation/arbeitsblaetter-uebungen/u:bertragen.htm" title="übertragen Arbeitsblätter und Übungen">kostenlose Arbeitsblätter für übertragen</a>.
+</span>
+<span id="0fbc3Img" onclick="Rahmen.aufzu('0fbc3')"><svg fill="#333333" width="18px" height="18px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
+</svg></span>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('0fbc3');
+</script>
+</p>
+</header>
+<div id="varianten"></div>
+<nav class="rClear">
+<a href="#kommentare">
+<div class="rRechts vkDiv rNoSelect">
+<p class="vkStrn">
+<span class="kAus">★★★★★</span>
+</p>
+<p class="rKln vkTxt">Deine Meinung? </p>
+</div>
+</a>
+<a href="/konjugation/u:bertragen.htm" title="übertragen">
+<div class="vVar vVarAkt">
+übertragen
+</div>
+</a>
+<a href="/konjugation/sich_u:bertragen.htm" title="sich übertragen">
+<div class="vVar ">
+sich
+</div>
+</a>
+<div id="vVarMenuImg" class="vVar rNoSelect" onclick="Rahmen.aufzu('vVarMenu')">
+<svg fill="#ffffff" height="10" viewBox="0 0 14 14" width="12" xmlns="http://www.w3.org/2000/svg">
+<path style="display: none;" class="rAuf" d="m11.5 1.41-1.43-1.41-7.07 7 7.07 7 1.43-1.41-5.65-5.59z"></path>
+<path style="display: inline;" class="rZu" d="m3 1.41 1.425-1.41 7.075 7l-7.075 7-1.425-1.41 5.65-5.59z"></path>
+</svg>
+</div>
+<div id="vVarMenu" class="rZu">
+<a href="/konjugation/mag_u:bertragen.htm" title="mag übertragen">
+<div class="vVar">mag</div>
+</a>
+<a href="/konjugation/kann_u:bertragen.htm" title="kann übertragen">
+<div class="vVar">kann</div>
+</a>
+<a href="/konjugation/soll_u:bertragen.htm" title="soll übertragen">
+<div class="vVar">soll</div>
+</a>
+<a href="/konjugation/muss_u:bertragen.htm" title="muss übertragen">
+<div class="vVar">muss</div>
+</a>
+<a href="/konjugation/darf_u:bertragen.htm" title="darf übertragen">
+<div class="vVar">darf</div>
+</a>
+<a href="/konjugation/will_u:bertragen.htm" title="will übertragen">
+<div class="vVar">will</div>
+</a>
+<a href="/konjugation/mo:chte_u:bertragen.htm" title="möchte übertragen">
+<div class="vVar">möchte</div>
+</a>
+<a href="/konjugation/nicht_u:bertragen.htm" title="nicht übertragen">
+<div class="vVar">nicht</div>
+</a>	
+</div>
+</nav>
+<div class="rClear"></div>
+<div class="rAbschnitt "><div>
+<nav class="rBox rBoxWht" id="cede8Box">
+<header>
+<div class="rInf">
+unregelmäßig
+· haben
+· untrennbar
+</div><div class="rBoxKnopf">
+<button type="button" id="cede8Img" onclick="Rahmen.alleaufzu('cede8','rAufZu')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M7.41,18.41L6,17L12,11L18,17L16.59,18.41L12,13.83L7.41,18.41M7.41,12.41L6,11L12,5L18,11L16.59,12.41L12,7.83L7.41,12.41Z"></path>
+<path class="rZu" d="M16.59,5.59L18,7L12,13L6,7L7.41,5.59L12,10.17L16.59,5.59M16.59,11.59L18,13L12,19L6,13L7.41,11.59L12,16.17L16.59,11.59Z"></path>
+</svg>
+</button></div>
+</header>
+<div class="rClear"></div>
+<div class="rCntr">
+<a href="/konjugation/u:bertouren.htm">
+<div class="rKnpf rLinks" style="margin-top: 6px;"><svg fill="#ffffff" height="10" viewBox="0 0 14 14" width="12" xmlns="http://www.w3.org/2000/svg">
+<path d="m11.5 1.41-1.43-1.41-7.07 7 7.07 7 1.43-1.41-5.65-5.59z"></path>
+</svg></div>
+</a>
+<a href="/konjugation/u:bertrainieren.htm">
+<div class="rKnpf rRechts" style="margin-top: 6px;"><svg fill="#ffffff" height="10" viewBox="0 0 14 14" width="12" xmlns="http://www.w3.org/2000/svg">
+<path d="m3 1.41 1.425-1.41 7.075 7l-7.075 7-1.425-1.41 5.65-5.59z"></path>
+</svg></div>
+</a>
+<h2 class="vGrnd"><b>übertrag<i>en</i></b> <a class="" href="/konjugation/infinitiv/u:bertragen.wav" id="c0ade" onclick="Stimme.klick(event,'c0ade')" rel="nofollow"><svg fill="#dddddd" height="32" viewBox="0 0 14 20" width="22" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 5.286v6h4l5 5v-16l-5 4.996m9.5 3c0-1.77-1-3.29-2.5-4.03v8.03c1.5-0.71 2.5-2.24 2.5-4z"></path>
+</svg></a> </h2>
+<p class="vStm">
+<b>übertr<u>ä</u>g<i>t</i></b> ·
+<b>übertr<u>u</u>g</b> ·
+<i>hat</i> <b>übertrag<i>en</i></b> <a class="" href="/konjugation/stammformen/u:bertragen.wav" id="f4af3" onclick="Stimme.klick(event,'f4af3')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+</p>
+</div><div id="cede8" class="rAufZu">
+<div class="rCntr">
+<p class="rInf">
+&nbsp;Wechsel des Stammvokals
+a
+- u
+- a&nbsp;	 				
+&nbsp;Umlautung im Präsens&nbsp;
+</p>
+<div class="vBsp rClear">
+<hr>
+<ul>
+<li>
+» Diese Gelder <i>w</i><i>e</i><i>rd</i><i>en</i> auf das nächste Jahr <b>über</b><b>tr</b><b>a</b><b>g</b><b><i>en</i></b>.<span class="rBoxInfo">¹</span>
+<a class="" href="/konjugation/beispiele/u:bertragen.wav?q=tatoeba&r=2943311" id="76475" onclick="Stimme.klick(event,'76475')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://tatoeba.org/sentences/show/2943311" title="tatoeba.org"><span class="rBoxInfo">...</span></a>
+<a class="rInf" href="/konjugation/beispiele/u:bertragen.htm">mehr&nbsp;</a>
+</li>				
+</ul>
+</div>
+</div>		
+</div>
+<div class="rClear"></div>
+</nav>
+<p style="margin-bottom: 18px;">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+style="display:block; text-align:center;"
+data-ad-layout="in-article"
+data-ad-format="fluid"
+data-ad-client="ca-pub-1536920203038272"
+data-ad-slot="9702240298"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<div id="6f5c2"></div>
+<script type="text/javascript">
+Anzeigen.texte('6f5c2','/konjugation','steckbrief',false);
+</script>
+<section class="rBox rBoxWht" id="090bbBox">
+<div class="rAnkr" id="ueberblick"></div>
+<header>
+<div class="rBoxText">
+<h2>Überblick</h2>
+<br><span class="rInf">Die einfach konjugierten Verbformen Präsens, Präteritum, Imperativ und Konjunktiv von übertragen</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="090bbImg" onclick="Rahmen.aufzu('090bb')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="090bb" class="rAufZu">
+<hr>
+<div class="vTbl">
+<h3>Präsens</h3>
+<a class="" href="/konjugation/indikativ/praesens/u:bertragen.wav" id="42578" onclick="Stimme.klick(event,'42578')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>übertrag</b>(<b><i>e</i></b>)⁵</td></tr><tr><td> du</td><td> <b>übertr<u>ä</u>g<i>st</i></b></td></tr><tr><td> er</td><td> <b>übertr<u>ä</u>g<i>t</i></b></td></tr><tr><td> wir</td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> ihr</td><td> <b>übertrag<i>t</i></b></td></tr><tr><td> sie</td><td> <b>übertrag<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Präteritum</h3>
+<a class="" href="/konjugation/indikativ/praeteritum/u:bertragen.wav" id="59b8b" onclick="Stimme.klick(event,'59b8b')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>übertr<u>u</u>g</b></td></tr><tr><td> du</td><td> <b>übertr<u>u</u>g<i>st</i></b></td></tr><tr><td> er</td><td> <b>übertr<u>u</u>g</b></td></tr><tr><td> wir</td><td> <b>übertr<u>u</u>g<i>en</i></b></td></tr><tr><td> ihr</td><td> <b>übertr<u>u</u>g<i>t</i></b></td></tr><tr><td> sie</td><td> <b>übertr<u>u</u>g<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Imperativ</h3>
+<a class="" href="/konjugation/imperativ/u:bertragen.wav" id="148d4" onclick="Stimme.klick(event,'148d4')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td>-</td></tr><tr><td><b>übertrag</b>(<b><i>e</i></b>)⁵</td><td> (du)</td></tr><tr><td>-</td></tr><tr><td><b>übertrag<i>en</i></b></td><td> wir</td></tr><tr><td><b>übertrag<i>t</i></b></td><td> ihr</td></tr><tr><td><b>übertrag<i>en</i></b></td><td> Sie</td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Konjunktiv I</h3>
+<a class="" href="/konjugation/konjunktiv/praesens/u:bertragen.wav" id="f26d0" onclick="Stimme.klick(event,'f26d0')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>übertrag<i>e</i></b></td></tr><tr><td> du</td><td> <b>übertrag<i>est</i></b></td></tr><tr><td> er</td><td> <b>übertrag<i>e</i></b></td></tr><tr><td> wir</td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> ihr</td><td> <b>übertrag<i>et</i></b></td></tr><tr><td> sie</td><td> <b>übertrag<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Konjunktiv II</h3>
+<a class="" href="/konjugation/konjunktiv/praeteritum/u:bertragen.wav" id="98f4b" onclick="Stimme.klick(event,'98f4b')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>übertr<u>ü</u>g<i>e</i></b></td></tr><tr><td> du</td><td> <b>übertr<u>ü</u>g<i>est</i></b></td></tr><tr><td> er</td><td> <b>übertr<u>ü</u>g<i>e</i></b></td></tr><tr><td> wir</td><td> <b>übertr<u>ü</u>g<i>en</i></b></td></tr><tr><td> ihr</td><td> <b>übertr<u>ü</u>g<i>et</i></b></td></tr><tr><td> sie</td><td> <b>übertr<u>ü</u>g<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Infinitiv</h3>
+<a class="" href="/konjugation/infinitive/u:bertragen.wav" id="3a32a" onclick="Stimme.klick(event,'3a32a')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table>
+<tr><td><b>übertrag<i>en</i></b></td></tr>
+<tr><td><b><i>zu</i></b> <b>übertrag<i>en</i></b></td></tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Partizip</h3>
+<a class="" href="/konjugation/partizipien/u:bertragen.wav" id="f8486" onclick="Stimme.klick(event,'f8486')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table>					
+<tr><td><b>übertrag<i>end</i></b></td></tr>
+<tr><td><b>übertrag<i>en</i></b></td></tr>
+</table>
+</div>
+<div class="rClear"></div>
+<hr>
+Detaillierte Regeln zur Konjugation:
+&cir;&nbsp;<a href="/konjugation/indikativ/praesens/u:bertragen.htm">Bildung Präsens von übertragen</a>
+&cir;&nbsp;<a href="/konjugation/indikativ/praeteritum/u:bertragen.htm">Bildung Präteritum von übertragen</a>
+&cir;&nbsp;<a href="http://verben.de/deutsch/verb/bildung_der_deutschen_verbformen" target="_blank">Wie konjugiert man Verben im Deutschen</a>?
+<div class="rClear"></div>
+<hr>
+<a target="_blank" href="/konjugation/u:bertragen.pdf" onclick="ga('send', 'pageview', '/konjugation/u:bertragen.pdf')">
+<div class="rKnpf">Verbtabelle PDF</div>
+</a>	
+<a target="_blank" href="/konjugation/steckbrief/u:bertragen.png"  onclick="ga('send', 'pageview', '/konjugation/steckbrief/u:bertragen.png')">
+<div class="rKnpf">PNG</div>
+</a>		
+<a target="_blank" href="/konjugation/u:bertragen.docx"  onclick="ga('send', 'pageview', '/konjugation/u:bertragen.docx')">
+<div class="rKnpf">DOCX</div>
+</a>
+<a href="/konjugation/beispiele/u:bertragen.htm"  title="Beispiele zur Konjugation des Verbs übertragen">
+<div class="rKnpf">Beispiele</div>
+</a>		
+<a href="/konjugation/arbeitsblaetter-uebungen/u:bertragen.htm" title="Arbeitsblätter zur Konjugation des  Verbs übertragen">
+<div class="rKnpf">Arbeitsblätter</div>
+</a>
+</div>
+<div class="rClear"></div>
+</section>
+<p style="margin-bottom: 18px;">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+style="display:block; text-align:center;"
+data-ad-layout="in-article"
+data-ad-format="fluid"
+data-ad-client="ca-pub-1536920203038272"
+data-ad-slot="9678304502"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<div id="d14c2"></div>
+<script type="text/javascript">
+Anzeigen.texte('d14c2','/konjugation','ueberblick',false);
+</script>
+<section class="rBox rBoxWht" id="82408Box">
+<div class="rAnkr" id="indikativ"></div>
+<header>
+<div class="rBoxText">
+<h2>Indikativ</h2>
+<br><span class="rInf">Das Verb übertragen konjugiert im Indikativ Aktiv in den Zeitformen Gegenwart, Vergangenheit und Zukunft
+</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="82408Img" onclick="Rahmen.aufzu('82408')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="82408" class="rAufZu">
+<hr>
+<div class="vTbl">
+<h3>Präsens</h3>
+<a class="" href="/konjugation/indikativ/praesens/u:bertragen.wav" id="f19f3" onclick="Stimme.klick(event,'f19f3')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>übertrag</b>(<b><i>e</i></b>)⁵</td></tr><tr><td> du</td><td> <b>übertr<u>ä</u>g<i>st</i></b></td></tr><tr><td> er</td><td> <b>übertr<u>ä</u>g<i>t</i></b></td></tr><tr><td> wir</td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> ihr</td><td> <b>übertrag<i>t</i></b></td></tr><tr><td> sie</td><td> <b>übertrag<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Präteritum</h3>
+<a class="" href="/konjugation/indikativ/praeteritum/u:bertragen.wav" id="2dc90" onclick="Stimme.klick(event,'2dc90')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>übertr<u>u</u>g</b></td></tr><tr><td> du</td><td> <b>übertr<u>u</u>g<i>st</i></b></td></tr><tr><td> er</td><td> <b>übertr<u>u</u>g</b></td></tr><tr><td> wir</td><td> <b>übertr<u>u</u>g<i>en</i></b></td></tr><tr><td> ihr</td><td> <b>übertr<u>u</u>g<i>t</i></b></td></tr><tr><td> sie</td><td> <b>übertr<u>u</u>g<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Perfekt</h3>
+<a class="" href="/konjugation/indikativ/perfekt/u:bertragen.wav" id="065f1" onclick="Stimme.klick(event,'065f1')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>habe</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> du</td><td> <i>hast</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> er</td><td> <i>hat</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> wir</td><td> <i>haben</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> ihr</td><td> <i>habt</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> sie</td><td> <i>haben</i></td><td> <b>übertrag<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Plusquam</h3>
+<a class="" href="/konjugation/indikativ/plusquamperfekt/u:bertragen.wav" id="7cc8f" onclick="Stimme.klick(event,'7cc8f')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>hatte</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> du</td><td> <i>hattest</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> er</td><td> <i>hatte</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> wir</td><td> <i>hatten</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> ihr</td><td> <i>hattet</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> sie</td><td> <i>hatten</i></td><td> <b>übertrag<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Futur I</h3>
+<a class="" href="/konjugation/indikativ/futur1/u:bertragen.wav" id="3c2b5" onclick="Stimme.klick(event,'3c2b5')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>werde</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> du</td><td> <i>wirst</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> er</td><td> <i>wird</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> wir</td><td> <i>werden</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> ihr</td><td> <i>werdet</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> sie</td><td> <i>werden</i></td><td> <b>übertrag<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Futur II</h3>
+<a class="" href="/konjugation/indikativ/futur2/u:bertragen.wav" id="4e2a6" onclick="Stimme.klick(event,'4e2a6')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>werde</i></td><td> <b>übertrag<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> du</td><td> <i>wirst</i></td><td> <b>übertrag<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> er</td><td> <i>wird</i></td><td> <b>übertrag<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> wir</td><td> <i>werden</i></td><td> <b>übertrag<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> ihr</td><td> <i>werdet</i></td><td> <b>übertrag<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> sie</td><td> <i>werden</i></td><td> <b>übertrag<i>en</i></b></td><td> <i>haben</i></td></tr></table>
+</div>
+<div class="vBsp rClear">
+<hr>
+<ul>
+<li>
+» Die Acetylsalicylsäure <b>über</b><b>tr</b><b><u>ä</u></b><b>g</b><b><i>t</i></b> bei der Hemmung einen Acetylrest auf einen Aminosäurerest kurz vor dem katalytischen Zentrum.<span class="rBoxInfo">²</span>
+<a class="" href="/konjugation/beispiele/u:bertragen.wav?q=wikipedia&r=4830890" id="80f94" onclick="Stimme.klick(event,'80f94')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://de.wikipedia.org/wiki?curid=4830890" title="wikipedia.org"><span class="rBoxInfo">...</span></a>
+</li>				
+<li>
+» Die Regentschaft über das Herzogtum <b>über</b><b>tr</b><b><u>u</u></b><b>g</b> er für die Zeit seiner Abwesenheit seiner Gemahlin.<span class="rBoxInfo">²</span>
+<a class="" href="/konjugation/beispiele/u:bertragen.wav?q=wikipedia&r=86367" id="6c5d2" onclick="Stimme.klick(event,'6c5d2')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://de.wikipedia.org/wiki?curid=86367" title="wikipedia.org"><span class="rBoxInfo">...</span></a>
+<a class="rRechts rInf" href="/konjugation/beispiele/u:bertragen.htm">mehr&nbsp;</a>
+</li>				
+</ul>
+</div>
+</div>
+<div class="rClear"></div>
+</section>
+<section class="rBox rBoxWht" id="a360cBox">
+<div class="rAnkr" id="konjunktiv"></div>
+<header>
+<div class="rBoxText">
+<h2>Konjunktiv</h2>
+<br><span class="rInf">Die Konjugation im Konjunktiv I und II bzw. in den Zeiten Präsens, Präteritum, Perfekt, Plusquamperfekt und Futur für das Verb übertragen</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="a360cImg" onclick="Rahmen.aufzu('a360c')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="a360c" class="rAufZu">
+<hr>
+<div class="vTbl">
+<h3>Konjunktiv I</h3>
+<a class="" href="/konjugation/konjunktiv/praesens/u:bertragen.wav" id="b61a5" onclick="Stimme.klick(event,'b61a5')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>übertrag<i>e</i></b></td></tr><tr><td> du</td><td> <b>übertrag<i>est</i></b></td></tr><tr><td> er</td><td> <b>übertrag<i>e</i></b></td></tr><tr><td> wir</td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> ihr</td><td> <b>übertrag<i>et</i></b></td></tr><tr><td> sie</td><td> <b>übertrag<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Konjunktiv II</h3>
+<a class="" href="/konjugation/konjunktiv/praeteritum/u:bertragen.wav" id="1b3e6" onclick="Stimme.klick(event,'1b3e6')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <b>übertr<u>ü</u>g<i>e</i></b></td></tr><tr><td> du</td><td> <b>übertr<u>ü</u>g<i>est</i></b></td></tr><tr><td> er</td><td> <b>übertr<u>ü</u>g<i>e</i></b></td></tr><tr><td> wir</td><td> <b>übertr<u>ü</u>g<i>en</i></b></td></tr><tr><td> ihr</td><td> <b>übertr<u>ü</u>g<i>et</i></b></td></tr><tr><td> sie</td><td> <b>übertr<u>ü</u>g<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Perfekt</h3>
+<a class="" href="/konjugation/konjunktiv/perfekt/u:bertragen.wav" id="c1950" onclick="Stimme.klick(event,'c1950')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>habe</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> du</td><td> <i>habest</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> er</td><td> <i>habe</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> wir</td><td> <i>haben</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> ihr</td><td> <i>habet</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> sie</td><td> <i>haben</i></td><td> <b>übertrag<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Plusquam</h3>
+<a class="" href="/konjugation/konjunktiv/plusquamperfekt/u:bertragen.wav" id="46241" onclick="Stimme.klick(event,'46241')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>hätte</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> du</td><td> <i>hättest</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> er</td><td> <i>hätte</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> wir</td><td> <i>hätten</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> ihr</td><td> <i>hättet</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> sie</td><td> <i>hätten</i></td><td> <b>übertrag<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Futur I</h3>
+<a class="" href="/konjugation/konjunktiv/futur1/u:bertragen.wav" id="b651e" onclick="Stimme.klick(event,'b651e')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>werde</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> du</td><td> <i>werdest</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> er</td><td> <i>werde</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> wir</td><td> <i>werden</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> ihr</td><td> <i>werdet</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> sie</td><td> <i>werden</i></td><td> <b>übertrag<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Futur II</h3>
+<a class="" href="/konjugation/konjunktiv/futur2/u:bertragen.wav" id="832c0" onclick="Stimme.klick(event,'832c0')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>werde</i></td><td> <b>übertrag<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> du</td><td> <i>werdest</i></td><td> <b>übertrag<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> er</td><td> <i>werde</i></td><td> <b>übertrag<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> wir</td><td> <i>werden</i></td><td> <b>übertrag<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> ihr</td><td> <i>werdet</i></td><td> <b>übertrag<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> sie</td><td> <i>werden</i></td><td> <b>übertrag<i>en</i></b></td><td> <i>haben</i></td></tr></table>
+</div>
+<div class="vBsp rClear">
+<hr>
+<ul>
+<li>
+» Zum einen <b>über</b><b>tr</b><b><u>ü</u></b><b>g</b><b><i>en</i></b> sie das eurozentrisch geprägte unreflektiert auf andere Kulturen.<span class="rBoxInfo">²</span>
+<a class="" href="/konjugation/beispiele/u:bertragen.wav?q=wikipedia&r=9561216" id="dd13a" onclick="Stimme.klick(event,'dd13a')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://de.wikipedia.org/wiki?curid=9561216" title="wikipedia.org"><span class="rBoxInfo">...</span></a>
+<li>
+» Diese Geschichte <b>über</b><b>tr</b><b>a</b><b>g</b><b><i>e</i></b> Juno auf ihre eigene Geschichte.<span class="rBoxInfo">²</span>
+<a class="" href="/konjugation/beispiele/u:bertragen.wav?q=wikipedia&r=9857757" id="f7242" onclick="Stimme.klick(event,'f7242')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://de.wikipedia.org/wiki?curid=9857757" title="wikipedia.org"><span class="rBoxInfo">...</span></a>
+<a class="rRechts rInf" href="/konjugation/beispiele/u:bertragen.htm">mehr&nbsp;</a>
+</ul>
+</div>
+</div>
+<div class="rClear"></div>
+</section>
+<section class="rBox rBoxWht" id="c0574Box">
+<div class="rAnkr" id="konditional"></div>
+<header>
+<div class="rBoxText">
+<h2>Konjunktiv II (würde)</h2>
+<br><span class="rInf">Ersatzformen des Konjunktiv II konjugiert mit würde als finites Verb</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="c0574Img" onclick="Rahmen.aufzu('c0574')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="c0574" class="rAufZu">
+<hr>
+<div class="vTbl">
+<h3>Prät (würde)</h3>
+<a class="" href="/konjugation/konditional/praeteritum/u:bertragen.wav" id="711ab" onclick="Stimme.klick(event,'711ab')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>würde</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> du</td><td> <i>würdest</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> er</td><td> <i>würde</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> wir</td><td> <i>würden</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> ihr</td><td> <i>würdet</i></td><td> <b>übertrag<i>en</i></b></td></tr><tr><td> sie</td><td> <i>würden</i></td><td> <b>übertrag<i>en</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Plusquam (würde)</h3>
+<a class="" href="/konjugation/konditional/plusquamperfekt/u:bertragen.wav" id="37284" onclick="Stimme.klick(event,'37284')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td> ich</td><td> <i>würde</i></td><td> <b>übertrag<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> du</td><td> <i>würdest</i></td><td> <b>übertrag<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> er</td><td> <i>würde</i></td><td> <b>übertrag<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> wir</td><td> <i>würden</i></td><td> <b>übertrag<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> ihr</td><td> <i>würdet</i></td><td> <b>übertrag<i>en</i></b></td><td> <i>haben</i></td></tr><tr><td> sie</td><td> <i>würden</i></td><td> <b>übertrag<i>en</i></b></td><td> <i>haben</i></td></tr></table>
+</div>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+Rahmen.aufzu('c0574');
+</script>
+</section>
+<section class="rBox rBoxWht" id="609bbBox">
+<div class="rAnkr" id="imperativ"></div>
+<header>
+<div class="rBoxText">
+<h2>Imperativ</h2>
+<br><span class="rInf">Die Konjugationsformen im Imperativ Aktiv Präsens für das Verb übertragen</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="609bbImg" onclick="Rahmen.aufzu('609bb')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="609bb" class="rAufZu">
+<hr>
+<div class="vTbl">
+<h3>Präsens</h3>
+<a class="" href="/konjugation/imperativ/u:bertragen.wav" id="e8987" onclick="Stimme.klick(event,'e8987')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<table><tr><td><b>übertrag</b>(<b><i>e</i></b>)⁵</td><td> (du)</td></tr><tr><td><b>übertrag<i>en</i></b></td><td> wir</td></tr><tr><td><b>übertrag<i>t</i></b></td><td> ihr</td></tr><tr><td><b>übertrag<i>en</i></b></td><td> Sie</td></tr></table>
+</div>
+</div>
+<div class="rClear"></div>
+</section>
+<section class="rBox rBoxWht" id="2ccb7Box">
+<header>
+<div class="rBoxText">
+<h2>Infinitiv/Partizip</h2>
+<br><span class="rInf">Die infiniten Formen Partizip und Infinitiv (mit zu) im Aktiv für übertragen
+</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="2ccb7Img" onclick="Rahmen.aufzu('2ccb7')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="2ccb7" class="rAufZu">
+<hr>
+<div class="vTbl">
+<h3>Infinitiv I</h3>
+<a class="" href="/konjugation/infinitiv1/u:bertragen.wav" id="c11d6" onclick="Stimme.klick(event,'c11d6')" rel="nofollow"><img src="/stimme.svg" alt=""></a><br>
+<table>
+<tr><td><b>übertrag<i>en</i></b></td></tr>
+<tr><td><b><i>zu</i></b> <b>übertrag<i>en</i></b></td></tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Infinitiv II</h3>
+<a class="" href="/konjugation/infinitiv2/u:bertragen.wav" id="0abf5" onclick="Stimme.klick(event,'0abf5')" rel="nofollow"><img src="/stimme.svg" alt=""></a><br>
+<table>
+<tr><td><b>übertrag<i>en</i></b> <i>haben</i></td></tr>
+<tr><td><b>übertrag<i>en</i></b> <i>zu</i> <i>haben</i></td></tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Partizip I</h3>
+<a class="" href="/konjugation/partizip1/u:bertragen.wav" id="93510" onclick="Stimme.klick(event,'93510')" rel="nofollow"><img src="/stimme.svg" alt=""></a><br>
+<table>
+<tr><td><b>übertrag<i>end</i></b></td></tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Partizip II</h3>
+<a class="" href="/konjugation/partizip2/u:bertragen.wav" id="bc614" onclick="Stimme.klick(event,'bc614')" rel="nofollow"><img src="/stimme.svg" alt=""></a><br>
+<table>
+<tr><td><b>übertrag<i>en</i></b></td></tr>
+</table>
+</div>
+</div>
+<div class="rClear"></div>
+</section>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+style="display:block; text-align:center; margin-bottom:20px;"
+data-ad-layout="in-article"
+data-ad-format="fluid"
+data-ad-client="ca-pub-1536920203038272"
+data-ad-slot="4114995409"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<section class="rBox rBoxTrns" id="ef404Box">
+<div class="rAnkr" id="kommentare"></div>
+<header>
+<div class="rBoxText">
+<h2>Kommentare</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="ef404Img" onclick="Rahmen.aufzu('ef404')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="ef404" class="rAufZu">
+<div class="kFrm" id="2a9b7">
+<form method="post" action="/kommentare/anlage.htm" onsubmit="Ajax.ersetze(event,'2a9b7')">
+<select class="kBwrt" name="bewertung">
+<option value="" selected="selected">★✰✰✰✰</option>
+<option value="5">★★★★★</option>
+<option value="4">★★★★</option>
+<option value="3">★★★</option>
+<option value="2">★★</option>
+<option value="1">★</option>
+</select> Kommentar:
+<br>
+<textarea maxlength="1000" rows="5" name="kommentar" required="required"></textarea><br>
+<br>
+Name:
+<input name="autor" required="required" maxlength="20"><br>
+<br>
+<input type="submit" value="Absenden">
+<input name="pfad" type="hidden" value="/konjugation/u:bertragen.htm">
+<input name="url" type="hidden" value="https://www.verbformen.de/konjugation/?w=%C3%BCbertragen">
+</form>
+</div>
+</div>
+<div class="rClear"></div>
+</section>
+</div></div>
+<div class="rInfo">
+<nav class="rBox rBoxTrns" id="2732bBox">
+<header>
+<div class="rBoxText">
+<a href="/konjugation/arbeitsblaetter-uebungen/u:bertragen.htm" ><h2>Arbeitsblätter</h2><svg fill="#0052d9" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="m6.07 13.6 1.43 1.39 8.36-8.61-0.0584 4.76 2.01-0.0291 0.0088-8.19-8.18 0.0336 0.0291 2.01 4.76 0.0159z"></path>
+</svg></a>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="2732bImg" onclick="Rahmen.aufzu('2732b')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="2732b" class="rAufZu">
+<div class="rCntr">
+<div class="vArbBltt">
+<a target="_blank" href="/konjugation/u:bertragen.pdf"  onclick="ga('send', 'pageview', '/konjugation/u:bertragen.pdf')">
+<span class="rKln rInf">Verbtabelle PDF</span><br>
+<img class="rImg" alt="Konjugation des deutschen Verbs übertragen" src="/konjugation/steckbrief/u:bertragen.png">
+</a>
+</div>
+</div>
+&cir;&nbsp;<a target="_blank" href="/konjugation/u:bertragen.pdf"  onclick="ga('send', 'pageview', '/konjugation/u:bertragen.pdf')">
+Verbtabelle PDF</a><br>
+&cir;&nbsp;<a target="_blank" href="/konjugation/arbeitsblaetter-uebungen/suchsel/u:bertragen.pdf" onclick="ga('send', 'pageview', '/konjugation/arbeitsblaetter-uebungen/suchsel/u:bertragen.pdf')">
+Wortsuchrätsel PDF </a><br>
+&cir;&nbsp;<a target="_blank" href="/konjugation/arbeitsblaetter-uebungen/lernkarten/u:bertragen.pdf" onclick="ga('send', 'pageview', '/konjugation/arbeitsblaetter-uebungen/lernkarten/u:bertragen.pdf')">
+Lernkarten PDF </a>
+<div class="rClear rKln"><br></div>
+<a href="/konjugation/arbeitsblaetter-uebungen/u:bertragen.htm" title="Arbeitsblätter zur Konjugation des  Verbs übertragen">
+<div class="rKnpf">Zu den Arbeitsblättern</div>
+</a>
+</div>
+<div class="rClear"></div>
+</nav>
+<nav class="rBox rBoxTrns" id="83062Box">
+<header>
+<div class="rBoxText">
+<a href="/konjugation/beispiele/u:bertragen.htm" ><h2>Beispiele</h2><svg fill="#0052d9" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="m6.07 13.6 1.43 1.39 8.36-8.61-0.0584 4.76 2.01-0.0291 0.0088-8.19-8.18 0.0336 0.0291 2.01 4.76 0.0159z"></path>
+</svg></a>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="83062Img" onclick="Rahmen.aufzu('83062')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="83062" class="rAufZu">
+<div class="vBsp">
+<ul>
+<li>
+» Beim Menschen <i>w</i><i>e</i><i>rd</i><i>en</i> sie vor allem sexuell <b>über</b><b>tr</b><b>a</b><b>g</b><b><i>en</i></b>.<span class="rBoxInfo">²</span>
+<a class="" href="/konjugation/beispiele/u:bertragen.wav?q=wikipedia&r=37780" id="f0e3e" onclick="Stimme.klick(event,'f0e3e')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://de.wikipedia.org/wiki?curid=37780" title="wikipedia.org"><span class="rBoxInfo">...</span></a>
+</li>
+<li>
+» Die daraus gewonnenen Erkenntnisse <i>w</i><i>e</i><i>rd</i><i>en</i> auf den Gesamtmarkt <b>über</b><b>tr</b><b>a</b><b>g</b><b><i>en</i></b>.<span class="rBoxInfo">²</span>
+<a class="" href="/konjugation/beispiele/u:bertragen.wav?q=wikipedia&r=2507722" id="13b2d" onclick="Stimme.klick(event,'13b2d')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://de.wikipedia.org/wiki?curid=2507722" title="wikipedia.org"><span class="rBoxInfo">...</span></a>
+</li>
+<li>
+» Die Konzerte <i>w</i><i>e</i><i>rd</i><i>en</i> im norwegischen Radio und Fernsehen <b>über</b><b>tr</b><b>a</b><b>g</b><b><i>en</i></b>.<span class="rBoxInfo">²</span>
+<a class="" href="/konjugation/beispiele/u:bertragen.wav?q=wikipedia&r=7797509" id="d2e4b" onclick="Stimme.klick(event,'d2e4b')" rel="nofollow"><img src="/stimme.svg" alt=""></a>
+<a rel="nofollow" target="_blank" href="https://de.wikipedia.org/wiki?curid=7797509" title="wikipedia.org"><span class="rBoxInfo">...</span></a>
+</li>
+</ul>
+</div>
+<div class="rClear rKln"><br></div>
+<a href="/konjugation/beispiele/u:bertragen.htm"  title="Beispiele zur Konjugation des Verbs übertragen">
+<div class="rKnpf">Zu den Beispielen</div>
+</a>
+</div>
+<div class="rClear"></div>
+</nav>
+<section class="rBox rBoxTrns" id="0614fBox">
+<header>
+<div class="rBoxText">
+<h2>Bildungsregeln</h2>
+<br><span class="rInf">Detaillierte Regeln zur Konjugation</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="0614fImg" onclick="Rahmen.aufzu('0614f')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="0614f" class="rAufZu">
+<p>
+&cir;&nbsp;<a href="/konjugation/indikativ/praesens/u:bertragen.htm">Konjugation von übertragen im Präsens </a>?<br>
+&cir;&nbsp;<a href="/konjugation/indikativ/praeteritum/u:bertragen.htm">Konjugation von übertragen im Präteritum </a>?<br>
+&cir;&nbsp;<a href="http://verben.de/deutsch/verb/bildung_der_deutschen_verbformen" target="_blank">Wie konjugiert man Verben im Deutschen</a>?
+</p>
+</div>
+<div class="rClear"></div>
+</section>
+<nav class="rBox rBoxTrns" id="f1521Box">
+<header>
+<div class="rBoxText">
+<h2>Weitere Formen</h2>
+<br><span class="rInf">Modalformen und Negation von übertragen</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="f1521Img" onclick="Rahmen.aufzu('f1521')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="f1521" class="rAufZu">
+<table>
+<tr><td class="vKpfZ">Fähigkeit</td><td>
+&cir;&nbsp;<a href="/konjugation/kann_u:bertragen.htm">kann übertragen</a>
+<a class="" href="/konjugation/infinitiv/kann_u:bertragen.wav" id="48742" onclick="Stimme.klick(event,'48742')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+<tr><td class="vKpfZ">Erlaubnis</td><td>
+&cir;&nbsp;<a href="/konjugation/darf_u:bertragen.htm">darf übertragen</a>
+<a class="" href="/konjugation/infinitiv/darf_u:bertragen.wav" id="8b102" onclick="Stimme.klick(event,'8b102')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+<tr><td class="vKpfZ">Pflicht</td><td>
+&cir;&nbsp;<a href="/konjugation/muss_u:bertragen.htm">muss übertragen</a>
+<a class="" href="/konjugation/infinitiv/muss_u:bertragen.wav" id="97f25" onclick="Stimme.klick(event,'97f25')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+<tr><td class="vKpfZ">Absicht</td><td>
+&cir;&nbsp;<a href="/konjugation/will_u:bertragen.htm">will übertragen</a>
+<a class="" href="/konjugation/infinitiv/will_u:bertragen.wav" id="c71b1" onclick="Stimme.klick(event,'c71b1')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+<tr><td class="vKpfZ">Vorschrift</td><td>
+&cir;&nbsp;<a href="/konjugation/soll_u:bertragen.htm">soll übertragen</a>
+<a class="" href="/konjugation/infinitiv/soll_u:bertragen.wav" id="e2602" onclick="Stimme.klick(event,'e2602')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+<tr><td class="vKpfZ">Gefallen</td><td>
+&cir;&nbsp;<a href="/konjugation/mag_u:bertragen.htm">mag übertragen</a>
+<a class="" href="/konjugation/infinitiv/mag_u:bertragen.wav" id="ecffc" onclick="Stimme.klick(event,'ecffc')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+<tr><td class="vKpfZ">Wunsch</td><td>
+&cir;&nbsp;<a href="/konjugation/mo:chte_u:bertragen.htm">möchte übertragen</a>
+<a class="" href="/konjugation/infinitiv/mo:chte_u:bertragen.wav" id="2c4d8" onclick="Stimme.klick(event,'2c4d8')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+<tr><td class="vKpfZ">Verneinung&nbsp;</td><td>
+&cir;&nbsp;<a href="/konjugation/nicht_u:bertragen.htm">nicht übertragen</a>
+<a class="" href="/konjugation/infinitiv/nicht_u:bertragen.wav" id="3efa0" onclick="Stimme.klick(event,'3efa0')" rel="nofollow"><img src="/stimme.svg" alt=""></a>				
+</td></tr>
+</table>					
+</div>
+<div class="rClear"></div>
+</nav>
+<nav class="rBox rBoxTrns" id="2f946Box">
+<header>
+<div class="rBoxText">
+<h2>Ableitungen</h2>
+<br><span class="rInf">Abgeleitete Formen von übertragen</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="2f946Img" onclick="Rahmen.aufzu('2f946')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="2f946" class="rAufZu">
+<p style="column-count: 2;">
+&cir;&nbsp;<a href="/konjugation/auftragen.htm" title="auftragen">auftragen</a><br>
+&cir;&nbsp;<a href="/konjugation/beantragen.htm" title="beantragen">beantragen</a><br>
+&cir;&nbsp;<a href="/konjugation/beauftragen.htm" title="beauftragen">beauftragen</a><br>
+&cir;&nbsp;<a href="/konjugation/davontragen.htm" title="davontragen">davontragen</a><br>
+&cir;&nbsp;<a href="/konjugation/durchtragen.htm" title="durchtragen">durchtragen</a><br>
+&cir;&nbsp;<a href="/konjugation/ertragen.htm" title="ertragen">ertragen</a><br>
+&cir;&nbsp;<a href="/konjugation/forttragen.htm" title="forttragen">forttragen</a><br>
+&cir;&nbsp;<a href="/konjugation/herantragen.htm" title="herantragen">herantragen</a><br>
+&cir;&nbsp;<a href="/konjugation/hertragen.htm" title="hertragen">hertragen</a><br>
+&cir;&nbsp;<a href="/konjugation/hintragen.htm" title="hintragen">hintragen</a><br>
+&cir;&nbsp;<a href="/konjugation/tragen.htm" title="tragen">tragen</a><br>
+&cir;&nbsp;<a href="/konjugation/wegtragen.htm" title="wegtragen">wegtragen</a><br>
+&cir;&nbsp;<a href="/konjugation/zutragen.htm" title="zutragen">zutragen</a><br>
+&cir;&nbsp;<a href="/konjugation/u:berantworten.htm" title="überantworten">überantworten</a><br>
+&cir;&nbsp;<a href="/konjugation/u:berbauen.htm" title="überbauen">überbauen</a><br>
+&cir;&nbsp;<a href="/konjugation/u:berbinden.htm" title="überbinden">überbinden</a><br>
+&cir;&nbsp;<a href="/konjugation/u:berbleiben.htm" title="überbleiben">überbleiben</a><br>
+&cir;&nbsp;<a href="/konjugation/u:berblicken.htm" title="überblicken">überblicken</a><br>
+&cir;&nbsp;<a href="/konjugation/u:berbrennen.htm" title="überbrennen">überbrennen</a><br>
+&cir;&nbsp;<a href="/konjugation/u:berbringen.htm" title="überbringen">überbringen</a><br>
+&cir;&nbsp;<a href="/konjugation/u:berdachen.htm" title="überdachen">überdachen</a><br>
+&cir;&nbsp;<a href="/konjugation/u:berbuchen.htm" title="überbuchen">überbuchen</a><br>
+&cir;&nbsp;<a href="/konjugation/u:berdehnen.htm" title="überdehnen">überdehnen</a><br>
+&cir;&nbsp;<a href="/konjugation/u:berdenken.htm" title="überdenken">überdenken</a><br>
+</p>
+</div>
+<div class="rClear"></div>
+</nav>
+<section class="rBox rBoxTrns" id="f4950Box">
+<header>
+<div class="rBoxText">
+<h2>Übersetzung</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="f4950Img" onclick="Rahmen.aufzu('f4950')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="f4950" class="rAufZu">
+<p>
+Übersetzung
+&cir;&nbsp;transfer
+</p>
+</div>
+<div class="rClear"></div>
+</section>
+</div>
+<div class="rClear"></div>		
+<section class="rBox rBoxTrns" id="60659Box">
+<header>
+<div class="rBoxText">
+<h2>Verbformen</h2>
+<br><span class="rInf">Zusammenfassung aller Verbformen des Zeitworts, Tätigkeitsworts bzw. Tuworts  übertragen</span></div>
+<div class="rBoxKnopf">
+<button type="button" id="60659Img" onclick="Rahmen.aufzu('60659')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="60659" class="rAufZu">
+<p>
+Die <u>übertragen Konjugation</u> online als Verbtabelle mit allen Verbformen in Singular (Einzahl) und Plural (Mehrzahl) in allen Personen (1. Person, 2.Person, 3. Person) übersichtlich dargestellt. Die Beugung bzw. Flexion des Verbs übertragen ist somit eine Hilfestellung für Hausaufgaben, Prüfungen, Klausuren, für den Deutschuntericht der Schule, zum Deutsch Lernen, für das Studium, Deutsch als Fremdsprache (DaZ), Deutsch als Zweitsprache (DaZ) und für die Erwachsenenbildung. Gerade auch für Deutsch-lernende ist die korrekte Konjugation des Verbs bzw. die korrekt flektierten Formen (überträgt - übertrug - hat übertragen) entscheidend. Weitere Informationen finden sich unter <a href="https://de.wiktionary.org/wiki/Flexion:übertragen" rel="nofollow">Wiktionary übertragen</a> und unter <a href="http://www.duden.de/rechtschreibung/übertragen" rel="nofollow">übertragen im Duden</a>.
+Das Verb gehört zum Wortschatz des Zertifikat Deutsch bzw. zur Stufe B2.
+</p>
+<h3>
+Indikativ
+Wirklichkeitsform /
+Aktiv
+Tatform
+</h3>
+<ul>
+<li>
+<b>Präsens
+Gegenwart</b>, ich übertrag(e), du überträgst, er überträgt, wir übertragen, ihr übertragt, sie übertragen
+</li>
+<li>
+<b>Präteritum	
+Vergangenheit</b>, ich übertrug, du übertrugst, er übertrug, wir übertrugen, ihr übertrugt, sie übertrugen
+</li>
+<li>
+<b>
+Perfekt
+Vorgegenwart</b>, ich habe übertragen, du hast übertragen, er hat übertragen, wir haben übertragen, ihr habt übertragen, sie haben übertragen
+</li>
+<li>
+<b>
+Plusquamperfekt
+Vorvergangenheit</b>, ich hatte übertragen, du hattest übertragen, er hatte übertragen, wir hatten übertragen, ihr hattet übertragen, sie hatten übertragen
+</li>
+<li>
+<b>
+Futur I
+Zukunft</b>, ich werde übertragen, du wirst übertragen, er wird übertragen, wir werden übertragen, ihr werdet übertragen, sie werden übertragen
+</li>	
+<li>
+<b>
+Futur II
+Vorzukunft</b>, ich werde übertragen haben, du wirst übertragen haben, er wird übertragen haben, wir werden übertragen haben, ihr werdet übertragen haben, sie werden übertragen haben
+</li>
+</ul>
+<h3>
+Konjunktiv
+Möglichkeitsform /
+Aktiv
+Tatform
+</h3>
+<ul>
+<li>
+<b>
+Präsens
+Gegenwart</b>, ich übertrage, du übertragest, er übertrage, wir übertragen, ihr übertraget, sie übertragen
+</li>	
+<li>
+<b>
+Präteritum
+Vergangenheit</b>, ich übertrüge, du übertrügest, er übertrüge, wir übertrügen, ihr übertrüget, sie übertrügen
+</li>	
+<li>
+<b>
+Perfekt
+Vorgegenwart</b>, ich habe übertragen, du habest übertragen, er habe übertragen, wir haben übertragen, ihr habet übertragen, sie haben übertragen
+</li>	
+<li>						
+<b>
+Plusquamperfekt
+Vorvergangenheit</b>, ich hätte übertragen, du hättest übertragen, er hätte übertragen, wir hätten übertragen, ihr hättet übertragen, sie hätten übertragen
+</li>	
+<li>
+<b>
+Futur I
+Zukunft</b>, ich werde übertragen, du werdest übertragen, er werde übertragen, wir werden übertragen, ihr werdet übertragen, sie werden übertragen
+</li>	
+<li>
+<b>
+Futur II
+Vorzukunft</b>, ich werde übertragen haben, du werdest übertragen haben, er werde übertragen haben, wir werden übertragen haben, ihr werdet übertragen haben, sie werden übertragen haben
+</li>
+</ul>
+<h3>
+Konjunktiv II (würde)
+Bedingungsform /
+Aktiv
+Tatform
+</h3>
+<ul>
+<li>
+<b>
+Präteritum
+Vergangenheit</b>, ich würde übertragen, du würdest übertragen, er würde übertragen, wir würden übertragen, ihr würdet übertragen, sie würden übertragen
+</li>	
+<li>
+<b>
+Plusquamperfekt
+Vorvergangenheit</b>, ich würde übertragen haben, du würdest übertragen haben, er würde übertragen haben, wir würden übertragen haben, ihr würdet übertragen haben, sie würden übertragen haben
+</li>
+</ul>
+<h3>
+Imperativ
+Befehlsform /
+Aktiv
+Tatform
+</h3>
+<ul>
+<li>
+<b>
+Präsens
+Gegenwart</b>, übertrag(e) (du), übertragen wir, übertragt ihr, übertragen Sie
+</li>
+</ul>
+<h3>
+Infinitiv
+Grundform
+/
+Partizip
+Mittelwort
+/
+Aktiv
+Tatform
+</h3>
+<ul>
+<li>
+<b>
+Infinitiv I</b>, übertragen
+, zu übertragen
+</li>	
+<li>
+<b>
+Infinitiv II</b>, übertragen haben
+, übertragen zu haben
+</li>	
+<li>
+<b>Partizip I</b>, übertragend
+</li>	
+<li>
+<b>Partizip II</b>, übertragen
+</li>
+</ul>
+</div>
+<div class="rClear"></div>
+</section>
+<footer class="rInf vLeg rClear">
+¹ Die Beispielsätze stammen von <a href="https://tatoeba.org" rel="nofollow" target="_blank">Tatoeba</a>. Sie sind unter der Lizenz <a href="https://creativecommons.org/licenses/by/2.0/" rel="nofollow" target="_blank">CC BY 2.0</a> <i>(creativecommons.org/licenses/by/2.0)</i> frei verfügbar. Die Urheber der Sätze sind über den Link ... direkt am Satz oder über folgende URLs jeweils unter <i>https://tatoeba.org/sentences/show</i> zu finden (die Reihenfolge entspricht dem Auftreten): 
+<i>/2943311</i>
+<br>
+² Die Beispielsätze stammen aus der <a href="https://de.wikipedia.org" rel="nofollow" target="_blank">Wikipedia</a>. Sie sind unter der Lizenz <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="nofollow" target="_blank">CC-BY-SA 3.0</a> <i>(creativecommons.org/licenses/by-sa/3.0)</i> frei verfügbar. Die Urheber der Sätze sind über den Link ... direkt am Satz oder über folgende URLs jeweils unter <i>https://de.wikipedia.org/wiki?curid=</i> zu finden (die Reihenfolge entspricht dem Auftreten): 
+<i>254896 (Seemaus)</i>, 
+<i>4830890 (Acetylsalicylsäure)</i>, 
+<i>86367 (Ernst August (Braunschweig))</i>, 
+<i>9561216 (Naturreligion (Begriff))</i>, 
+<i>9857757 (Salvation (Album))</i>, 
+<i>37780 (Harnröhre)</i>, 
+<i>2507722 (Testmarkt)</i>, 
+<i>7797509 (Moldejazz)</i>
+<br>
+⁵ Umgangssprachlicher Gebrauch<br>
+<br>
+</footer>
+</div><div class="rClear"></div></article>
+<footer><div>
+<div class="rLinks vFuss">
+<h2>Kontakt</h2>
+<p>Netzverb Inh. Andreas Göbel<br>
+Alte Buchholzer Str. 8<br>
+D-09487 Schlettau</p>
+<p>Telefon: +49 3733 6196894<br>
+E-Mail: info@netzverb.de</p>
+<p>Facebook: <a href="https://www.facebook.com/Netzverb" rel="nofollow" target="_blank">facebook.com/Netzverb</a><br>
+Twitter: <a href="https://twitter.com/Netzverb" rel="nofollow" target="_blank">twitter.com/Netzverb</a><br>
+Google+: <a href="https://plus.google.com/+NetzverbDe" rel="nofollow" target="_blank">plus.google.com/+NetzverbDe</a></p>
+</div>
+<div class="rLinks vFuss">
+<h2>Netzverb</h2>
+<p>Netzwerk der deutschen Sprache<br>
+<a href="//www.netzverb.de">www.netzverb.de</a> · <a href="//www.netzverb.de/blog/">Blog</a></p>
+<p>Deutsche Flexion: <a href="//www.verbformen.de">verbformen.de</a><br>
+Deutsches Wörterbuch: <a href="//www.verblisten.de">verblisten.de</a><br>
+Sprachforum: <a href="http://www.konjugation.de">konjugation.de</a><br>
+Deutsche Grammatik: <a href="http://www.verben.de">verben.de</a></p>
+<a href="https://www.facebook.com/Netzverb" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path>
+</svg></a>
+<a href="https://twitter.com/Netzverb" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path>
+</svg></a>
+<a href="https://plus.google.com/+NetzverbDe" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M23,11H21V9H19V11H17V13H19V15H21V13H23M8,11V13.4H12C11.8,14.4 10.8,16.4 8,16.4C5.6,16.4 3.7,14.4 3.7,12C3.7,9.6 5.6,7.6 8,7.6C9.4,7.6 10.3,8.2 10.8,8.7L12.7,6.9C11.5,5.7 9.9,5 8,5C4.1,5 1,8.1 1,12C1,15.9 4.1,19 8,19C12,19 14.7,16.2 14.7,12.2C14.7,11.7 14.7,11.4 14.6,11H8Z"></path>
+</svg></a>		
+</div>
+<div class="rLinks vFuss">
+<h2>Hinweise</h2>
+<p><a href="//www.netzverb.de/impressum.htm">Impressum</a> ·
+<a href="//www.netzverb.de/impressum.htm">Nutzungsbedingungen</a><br>
+<a href="//www.netzverb.de/datenschutz.htm">Datenschutz</a> ·
+<a href="//www.netzverb.de/datenschutz.htm">Cookies</a></p>
+<h2>Hilfe</h2>
+<p><a href="/hilfe/">Hilfe und FAQ</a> · <a href="/kommentare.htm">Kommentare</a><br>
+<a href="//www.netzverb.de/links/">Links</a> · <a href="/hilfe/widgets.htm">Widgets</a> · <a href="/neuigkeiten.htm">Neuigkeiten</a></p>
+<a href="/nutzer/?anmelden">Anmelden</a>
+</div>
+<div class="rClear">
+<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow">
+<svg fill="#fff" fill-opacity="0.6" height="26" viewBox="0 0 26 26" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="m13 0c3.6 0 6.7 1.3 9.3 3.8 1.2 1.2 2.2 2.6 2.8 4.2 0.6 1.6 0.9 3.3 0.9 5 0 1.8-0.3 3.5-0.9 5 -0.6 1.6-1.5 2.9-2.8 4.1 -1.3 1.3-2.7 2.2-4.3 2.9 -1.6 0.7-3.3 1-5 1s-3.4-0.3-4.9-1c-1.6-0.6-3-1.6-4.3-2.9 -1.3-1.2-2.2-2.6-2.8-4.2 -0.6-1.5-1-3.2-1-4.9s0.3-3.4 1-5c0.7-1.6 1.6-3 2.9-4.3 2.5-2.5 5.5-3.8 9.1-3.8Zm0 2.3c-3 0-5.5 1-7.5 3.1 -1 1-1.8 2.2-2.3 3.5 -0.5 1.3-0.8 2.6-0.8 4 0 1.4 0.3 2.7 0.8 4 0.5 1.3 1.3 2.4 2.4 3.5s2.2 1.8 3.5 2.3c1.3 0.5 2.6 0.8 4 0.8 1.4 0 2.7-0.3 4.1-0.8s2.5-1.3 3.5-2.3c2-2 3-4.5 3-7.4 0-1.4-0.3-2.8-0.8-4.1 -0.5-1.3-1.2-2.4-2.2-3.4 -2.1-2.1-4.6-3.1-7.6-3.1Zm-0.2 8.5l-1.7 0.9c-0.2-0.4-0.4-0.7-0.7-0.8 -0.3-0.2-0.5-0.2-0.8-0.2 -1.2 0-1.7 0.8-1.7 2.3 0 0.7 0.1 1.3 0.4 1.7 0.3 0.4 0.7 0.6 1.3 0.6 0.8 0 1.3-0.4 1.6-1.1l1.6 0.8c-0.3 0.6-0.8 1.1-1.4 1.5 -0.6 0.4-1.3 0.5-2 0.5 -1.2 0-2.1-0.4-2.8-1.1 -0.7-0.7-1.1-1.7-1.1-3 0-1.2 0.4-2.2 1.1-2.9 0.7-0.7 1.6-1.1 2.7-1.1 1.6 0 2.8 0.6 3.5 1.9Zm7.5 0l-1.7 0.9c-0.2-0.4-0.4-0.7-0.7-0.8 -0.3-0.2-0.5-0.2-0.8-0.2 -1.2 0-1.7 0.8-1.7 2.3 0 0.7 0.1 1.3 0.4 1.7 0.3 0.4 0.7 0.6 1.3 0.6 0.8 0 1.3-0.4 1.6-1.1l1.6 0.8c-0.4 0.6-0.8 1.1-1.4 1.5 -0.6 0.4-1.3 0.5-2 0.5 -1.2 0-2.1-0.4-2.8-1.1 -0.7-0.7-1.1-1.7-1.1-3 0-1.2 0.4-2.2 1.1-2.9 0.7-0.7 1.6-1.1 2.7-1.1 1.6 0 2.8 0.6 3.4 1.9Z"></path>
+</svg>
+<svg fill="#fff" fill-opacity="0.6" height="26" viewBox="0 0 26 26" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="m13 0c3.7 0 6.7 1.3 9.2 3.8 2.5 2.6 3.8 5.6 3.8 9.2 0 3.7-1.2 6.7-3.7 9.1 -2.6 2.6-5.8 3.9-9.3 3.9 -3.6 0-6.6-1.3-9.2-3.8 -2.5-2.6-3.8-5.6-3.8-9.2 0-3.6 1.3-6.6 3.8-9.2 2.5-2.5 5.6-3.8 9.2-3.8Zm0.1 2.3c-3 0-5.4 1-7.5 3.1 -2.1 2.2-3.2 4.7-3.2 7.6 0 2.9 1.1 5.4 3.2 7.5 2 2 4.5 3.1 7.4 3.1 2.9 0 5.4-1.1 7.6-3.2 2-2 3.1-4.5 3.1-7.4s-1-5.5-3.1-7.6c-2-2.1-4.5-3.2-7.5-3.2Zm3.5 7.4v5.3h-1.5v6.3h-4v-6.3h-1.5v-5.3c0-0.2 0.1-0.4 0.2-0.6 0.2-0.2 0.4-0.2 0.6-0.2h5.3c0.2 0 0.4 0.1 0.6 0.2 0.2 0.2 0.3 0.4 0.3 0.6Zm-5.4-3.4c0-1.2 0.6-1.8 1.8-1.8s1.8 0.6 1.8 1.8c0 1.2-0.6 1.8-1.8 1.8 -1.2 0-1.8-0.6-1.8-1.8Z"></path>
+</svg>
+<svg fill="#fff" fill-opacity="0.6" height="26" viewBox="0 0 26 26" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="m13 0c3.6 0 6.7 1.3 9.2 3.8 2.5 2.5 3.8 5.6 3.8 9.2 0 3.6-1.2 6.7-3.7 9.1 -2.6 2.6-5.7 3.9-9.3 3.9 -3.5 0-6.6-1.3-9.2-3.8 -2.5-2.6-3.8-5.6-3.8-9.2 0-3.5 1.3-6.6 3.8-9.2 2.5-2.5 5.6-3.8 9.2-3.8Zm0 2.3c-3 0-5.4 1-7.5 3.1 -2.1 2.2-3.2 4.7-3.2 7.5 0 2.9 1.1 5.4 3.2 7.5 2.1 2.1 4.6 3.2 7.5 3.2 2.9 0 5.4-1.1 7.6-3.2 2.1-2 3.1-4.5 3.1-7.4 0-3-1-5.5-3.1-7.5 -2-2.2-4.5-3.2-7.4-3.2Zm-5.7 8.9c0.3-1.6 0.9-2.9 1.9-3.7 1-0.9 2.3-1.3 3.8-1.3 2.1 0 3.7 0.7 4.9 2 1.2 1.3 1.8 3 1.8 5.1 0 2-0.6 3.7-1.9 5 -1.3 1.3-2.9 2-4.9 2 -1.5 0-2.7-0.4-3.8-1.3s-1.7-2.1-1.9-3.8h3.3c0.1 1.6 1 2.4 2.9 2.4 0.9 0 1.7-0.4 2.2-1.2 0.6-0.8 0.8-1.8 0.8-3.2 0-1.4-0.3-2.4-0.8-3.1 -0.5-0.7-1.2-1.1-2.2-1.1 -1.7 0-2.7 0.8-2.9 2.3h1l-2.6 2.6 -2.6-2.6 1 0Z"></path>
+</svg>
+</a>
+<p>Alle originären Inhalte auf dieser Website sind, soweit nichts anderes vermerkt ist, unter der offenen Lizenz <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license nofollow" target="_blank">CC BY-SA 4.0</a> <em>(https://creativecommons.org/licenses/by-sa/4.0)</em> verfügbar. Die Inhalte dürfen somit frei und dauerhaft verwendet, kopiert und geändert werden und eignen sich im Rahmen von Open Educational Resources (OER) als Lehrmaterial. Bei einer Veröffentlichung ist als Urheber <em>"Netzverb (<a href="https://www.verbformen.de/">www.verbformen.de</a>)"</em> mit Verlinkung auf <em>https://www.verbformen.de/</em> zu nennen. Mehr Informationen stehen in den <a href="//www.netzverb.de/impressum.htm">Nutzungsbedingungen</a>.</p>
+</div>
+</div></footer>
+<aside class="rHw rHwUnt" id="20170317_cookie">
+<div>
+<div class="rRechts" onclick="Hinweis.weg('20170317_cookie')">
+<svg fill="#505050" fill-opacity="0.6" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+<path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
+</svg>
+</div>
+Es werden <a target="_blank"  href="//www.netzverb.de/datenschutz.htm">Cookies</a> verwendet. Nur weiter, wenn einverstanden!
+</div>
+</aside>
+<audio id="sTon" preload="auto" autoplay ></audio>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-1466848-8', 'auto');
+ga('send', 'pageview');
+ga('set', 'anonymizeIp', true);
+</script>
+<script type="application/ld+json">
+{
+"@id": "http://www.netzverb.de/",
+"@context": "http://schema.org",
+"@type": "Organization",
+"url": "http://www.netzverb.de/",
+"name": "Netzverb Inh. Andreas Göbel",
+"logo": {
+"@type": "ImageObject",
+"url": "http://www.netzverb.de/netzverb.png"
+}, 
+"sameAs": [
+"https://www.facebook.com/Netzverb",
+"https://twitter.com/Netzverb",
+"https://plus.google.com/+NetzverbDe"
+]
+}
+</script>
+<script type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "WebSite",
+"url": "https://www.verbformen.de/",
+"potentialAction": {
+"@type": "SearchAction",
+"target": "https://www.verbformen.de/suche/?w={search_term_string}",
+"query-input": "required name=search_term_string"
+},
+"author": { "@id": "http://www.netzverb.de/" },
+"publisher": { "@id": "http://www.netzverb.de/" }
+}
+</script>
+<script type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "Article",
+"mainEntityOfPage": {
+"@type": "WebPage",
+"@id": "https://www.verbformen.de/konjugation/u:bertragen.htm"
+},
+"headline": "Konjugation des deutschen Verbs übertragen",
+"image": {
+"@type": "ImageObject",
+"url": "https://www.verbformen.de/konjugation/steckbrief/u:bertragen.png",
+"height": 600,
+"width": 900
+},
+"datePublished": "2017-01-01T08:00:00+02:00",
+"dateModified": "2017-12-01T08:07:00+02:00",
+"author": {
+"@id": "http://www.netzverb.de/"
+},
+"publisher": {
+"@id": "http://www.netzverb.de/"
+}
+}
+</script>
+<script type="application/ld+json">
+[			
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"übertragen",
+"url":"https://www.verbformen.de/konjugation/u:bertragen.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"sich übertragen",
+"url":"https://www.verbformen.de/konjugation/sich_u:bertragen.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"mag übertragen",
+"url":"https://www.verbformen.de/konjugation/mag_u:bertragen.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"kann übertragen",
+"url":"https://www.verbformen.de/konjugation/kann_u:bertragen.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"soll übertragen",
+"url":"https://www.verbformen.de/konjugation/soll_u:bertragen.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"muss übertragen",
+"url":"https://www.verbformen.de/konjugation/muss_u:bertragen.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"darf übertragen",
+"url":"https://www.verbformen.de/konjugation/darf_u:bertragen.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"will übertragen",
+"url":"https://www.verbformen.de/konjugation/will_u:bertragen.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"nicht übertragen",
+"url":"https://www.verbformen.de/konjugation/nicht_u:bertragen.htm"
+}
+]
+</script>
+182
+</body>
+</html>

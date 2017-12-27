@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<title>Suche | Deutsche Wörter mit al - Netzverb</title>
+<meta name="description" content="Wörter mit al"/>
+<meta name="robots" content="noindex, follow" /> 
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<meta name=viewport content="width=device-width, initial-scale=1">	
+<meta name="HandheldFriendly" content="true"/>
+<meta name="MobileOptimized" content="width"/>
+<meta name="application-name" content="Netzverb" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000086">
+<meta name="theme-color" content="#000086">
+<script type="text/javascript">
+var Rahmen = {};
+(function() {
+function istauf(id) {
+var e = document.getElementById(id);
+var d = e.currentStyle ? e.currentStyle.display : getComputedStyle(e, null).display;
+return d != "none";
+}
+function aufzu(id, auf) {
+var e = document.getElementById(id);
+if(!e) return;
+e.style.display = auf ? "inline" : "none";
+var b = document.getElementById(id + "Img");
+if(!b) return;
+b.getElementsByClassName("rAuf")[0].style.display = auf ? "inline" : "none";
+b.getElementsByClassName("rZu")[0].style.display = auf ? "none" : "inline";
+}
+this.alleaufzu = function(id, k) {
+var ia = istauf(id);
+var es = document.getElementsByClassName(k);
+for (var i = 0; i < es.length; i++) aufzu(es[i].id, !ia);
+}
+this.aufzu = function(ids) {
+if(ids instanceof Array) { var ia = istauf(ids[0]); for (var id in ids)	aufzu(ids[id], !ia) }
+else aufzu(ids, !istauf(ids));
+}
+this.breite = function() {
+return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+}
+}).apply(Rahmen); 
+var Eingabe = {};
+(function() {
+function element(id) {
+return document.getElementById(id);
+}
+function sprung(ide, idl, start, schritt) {
+var e = element(ide);
+var l = element(idl);
+if(l.selectedIndex == -1) l.selectedIndex = start;
+else l.selectedIndex = l.selectedIndex + schritt;
+if(l.selectedIndex != -1) e.value = l.options[l.selectedIndex].text;
+}
+this.zeige = function(w, v) {
+if(this.w != w) { return; }
+var s=0;
+while(this.l.children.length > 0) this.l.removeChild(this.l.children[0]);
+for (i = 0; i < v.length; i++) {
+if(!v[i])
+continue;
+if(v[i] instanceof Array) {
+if(v[i].length <= 1)
+continue;
+var g = document.createElement('optgroup');	g.label = v[i][0]; s++;
+for (j = 1; j < v[i].length; j++) {	var o = document.createElement('option'); o.text = v[i][j];	g.appendChild(o);  s++; } 
+this.l.appendChild(g);
+} else {
+var o = document.createElement('option'); o.text = v[i]; this.l.appendChild(o); s++;
+}
+}
+if(s <= 1) { this.l.style.display = "none"; return; }
+this.l.style.top = (this.f.clientHeight + this.f.getBoundingClientRect().top) + "px";
+this.l.style.width = (this.f.clientWidth) + "px";
+this.l.style.display = "inline";
+this.l.size = s; 
+}
+this.an = function(ide, idl, fnkl) {
+var e = element(ide);
+this.l=element(idl); this.w = e.value; this.f=e.parentElement;
+if(this.w.length == 0) { this.l.style.display = "none"; return;	}
+var v=fnkl(this.w);
+};
+this.aus = function(ide, idl) {
+setTimeout(function() {
+var e = element(ide);
+var l = element(idl);
+if(document.activeElement == e || document.activeElement == l) return;
+l.style.display = "none";
+},50);
+};
+this.uebernahme = function(ide, idl) {
+var e = element(ide);
+var l = element(idl);
+e.value = l.options[l.selectedIndex].text;
+l.style.display = "none";
+l.form.submit();
+};
+this.taste = function(ide, idl, event) {
+var l = element(idl);
+keyCode = ('which' in event) ? event.which : event.keyCode;
+if(keyCode == 40) { sprung(ide, idl, 0, 1); event.preventDefault(); }
+if(keyCode == 38) { sprung(ide, idl, l.options.length - 1, -1); event.preventDefault(); }
+if(keyCode == 27) { l.style.display = "none"; }
+};
+}).apply(Eingabe);
+var Hinweis = {};
+(function() {
+this.weg = function(n) {
+var e=document.getElementById(n);
+e.style.display="none";
+document.cookie="de.netzverb.rahmen.hinweis_"+n+"=none" +
+";expires="+new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toUTCString() +
+";path=/";
+};
+}).apply(Hinweis);
+var Ajax = {};
+(function() {
+var a, v;
+function param(d) {
+var is = d.getElementsByTagName("input");
+var p = paar(p,a,v);
+a = null; v = null;
+for(var i=0; i<is.length; i++)
+if(!is[i].disabled && is[i].name && is[i].type != "submit")
+if(is[i].type != "radio" && is[i].type != "checkbox" || is[i].checked)
+p += paar(p, is[i].name, is[i].value);
+var tas = d.getElementsByTagName("textarea");
+for(var i=0; i<tas.length; i++)
+if(!tas[i].disabled && tas[i].name)
+p += paar(p, tas[i].name, tas[i].value);
+var ss = d.getElementsByTagName("select");
+for(var i=0; i<ss.length; i++)
+if(!ss[i].disabled && ss[i].name && ss[i].selectedIndex >= 0)
+p += paar(p, ss[i].name, ss[i].options[ss[i].selectedIndex].value);
+return p;
+}	
+function paar(p, n, v) {
+return (p ? "&" : "") + encodeURIComponent(n) + "=" + encodeURIComponent(v);
+}
+this.ersetze = function(e, id) {
+e.preventDefault();
+var f = e.target;
+if(f.tagName != "FORM")
+f = f.form;
+var p = param(f);
+var r = new XMLHttpRequest();
+r.onload = function() {
+var d =  document.getElementById(id);
+if(r.status == 200)
+d.outerHTML = r.responseText;
+else
+d.innerHTML = r.responseURL + " (" + r.status + ": " + r.statusText + ")";
+}
+r.open("POST", f.action, true);
+r.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
+r.send(p);
+return false;
+}
+this.aktion = function(x) {
+a = 'aktion';
+v = x;
+}
+this.klick = function(e) {
+a = e.currentTarget.name;
+v = e.currentTarget.value;
+}
+}).apply(Ajax);
+var Anzeigen = {};
+(function() {
+var b=true;
+this.ungeblockt = function() {
+b = false;
+}
+this.geblockt = function() {
+return b;
+}
+this.texte = function(id,p,n,m) {
+var r = new XMLHttpRequest();
+r.onload = function(e) {
+var d =  document.getElementById(id);
+if(e.target.status == 200) d.outerHTML = e.target.responseText;
+else d.outerHTML = e.target.responseURL + " (" + e.target.status + ": " + e.target.statusText + ")";
+}
+r.open('GET', '/anzeigen/anzeigen.txt?p=' + p + "&n=" + n + "&m=" + m + "&b=" + b, true);
+try { r.send(null); } catch(err) { }
+}
+}).apply(Anzeigen);
+var Verbformen = {};
+(function() {
+this.suchliste = function(w) {
+var r = new XMLHttpRequest();
+r.open("GET", "/suche/eingabe/?w=" + encodeURI(w) + "&a=VERB", true);
+r.timeout = 500;
+r.onload = function (e) { if (r.readyState == 4 && r.status == 200) { Eingabe.zeige(w,JSON.parse(r.responseText)); } };
+r.send(null);
+};
+}).apply(Verbformen);
+</script>
+<script type="text/javascript" src="/anzeigen/showads.js"></script>
+<style type="text/css">.rEin {text-align:left;}.rEin input {width:100%;}.rEin select {display:none;position:fixed;border:none;border-top:solid 1px #666666;padding:0 3px;color:#666666;z-index:7;}.rEin optgroup {background-color:#eeeeee;}.rEin optgroup option {background-color:#ffffff;}nav .rEin select {box-shadow:2px 2px 3px 0px rgba(0,0,0,0.40); }@font-face {font-family:'Open Sans';font-style:normal;font-weight:400;src:local('Open Sans'), local('OpenSans'), url('/rahmen/opensans.woff')format('woff');}body {margin:0;padding:0;font-family:open sans,sans-serif;font-weight:400;color:#111111;font-size:0.9em;}body>* {background-color:#f5f5f5;}body>*>div {max-width:940px;margin:0 auto;clear:both;padding:2px 8px;}body,body>footer {background-color:#444444;}body>footer {color:#e0e0e0;font-size:0.9em;}body>footer a {color:#80bfff;}body>nav {position:fixed;z-index:9;font-size:1.2em;width:100%;max-height:100vh;overflow:auto;box-shadow:0px 2px 3px 0px rgba(0,0,0,0.40); color:#ffffff;}body>nav+div {height:44px;}a {text-decoration:none;color:#0052d9;}h1,h2,h3 {font-weight:400;margin-top:10px;margin-bottom:10px;}h1:first-child,h2:first-child,h3:first-child {margin-top:0;}a h1,a h2,a h3 {color:#111111;}h1 {font-size:1.6em;}h2 {font-size:1.4em;}h3 {font-size:1.3em;}p {line-height:1.25;margin:10px 0;}input,select,textarea {font-family:open sans,sans-serif;font-size:inherit;line-height:inherit;border:none;box-shadow:1px 1px 1px 0px rgba(0,0,0,0.40); outline:none;box-sizing:border-box;}input,textarea {padding:1px 5px;}nav input,nav select,nav textarea {box-shadow:none;}input[type=submit],.rKnpf {padding:5px 10px;margin:0 10px 10px 0;background-color:#000000;color:#ffffff !important;}input[type=submit].rRechts,.rKnpf.rRechts {margin:0 0 10px 10px;}textarea {overflow:hidden;}select {appearance:none;-moz-appearance:none;-webkit-appearance:none;}svg,img {vertical-align:middle;margin:0;}img.rRechts {margin:4px 0 10px 10px;}img.rLinks {margin:4px 10px 10px 0;}button {background-color:transparent;padding:0;border:none;}table {border-spacing:0;border-collapse:collapse;}td,th {padding:0;vertical-align:top;text-align:left;}th a {color:inherit;}hr {border:none;border-top:solid 1px #dddddd;margin:0.75em 0;}b>u {color:#2a2abc;text-decoration:none;}b>i {color:#028b02;font-style:normal;}.rKnpf {box-shadow:1px 1px 1px 0px rgba(0,0,0,0.40); box-sizing:border-box;display:inline-block;}.rNav {height:36px;overflow:hidden;width:100%;padding:2px 0;}.rNav>* {height:36px;}.rMnRnd {margin-bottom:6px;}.rTab {display:table;}.rTab>div {display:table-cell;vertical-align:middle;}.r1Pxl {width:1px;}.rLinks {float:left;}.rRechts {float:right;}.rNobr {white-space:nowrap;}.rClear {clear:both;}.rDunkel {background-color:#000000;}.rHell {color:#f5f5f5;}.rZu {display:none;}.rAnkr {position:relative;top:-67px;}.rAuf {display:inline;}.rCntr {text-align:center;}.rInf,.rInf a {color:#aaaaaa;}.rKln {font-size:0.9em;}.rNoSelect {-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}.rImg {box-shadow:1px 1px 2px 0px rgba(0,0,0,0.25); border:solid 1px #cccccc;}@media (min-width:700px){article .rAbschnitt {margin-left:-340px;width:100%;float:left;}article .rAbschnitt>div {margin-left:340px;}article .rInfo {width:320px;float:right;}.rInfo .rBoxTrns {border-left:solid 1px #dddddd;border-top:none !important;padding:0 0 0 15px;}}.rBox {margin-bottom:20px;}.rBox header  {display:table;width:100%;}.rBox header>div {display:table-cell;text-align:left;}.rBoxWht {background-color:#ffffff;box-shadow:1px 1px 2px 0px rgba(0,0,0,0.25); padding:8px 10px 8px 15px;}.rBoxTrns {border-top:solid 1px #dddddd;}.rBoxText {vertical-align:middle;}.rBoxKnopf {vertical-align:top;width:1px;white-space:nowrap;}.rBoxWht textarea,.rBoxWht input,.rBoxWht select {background-color:#e9e9e9;}.rBox h2 {margin:0;display:inline;}.rHw {width:100%;padding:4px 0;background-color:#aaaaaa;color:#222222;box-shadow:1px 1px 2px 0px rgba(0,0,0,0.25); }.rHwObn {position:relative;top:0px;}.rHwUnt {position:fixed;bottom:0px;opacity:0.91;z-index:8;}.rHwBox>div {position:static;padding-right:10px;padding-left:13px;}.rHwFhlr {background-color:#efbbbb;color:#662222;}.rHwTpp {background-color:#ffe7ba;color:#665544;}.rHwOk {background-color:#bbefbb;color:#226622;}.rMenu,.rMenuOpt {margin-bottom:3px;text-align:right;}.rMenu {margin-top:10px;}.rMenu > div {border-top:solid 1px #9b9b9b;padding-top:8px;}.rMenuOpt {margin-top:0px;}.rMenuKat {color:#ffffff;}.rMnLnk {margin-right:10px;}@media (min-width:700px){.rMenu > div {display:inline-block;min-width:300px;}}nav.rKruemel {font-size:0.9em;color:#aaaaaa;clear:both;}nav.rKruemel a {color:inherit;}nav.rKruemel + h1 {margin-top:0px;}div.rKruemel {display:inline-block;}.kFrm select {box-shadow:none;background-color:transparent;}.kFrm textarea {width:100%;}.kBwrt {font-size:1.6em;}.kAn {color:#000000;}.kAus {color:#aaaaaa;}.aDesktop {display:none;}.aMobil {display:inline-block;}@media (min-width:700px){ .aDesktop {display:inline-block;} .aMobil {display:none;} }.aTxtLinks {float:left;display:inline-block;margin:0 15px 15px 0;}.aTxtRechts {float:right;display:inline-block;margin:0 0 15px 15px;}.rDunkel {background-color:#000084;}.rHell {color:#9999ce;}body>nav,body>nav a {color:#9999ce;}.rMenu > div {border-color:#5050a4;}h4 {display:inline;}nav .rEin {width:220px;font-size:1.1em;max-width:40vw;max-width:calc(100vw - 216px); }input[type=submit],.rKnpf {background-color:#000084;}.vLeg {font-size:0.9em;margin-top:8px;}.vDbg {background-color:#ffffcc;}div.vDbg {margin-right:10px;}.vFuss {width:280px;margin:0 15px 15px 0;}.vBlogImg {width:120px;}.vAuswahl {display:inline-block;margin-bottom:10px;}.vAuswahl .rKnpf {margin:5px auto;}.vEinText .rEin {font-size:1.4em;max-width:160px;margin:0 10px 10px 0;}.vUnd,.vUnd b>u,.vUnd b>i {color:#aaaaaa;}			.kAn {color:#000084;}.vkDiv {margin:0 0 8px 0;text-align:right;}.vkDiv p {color:#000000;}.vkStrn,.vkTxt {margin:0;}.vkStrn {font-size:1.8em;line-height:0.6em;}.vkTxt {margin-top:0.3em;}.vkAnt {margin-left:5%;}.vArbBltt {display:inline-block;margin:0 10px 10px 0;}				.vArbBltt img {max-width:300px;height:80px;}				.vVar {color:#ffffff;text-align:center;box-shadow:1px 1px 2px 0px rgba(0,0,0,0.25); background-color:#000086;padding:5px 10px;display:inline-block;margin:0 10px 10px 0;}.vVarAkt {background-color:#000086;font-weight:bold;}.vVarErr {background-color:#860000;font-weight:bold;}h2.vGrnd {font-size:2.1em;}p.vStm {font-size:1.55em;margin:8px 0px;}</style>
+<style type="text/css">.vSuch {column-count:auto;column-width:270px;}.vSuchStm {}.vSuchBox {overflow:hidden;-webkit-column-break-inside:avoid;page-break-inside:avoid;break-inside:avoid;}.vSuchSplt {width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}mark {background-color:#dddddd;}.rBox mark {background-color:#eeeeee;}.vSuch h2 {margin-top:0;}.vSuch a {color:inherit;}</style>
+</style>
+</head>
+<body>
+<nav class="rDunkel"><div>
+<div class="rNav">
+<div class="rRechts" id="rMenuImg" onclick="Rahmen.aufzu(['rMenu','rMenuNav'])"><svg fill="#ffffff" fill-opacity="0.6" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" style="display: none;" d="m11.41 15.41 4.59-4.58 4.59 4.58 1.41-1.41-6-6l-6 6 1.41 1.41z"></path>
+<path class="rZu" style="display: inline;" d="m8 4.667h16v2h-16m0 4h16v2h-16m-2e-7 4h16v2h-16z"></path>
+</svg></div>
+<div class="rLinks"><a href="/"><svg fill="#ffffff" fill-opacity="0.6" height="36" viewBox="0 0 24 24" width="42" xmlns="http://www.w3.org/2000/svg">
+<path d="m 8.5366045,10.887553 -4.275913,-8.997564 -5.833396,0 10.109309,20.21502 9.8204705,-20.21502 -5.456371,0.085295 z"></path>
+</svg></a></div>
+<form class="rLinks rTab" action="/" method="get">
+<div>
+<div class="rEin ">
+<input  onfocus="this.setSelectionRange(0, this.value.length)" id="b9561" name="w" value="al" placeholder="" title="" autocomplete="off" onkeydown="Eingabe.taste('b9561','b9561Liste', event)" oninput="Eingabe.an('b9561','b9561Liste',Verbformen.suchliste)" onblur="Eingabe.aus('b9561','b9561Liste')"><br>
+<select id="b9561Liste" onchange="Eingabe.uebernahme('b9561','b9561Liste')" onblur="Eingabe.aus('b9561','b9561Liste')"></select>
+</div></div>
+<div class="r1Pxl"><button type="submit"><svg fill="#ffffff" fill-opacity="0.6" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" ></path>
+</svg></button></div>
+<div class="r1Pxl"><button type="submit" formaction="/suche/?w=al"><svg fill="#ffffff" fill-opacity="0.6" height="33" viewBox="0 0 24 24" width="33" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"></path>
+</svg></button></div>
+</form>
+<div class="rRechts" onclick="Rahmen.aufzu(['rMenu'])"><svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" fill-opacity=".6" height="36" width="36" version="1.1" viewBox="0 0 24 24">
+<path d="m16.7 14.6c-0.582 0.0087-1.11 0.227-1.52 0.564l-5.34-2.84c0.045-0.162 0.0823-0.324 0.0892-0.493 0.00693-0.169-0.017-0.33-0.0487-0.491l5.52-2.97c0.399 0.345 0.934 0.555 1.54 0.546a2.09 2.32 74 0 0 2.38 -2.14 2.09 2.32 74 0 0 -2.22 -2.08 2.09 2.32 74 0 0 -2.38 2.14c-0.0069 0.169 0.017 0.33 0.0487 0.491l-5.52 2.97c-0.399-0.343-0.934-0.553-1.54-0.544a2.09 2.32 74 0 0 -2.38 2.14 2.09 2.32 74 0 0 2.21 2.08c0.605-0.009 1.16-0.235 1.59-0.593l5.33 2.84c-0.0444 0.148-0.0738 0.303-0.0804 0.465-0.0466 1.13 0.919 2.03 2.15 2.01 1.23-0.0185 2.27-0.948 2.32-2.08a2.04 2.25 74 0 0 -2.15 -2.02z"></path>
+</svg>
+</div>
+<div class="rRechts rTab rNoSelect rMnLnk" onClick="Rahmen.aufzu(['vLng', 'rMenu'])">
+<div>
+Deutsch
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+</div>
+<div class="rClear"></div>
+<div class="rZu" id="rMenu">
+<div class="rMenu rNoSelect" onClick="Rahmen.aufzu('rMenuNav')">
+<div>
+<span class="rMenuKat">Navigation:</span> Konjugation
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+<div class="rZu" id="rMenuNav">
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/">
+Flexion
+</a>
+</div>		
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/konjugation/">
+Konjugation
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/suche/">
+&raquo;
+Suche
+</a>
+</div>
+</div>
+<div class="rMenu rNoSelect" onClick="Rahmen.aufzu('vLng')">
+<div>
+<span class="rMenuKat">Sprache:</span> Deutsch
+<svg fill="#ffffff" fill-opacity="0.6" height="8" viewBox="0 0 10 8" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="m0 0 5 5 5-5z"></path>
+</svg>
+</div>
+</div>
+<div class="rZu" id="vLng">
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.de/suche/?w=al">
+&raquo;
+Deutsch
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.com/search/?w=al">
+English
+</a>
+</div>
+<div class="rMenuOpt rNoSelect">
+<a href="https://www.verbformen.ru/poisk/?w=al">
+Русский
+</a>
+</div>
+</div>
+<div>
+<br>
+<div class="rMenu">
+<div>
+<span class="rMenuKat">Teilen: </span>
+<a rel="nofollow" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.verbformen.de%2Fkonjugation%2F%3Fw%3Dal" title="Teilen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path>
+</svg></a>
+<a rel="nofollow" href="https://twitter.com/home?status=https%3A%2F%2Fwww.verbformen.de%2Fkonjugation%2F%3Fw%3Dal" title="Teilen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path>
+</svg></a>
+<a rel="nofollow" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.verbformen.de%2Fkonjugation%2F%3Fw%3Dal" title="Teilen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M23,11H21V9H19V11H17V13H19V15H21V13H23M8,11V13.4H12C11.8,14.4 10.8,16.4 8,16.4C5.6,16.4 3.7,14.4 3.7,12C3.7,9.6 5.6,7.6 8,7.6C9.4,7.6 10.3,8.2 10.8,8.7L12.7,6.9C11.5,5.7 9.9,5 8,5C4.1,5 1,8.1 1,12C1,15.9 4.1,19 8,19C12,19 14.7,16.2 14.7,12.2C14.7,11.7 14.7,11.4 14.6,11H8Z"></path>
+</svg></a>
+&nbsp;&nbsp;&nbsp;
+<span class="rMenuKat">Folgen: </span>
+<a rel="nofollow" href="https://www.facebook.com/Netzverb" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path>
+</svg></a>
+<a rel="nofollow" href="https://twitter.com/Netzverb" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path>
+</svg></a>
+<a rel="nofollow" href="https://plus.google.com/+NetzverbDe" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M23,11H21V9H19V11H17V13H19V15H21V13H23M8,11V13.4H12C11.8,14.4 10.8,16.4 8,16.4C5.6,16.4 3.7,14.4 3.7,12C3.7,9.6 5.6,7.6 8,7.6C9.4,7.6 10.3,8.2 10.8,8.7L12.7,6.9C11.5,5.7 9.9,5 8,5C4.1,5 1,8.1 1,12C1,15.9 4.1,19 8,19C12,19 14.7,16.2 14.7,12.2C14.7,11.7 14.7,11.4 14.6,11H8Z"></path>
+</svg></a>
+</div>
+</div>
+</div>
+<div class="rMnRnd rClear"></div>
+</div>
+</div></nav>
+<div></div>
+<article class=""><div>
+<nav class="rKruemel" itemscope itemtype="http://schema.org/BreadcrumbList">
+<div class="rKruemel" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+<a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://www.verbformen.de/" id="https://www.verbformen.de/">
+<span itemprop="name">Flexion</span>
+</a>
+<meta itemprop="position" content="1"/>
+</div>
+› 	
+<div class="rKruemel" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+<a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://www.verbformen.de/suche/" id="https://www.verbformen.de/suche/">
+<span itemprop="name">Suche</span>
+</a>
+<meta itemprop="position" content="2"/>
+</div>
+› 	
+<div class="rKruemel" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+<a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://www.verbformen.de/konjugation/?w=al" id="https://www.verbformen.de/konjugation/?w=al">
+<span itemprop="name">al</span>
+</a>
+<meta itemprop="position" content="3"/>
+</div>
+</nav>
+<h1>Wörter mit al</h1>
+<p>
+Weitere Suchoptionen und Filter im <a href="http://www.verblisten.de/listen/verben/anfangsbuchstabe/ueberblick.html?i=al">Netzverb Wörterbuch</a> (<a href="//www.verblisten.de">www.verblisten.de</a>).
+</p>
+<div class="rClear"></div>
+<div class="vSuch">
+<div class="vSuchBox">
+<section class="rBox rBoxWht" id="1c768Box">
+<header>
+<div class="rBoxText">
+<h2>A</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="1c768Img" onclick="Rahmen.alleaufzu('1c768','rAufZu')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M7.41,18.41L6,17L12,11L18,17L16.59,18.41L12,13.83L7.41,18.41M7.41,12.41L6,11L12,5L18,11L16.59,12.41L12,7.83L7.41,12.41Z"></path>
+<path class="rZu" d="M16.59,5.59L18,7L12,13L6,7L7.41,5.59L12,10.17L16.59,5.59M16.59,11.59L18,13L12,19L6,13L7.41,11.59L12,16.17L16.59,11.59Z"></path>
+</svg>
+</button></div>
+</header>
+<div class="rClear"></div>
+<div id="1c768" class="rAufZu">
+<div class="vSuchSplt">
+<a href="/konjugation/sich_aalen.htm">
+sich a<mark>al</mark>en 
+</a>
+<span class="vSuchStm rInf">aalte sich &middot; hat sich geaalt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/abbalgen.htm">
+abb<mark>al</mark>gen 
+</a>
+<span class="vSuchStm rInf">balgte ab &middot; hat abgebalgt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/sich_abbalgen.htm">
+sich abb<mark>al</mark>gen 
+</a>
+<span class="vSuchStm rInf">balgte sich ab &middot; hat sich abgebalgt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/abbalzen.htm">
+abb<mark>al</mark>zen 
+</a>
+<span class="vSuchStm rInf">balzte ab &middot; hat abgebalzt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/abballern.htm">
+abb<mark>al</mark>lern 
+</a>
+<span class="vSuchStm rInf">ballerte ab &middot; hat abgeballert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/abbehalten.htm">
+abbeh<mark>al</mark>ten 
+</a>
+<span class="vSuchStm rInf">behielt ab &middot; hat abbehalten</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/abfallen.htm">
+abf<mark>al</mark>len 
+</a>
+<span class="vSuchStm rInf">fiel ab &middot; ist abgefallen</span><br>
+</div>
+<a href="http://www.verblisten.de/listen/verben/anfangsbuchstabe/vollstaendig.html?i=al">...</a><br>
+</div>
+<div class="rClear"></div>
+</section>
+</div>
+<div class="vSuchBox">
+<section class="rBox rBoxWht" id="729a9Box">
+<header>
+<div class="rBoxText">
+<h2>B</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="729a9Img" onclick="Rahmen.aufzu('729a9')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="729a9" class="rAufZu">
+<div class="vSuchSplt">
+<a href="/konjugation/baldowern.htm">
+b<mark>al</mark>dowern 
+</a>
+<span class="vSuchStm rInf">baldowerte &middot; hat baldowert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/balancieren_ist.htm">
+b<mark>al</mark>ancieren (ist) 
+</a>
+<span class="vSuchStm rInf">balancierte &middot; ist balanciert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/balancieren_hat.htm">
+b<mark>al</mark>ancieren (hat) 
+</a>
+<span class="vSuchStm rInf">balancierte &middot; hat balanciert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/sich_balgen.htm">
+sich b<mark>al</mark>gen 
+</a>
+<span class="vSuchStm rInf">balgte sich &middot; hat sich gebalgt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/balkanisieren.htm">
+b<mark>al</mark>kanisieren 
+</a>
+<span class="vSuchStm rInf">balkanisierte &middot; hat balkanisiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/ballen.htm">
+b<mark>al</mark>len 
+</a>
+<span class="vSuchStm rInf">ballte &middot; hat geballt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/sich_ballen.htm">
+sich b<mark>al</mark>len 
+</a>
+<span class="vSuchStm rInf">ballte sich &middot; hat sich geballt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/ballern.htm">
+b<mark>al</mark>lern 
+</a>
+<span class="vSuchStm rInf">ballerte &middot; hat geballert</span><br>
+</div>
+<a href="http://www.verblisten.de/listen/verben/anfangsbuchstabe/vollstaendig.html?i=al">...</a><br>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('729a9');
+</script>
+</section>
+</div>
+<div class="vSuchBox">
+<section class="rBox rBoxWht" id="65923Box">
+<header>
+<div class="rBoxText">
+<h2>D</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="65923Img" onclick="Rahmen.aufzu('65923')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="65923" class="rAufZu">
+<div class="vSuchSplt">
+<a href="/konjugation/dabehalten.htm">
+dabeh<mark>al</mark>ten 
+</a>
+<span class="vSuchStm rInf">behielt da &middot; hat dabehalten</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/dafu:rhalten.htm">
+dafürh<mark>al</mark>ten 
+</a>
+<span class="vSuchStm rInf">hielt dafür &middot; hat dafürgehalten</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/dagegenhalten.htm">
+dagegenh<mark>al</mark>ten 
+</a>
+<span class="vSuchStm rInf">hielt dagegen &middot; hat dagegengehalten</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/dahinfallen.htm">
+dahinf<mark>al</mark>len 
+</a>
+<span class="vSuchStm rInf">fiel dahin &middot; ist dahingefallen</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/dalassen.htm">
+d<mark>al</mark>assen 
+</a>
+<span class="vSuchStm rInf">ließ da &middot; hat dagelassen</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/daliegen_hat.htm">
+d<mark>al</mark>iegen (hat) 
+</a>
+<span class="vSuchStm rInf">lag da &middot; hat dagelegen</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/daliegen_ist.htm">
+d<mark>al</mark>iegen (ist) 
+</a>
+<span class="vSuchStm rInf">lag da &middot; ist dagelegen</span><br>
+</div>
+<a href="http://www.verblisten.de/listen/verben/anfangsbuchstabe/vollstaendig.html?i=al">...</a><br>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('65923');
+</script>
+</section>
+</div>
+<div class="vSuchBox">
+<section class="rBox rBoxWht" id="0e97bBox">
+<header>
+<div class="rBoxText">
+<h2>E</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="0e97bImg" onclick="Rahmen.aufzu('0e97b')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="0e97b" class="rAufZu">
+<div class="vSuchSplt">
+<a href="/konjugation/egalisieren.htm">
+eg<mark>al</mark>isieren 
+</a>
+<span class="vSuchStm rInf">egalisierte &middot; hat egalisiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/einbehalten.htm">
+einbeh<mark>al</mark>ten 
+</a>
+<span class="vSuchStm rInf">behielt ein &middot; hat einbehalten</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/einbalsamieren.htm">
+einb<mark>al</mark>samieren 
+</a>
+<span class="vSuchStm rInf">balsamierte ein &middot; hat einbalsamiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/einfallen.htm">
+einf<mark>al</mark>len 
+</a>
+<span class="vSuchStm rInf">fiel ein &middot; ist eingefallen</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/einhalten.htm">
+einh<mark>al</mark>ten 
+</a>
+<span class="vSuchStm rInf">hielt ein &middot; hat eingehalten</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/einkalkulieren.htm">
+eink<mark>al</mark>kulieren 
+</a>
+<span class="vSuchStm rInf">kalkulierte ein &middot; hat einkalkuliert</span><br>
+</div>
+<a href="http://www.verblisten.de/listen/verben/anfangsbuchstabe/vollstaendig.html?i=al">...</a><br>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('0e97b');
+</script>
+</section>
+</div>
+<div class="vSuchBox">
+<section class="rBox rBoxWht" id="94200Box">
+<header>
+<div class="rBoxText">
+<h2>F</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="94200Img" onclick="Rahmen.aufzu('94200')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="94200" class="rAufZu">
+<div class="vSuchSplt">
+<a href="/konjugation/fa:llen.htm">
+fällen 
+</a>
+<span class="vSuchStm rInf">fällte &middot; hat gefällt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/fa:lschen.htm">
+fälschen 
+</a>
+<span class="vSuchStm rInf">fälschte &middot; hat gefälscht</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/fa:lteln.htm">
+fälteln 
+</a>
+<span class="vSuchStm rInf">fältelte &middot; hat gefältelt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/fallen.htm">
+f<mark>al</mark>len 
+</a>
+<span class="vSuchStm rInf">fiel &middot; ist gefallen</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/fallenlassen.htm">
+f<mark>al</mark>lenlassen 
+</a>
+<span class="vSuchStm rInf">ließ fallen &middot; hat fallengelassen</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/falschliegen.htm">
+f<mark>al</mark>schliegen 
+</a>
+<span class="vSuchStm rInf">lag falsch &middot; hat falschgelegen</span><br>
+</div>
+<a href="http://www.verblisten.de/listen/verben/anfangsbuchstabe/vollstaendig.html?i=al">...</a><br>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('94200');
+</script>
+</section>
+</div>
+<div class="vSuchBox">
+<section class="rBox rBoxWht" id="ae2c5Box">
+<header>
+<div class="rBoxText">
+<h2>G</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="ae2c5Img" onclick="Rahmen.aufzu('ae2c5')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="ae2c5" class="rAufZu">
+<div class="vSuchSplt">
+<a href="/konjugation/galoppieren_ist.htm">
+g<mark>al</mark>oppieren (ist) 
+</a>
+<span class="vSuchStm rInf">galoppierte &middot; ist galoppiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/galoppieren_hat.htm">
+g<mark>al</mark>oppieren (hat) 
+</a>
+<span class="vSuchStm rInf">galoppierte &middot; hat galoppiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/galonieren.htm">
+g<mark>al</mark>onieren 
+</a>
+<span class="vSuchStm rInf">galonierte &middot; hat galoniert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/galvanisieren.htm">
+g<mark>al</mark>vanisieren 
+</a>
+<span class="vSuchStm rInf">galvanisierte &middot; hat galvanisiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/gefallen.htm">
+gef<mark>al</mark>len 
+</a>
+<span class="vSuchStm rInf">gefiel &middot; hat gefallen</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/sich_gefallen.htm">
+sich gef<mark>al</mark>len 
+</a>
+<span class="vSuchStm rInf">gefiel sich &middot; hat sich gefallen</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/gegeneinanderhalten.htm">
+gegeneinanderh<mark>al</mark>ten 
+</a>
+<span class="vSuchStm rInf">hielt gegeneinander &middot; hat gegeneinandergehalten</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/gegeneinanderprallen.htm">
+gegeneinanderpr<mark>al</mark>len 
+</a>
+<span class="vSuchStm rInf">prallte gegeneinander &middot; ist gegeneinandergeprallt</span><br>
+</div>
+<a href="http://www.verblisten.de/listen/verben/anfangsbuchstabe/vollstaendig.html?i=al">...</a><br>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('ae2c5');
+</script>
+</section>
+</div>
+<div class="vSuchBox">
+<section class="rBox rBoxWht" id="77ba3Box">
+<header>
+<div class="rBoxText">
+<h2>H</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="77ba3Img" onclick="Rahmen.aufzu('77ba3')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="77ba3" class="rAufZu">
+<div class="vSuchSplt">
+<a href="/konjugation/habitualisieren.htm">
+habitu<mark>al</mark>isieren 
+</a>
+<span class="vSuchStm rInf">habitualisierte &middot; hat habitualisiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/ha:lften.htm">
+hälften 
+</a>
+<span class="vSuchStm rInf">hälftete &middot; hat gehälftet</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/ha:ltern.htm">
+hältern 
+</a>
+<span class="vSuchStm rInf">hälterte &middot; hat gehältert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/halbieren.htm">
+h<mark>al</mark>bieren 
+</a>
+<span class="vSuchStm rInf">halbierte &middot; hat halbiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/sich_halbieren.htm">
+sich h<mark>al</mark>bieren 
+</a>
+<span class="vSuchStm rInf">halbierte sich &middot; hat sich halbiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/halftern.htm">
+h<mark>al</mark>ftern 
+</a>
+<span class="vSuchStm rInf">halfterte &middot; hat gehalftert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/hallen.htm">
+h<mark>al</mark>len 
+</a>
+<span class="vSuchStm rInf">hallte &middot; hat gehallt</span><br>
+</div>
+<a href="http://www.verblisten.de/listen/verben/anfangsbuchstabe/vollstaendig.html?i=al">...</a><br>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('77ba3');
+</script>
+</section>
+</div>
+<div class="vSuchBox">
+<section class="rBox rBoxWht" id="ce79fBox">
+<header>
+<div class="rBoxText">
+<h2>I</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="ce79fImg" onclick="Rahmen.aufzu('ce79f')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="ce79f" class="rAufZu">
+<div class="vSuchSplt">
+<a href="/konjugation/idealisieren.htm">
+ide<mark>al</mark>isieren 
+</a>
+<span class="vSuchStm rInf">idealisierte &middot; hat idealisiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/individualisieren.htm">
+individu<mark>al</mark>isieren 
+</a>
+<span class="vSuchStm rInf">individualisierte &middot; hat individualisiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/industrialisieren.htm">
+industri<mark>al</mark>isieren 
+</a>
+<span class="vSuchStm rInf">industrialisierte &middot; hat industrialisiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/inhalieren.htm">
+inh<mark>al</mark>ieren 
+</a>
+<span class="vSuchStm rInf">inhalierte &middot; hat inhaliert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/innehalten.htm">
+inneh<mark>al</mark>ten 
+</a>
+<span class="vSuchStm rInf">hielt inne &middot; hat innegehalten</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/instrumentalisieren.htm">
+instrument<mark>al</mark>isieren 
+</a>
+<span class="vSuchStm rInf">instrumentalisierte &middot; hat instrumentalisiert</span><br>
+</div>
+<a href="http://www.verblisten.de/listen/verben/anfangsbuchstabe/vollstaendig.html?i=al">...</a><br>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('ce79f');
+</script>
+</section>
+</div>
+<div class="vSuchBox">
+<section class="rBox rBoxWht" id="fe3c9Box">
+<header>
+<div class="rBoxText">
+<h2>K</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="fe3c9Img" onclick="Rahmen.aufzu('fe3c9')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="fe3c9" class="rAufZu">
+<div class="vSuchSplt">
+<a href="/konjugation/ka:lken.htm">
+kälken 
+</a>
+<span class="vSuchStm rInf">kälkte &middot; hat gekälkt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/ka:lbern.htm">
+kälbern 
+</a>
+<span class="vSuchStm rInf">kälberte &middot; hat gekälbert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/ka:lten.htm">
+kälten 
+</a>
+<span class="vSuchStm rInf">kältete &middot; hat gekältet</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/kalandern.htm">
+k<mark>al</mark>andern 
+</a>
+<span class="vSuchStm rInf">kalanderte &middot; hat kalandert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/kalandrieren.htm">
+k<mark>al</mark>andrieren 
+</a>
+<span class="vSuchStm rInf">kalandrierte &middot; hat kalandriert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/kalben.htm">
+k<mark>al</mark>ben 
+</a>
+<span class="vSuchStm rInf">kalbte &middot; hat gekalbt</span><br>
+</div>
+<a href="http://www.verblisten.de/listen/verben/anfangsbuchstabe/vollstaendig.html?i=al">...</a><br>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('fe3c9');
+</script>
+</section>
+</div>
+<div class="vSuchBox">
+<section class="rBox rBoxWht" id="44942Box">
+<header>
+<div class="rBoxText">
+<h2>L</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="44942Img" onclick="Rahmen.aufzu('44942')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="44942" class="rAufZu">
+<div class="vSuchSplt">
+<a href="/konjugation/labialisieren.htm">
+labi<mark>al</mark>isieren 
+</a>
+<span class="vSuchStm rInf">labialisierte &middot; hat labialisiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/lallen.htm">
+l<mark>al</mark>len 
+</a>
+<span class="vSuchStm rInf">lallte &middot; hat gelallt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/legalisieren.htm">
+leg<mark>al</mark>isieren 
+</a>
+<span class="vSuchStm rInf">legalisierte &middot; hat legalisiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/leichtfallen.htm">
+leichtf<mark>al</mark>len 
+</a>
+<span class="vSuchStm rInf">fiel leicht &middot; ist leichtgefallen</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/lexikalisieren.htm">
+lexik<mark>al</mark>isieren 
+</a>
+<span class="vSuchStm rInf">lexikalisierte &middot; hat lexikalisiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/liberalisieren.htm">
+liber<mark>al</mark>isieren 
+</a>
+<span class="vSuchStm rInf">liberalisierte &middot; hat liberalisiert</span><br>
+</div>
+<a href="http://www.verblisten.de/listen/verben/anfangsbuchstabe/vollstaendig.html?i=al">...</a><br>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('44942');
+</script>
+</section>
+</div>
+<div class="vSuchBox">
+<section class="rBox rBoxWht" id="bee96Box">
+<header>
+<div class="rBoxText">
+<h2>M</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="bee96Img" onclick="Rahmen.aufzu('bee96')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="bee96" class="rAufZu">
+<div class="vSuchSplt">
+<a href="/konjugation/maledeien.htm">
+m<mark>al</mark>edeien 
+</a>
+<span class="vSuchStm rInf">maledeite &middot; hat maledeit</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/malen.htm">
+m<mark>al</mark>en 
+</a>
+<span class="vSuchStm rInf">malte &middot; hat gemalt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/sich_malen.htm">
+sich m<mark>al</mark>en 
+</a>
+<span class="vSuchStm rInf">malte sich &middot; hat sich gemalt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/malochen.htm">
+m<mark>al</mark>ochen 
+</a>
+<span class="vSuchStm rInf">malochte &middot; hat malocht</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/malnehmen.htm">
+m<mark>al</mark>nehmen 
+</a>
+<span class="vSuchStm rInf">nahm mal &middot; hat malgenommen</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/malmen.htm">
+m<mark>al</mark>men 
+</a>
+<span class="vSuchStm rInf">malmte &middot; hat gemalmt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/maltra:tieren.htm">
+m<mark>al</mark>trätieren 
+</a>
+<span class="vSuchStm rInf">malträtierte &middot; hat malträtiert</span><br>
+</div>
+<a href="http://www.verblisten.de/listen/verben/anfangsbuchstabe/vollstaendig.html?i=al">...</a><br>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('bee96');
+</script>
+</section>
+</div>
+<div class="vSuchBox">
+<section class="rBox rBoxWht" id="f7e89Box">
+<header>
+<div class="rBoxText">
+<h2>N</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="f7e89Img" onclick="Rahmen.aufzu('f7e89')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="f7e89" class="rAufZu">
+<div class="vSuchSplt">
+<a href="/konjugation/nachfallen.htm">
+nachf<mark>al</mark>len 
+</a>
+<span class="vSuchStm rInf">fiel nach &middot; ist nachgefallen</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/nachgestalten.htm">
+nachgest<mark>al</mark>ten 
+</a>
+<span class="vSuchStm rInf">gestaltete nach &middot; hat nachgestaltet</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/nachhallen_hat.htm">
+nachh<mark>al</mark>len (hat) 
+</a>
+<span class="vSuchStm rInf">hallte nach &middot; hat nachgehallt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/nachhallen_ist.htm">
+nachh<mark>al</mark>len (ist) 
+</a>
+<span class="vSuchStm rInf">hallte nach &middot; ist nachgehallt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/nachhalten.htm">
+nachh<mark>al</mark>ten 
+</a>
+<span class="vSuchStm rInf">hielt nach &middot; hat nachgehalten</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/nachmalen.htm">
+nachm<mark>al</mark>en 
+</a>
+<span class="vSuchStm rInf">malte nach &middot; hat nachgemalt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/nachsalzen.htm">
+nachs<mark>al</mark>zen 
+</a>
+<span class="vSuchStm rInf">salzte nach &middot; hat nachgesalzen/nachgesalzt</span><br>
+</div>
+<a href="http://www.verblisten.de/listen/verben/anfangsbuchstabe/vollstaendig.html?i=al">...</a><br>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('f7e89');
+</script>
+</section>
+</div>
+<div class="vSuchBox">
+<section class="rBox rBoxWht" id="9b754Box">
+<header>
+<div class="rBoxText">
+<h2>O</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="9b754Img" onclick="Rahmen.aufzu('9b754')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="9b754" class="rAufZu">
+<div class="vSuchSplt">
+<a href="/konjugation/ob=walten.htm">
+obw<mark>al</mark>ten 
+</a>
+<span class="vSuchStm rInf">obwaltete &middot; hat obwaltet</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/ob-walten.htm">
+ob-w<mark>al</mark>ten 
+</a>
+<span class="vSuchStm rInf">waltete ob &middot; hat obgewaltet</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/opalisieren.htm">
+op<mark>al</mark>isieren 
+</a>
+<span class="vSuchStm rInf">opalisierte &middot; hat opalisiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/opaleszieren.htm">
+op<mark>al</mark>eszieren 
+</a>
+<span class="vSuchStm rInf">opaleszierte &middot; hat opalesziert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/operationalisieren.htm">
+operation<mark>al</mark>isieren 
+</a>
+<span class="vSuchStm rInf">operationalisierte &middot; hat operationalisiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/orientalisieren.htm">
+orient<mark>al</mark>isieren 
+</a>
+<span class="vSuchStm rInf">orientalisierte &middot; hat orientalisiert</span><br>
+</div>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('9b754');
+</script>
+</section>
+</div>
+<div class="vSuchBox">
+<section class="rBox rBoxWht" id="23b8fBox">
+<header>
+<div class="rBoxText">
+<h2>P</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="23b8fImg" onclick="Rahmen.aufzu('23b8f')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="23b8f" class="rAufZu">
+<div class="vSuchSplt">
+<a href="/konjugation/palavern.htm">
+p<mark>al</mark>avern 
+</a>
+<span class="vSuchStm rInf">palaverte &middot; hat palavert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/palatalisieren.htm">
+p<mark>al</mark>at<mark>al</mark>isieren 
+</a>
+<span class="vSuchStm rInf">palatalisierte &middot; hat palatalisiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/palmieren.htm">
+p<mark>al</mark>mieren 
+</a>
+<span class="vSuchStm rInf">palmierte &middot; hat palmiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/paralysieren.htm">
+par<mark>al</mark>ysieren 
+</a>
+<span class="vSuchStm rInf">paralysierte &middot; hat paralysiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/parallelisieren.htm">
+par<mark>al</mark>lelisieren 
+</a>
+<span class="vSuchStm rInf">parallelisierte &middot; hat parallelisiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/pauschalieren.htm">
+pausch<mark>al</mark>ieren 
+</a>
+<span class="vSuchStm rInf">pauschalierte &middot; hat pauschaliert</span><br>
+</div>
+<a href="http://www.verblisten.de/listen/verben/anfangsbuchstabe/vollstaendig.html?i=al">...</a><br>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('23b8f');
+</script>
+</section>
+</div>
+<div class="vSuchBox">
+<section class="rBox rBoxWht" id="b5bb7Box">
+<header>
+<div class="rBoxText">
+<h2>Q</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="b5bb7Img" onclick="Rahmen.aufzu('b5bb7')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="b5bb7" class="rAufZu">
+<div class="vSuchSplt">
+<a href="/konjugation/quacksalbern.htm">
+quacks<mark>al</mark>bern 
+</a>
+<span class="vSuchStm rInf">quacksalberte &middot; hat gequacksalbert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/qua:len.htm">
+quälen 
+</a>
+<span class="vSuchStm rInf">quälte &middot; hat gequält</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/sich_qua:len.htm">
+sich quälen 
+</a>
+<span class="vSuchStm rInf">quälte sich &middot; hat sich gequält</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/qualifizieren.htm">
+qu<mark>al</mark>ifizieren 
+</a>
+<span class="vSuchStm rInf">qualifizierte &middot; hat qualifiziert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/qualmen.htm">
+qu<mark>al</mark>men 
+</a>
+<span class="vSuchStm rInf">qualmte &middot; hat gequalmt</span><br>
+</div>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('b5bb7');
+</script>
+</section>
+</div>
+<div class="vSuchBox">
+<section class="rBox rBoxWht" id="0d25fBox">
+<header>
+<div class="rBoxText">
+<h2>R</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="0d25fImg" onclick="Rahmen.aufzu('0d25f')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="0d25f" class="rAufZu">
+<div class="vSuchSplt">
+<a href="/konjugation/radikalisieren.htm">
+radik<mark>al</mark>isieren 
+</a>
+<span class="vSuchStm rInf">radikalisierte &middot; hat radikalisiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/randalieren.htm">
+rand<mark>al</mark>ieren 
+</a>
+<span class="vSuchStm rInf">randalierte &middot; hat randaliert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/sich_ranhalten.htm">
+sich ranh<mark>al</mark>ten 
+</a>
+<span class="vSuchStm rInf">hielt sich ran &middot; hat sich rangehalten</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/rationalisieren.htm">
+ration<mark>al</mark>isieren 
+</a>
+<span class="vSuchStm rInf">rationalisierte &middot; hat rationalisiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/raushalten.htm">
+raush<mark>al</mark>ten 
+</a>
+<span class="vSuchStm rInf">hielt raus &middot; hat rausgehalten</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/realisieren.htm">
+re<mark>al</mark>isieren 
+</a>
+<span class="vSuchStm rInf">realisierte &middot; hat realisiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/sich_realisieren.htm">
+sich re<mark>al</mark>isieren 
+</a>
+<span class="vSuchStm rInf">realisierte sich &middot; hat sich realisiert</span><br>
+</div>
+<a href="http://www.verblisten.de/listen/verben/anfangsbuchstabe/vollstaendig.html?i=al">...</a><br>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('0d25f');
+</script>
+</section>
+</div>
+<div class="vSuchBox">
+<section class="rBox rBoxWht" id="5424eBox">
+<header>
+<div class="rBoxText">
+<h2>S</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="5424eImg" onclick="Rahmen.aufzu('5424e')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="5424e" class="rAufZu">
+<div class="vSuchSplt">
+<a href="/konjugation/salarieren.htm">
+s<mark>al</mark>arieren 
+</a>
+<span class="vSuchStm rInf">salarierte &middot; hat salariert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/salbadern.htm">
+s<mark>al</mark>badern 
+</a>
+<span class="vSuchStm rInf">salbaderte &middot; hat salbadert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/salben.htm">
+s<mark>al</mark>ben 
+</a>
+<span class="vSuchStm rInf">salbte &middot; hat gesalbt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/saldieren.htm">
+s<mark>al</mark>dieren 
+</a>
+<span class="vSuchStm rInf">saldierte &middot; hat saldiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/salutieren.htm">
+s<mark>al</mark>utieren 
+</a>
+<span class="vSuchStm rInf">salutierte &middot; hat salutiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/salzen.htm">
+s<mark>al</mark>zen 
+</a>
+<span class="vSuchStm rInf">salzte &middot; hat gesalzen/gesalzt</span><br>
+</div>
+<a href="http://www.verblisten.de/listen/verben/anfangsbuchstabe/vollstaendig.html?i=al">...</a><br>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('5424e');
+</script>
+</section>
+</div>
+<div class="vSuchBox">
+<section class="rBox rBoxWht" id="1194bBox">
+<header>
+<div class="rBoxText">
+<h2>T</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="1194bImg" onclick="Rahmen.aufzu('1194b')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="1194b" class="rAufZu">
+<div class="vSuchSplt">
+<a href="/konjugation/talken.htm">
+t<mark>al</mark>ken 
+</a>
+<span class="vSuchStm rInf">talkte &middot; hat getalkt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/theatralisieren.htm">
+theatr<mark>al</mark>isieren 
+</a>
+<span class="vSuchStm rInf">theatralisierte &middot; hat theatralisiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/tra:llern.htm">
+trällern 
+</a>
+<span class="vSuchStm rInf">trällerte &middot; hat geträllert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/trockenfallen.htm">
+trockenf<mark>al</mark>len 
+</a>
+<span class="vSuchStm rInf">fiel trocken &middot; ist trockengefallen</span><br>
+</div>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('1194b');
+</script>
+</section>
+</div>
+<div class="vSuchBox">
+<section class="rBox rBoxWht" id="e658eBox">
+<header>
+<div class="rBoxText">
+<h2>U</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="e658eImg" onclick="Rahmen.aufzu('e658e')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="e658e" class="rAufZu">
+<div class="vSuchSplt">
+<a href="/konjugation/umbehalten.htm">
+umbeh<mark>al</mark>ten 
+</a>
+<span class="vSuchStm rInf">behielt um &middot; hat umbehalten</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/umfa:lschen.htm">
+umfälschen 
+</a>
+<span class="vSuchStm rInf">fälschte um &middot; hat umgefälscht</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/umfallen.htm">
+umf<mark>al</mark>len 
+</a>
+<span class="vSuchStm rInf">fiel um &middot; ist umgefallen</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/umgestalten.htm">
+umgest<mark>al</mark>ten 
+</a>
+<span class="vSuchStm rInf">gestaltete um &middot; hat umgestaltet</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/umhalsen.htm">
+umh<mark>al</mark>sen 
+</a>
+<span class="vSuchStm rInf">umhalste &middot; hat umhalst</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/umkrallen.htm">
+umkr<mark>al</mark>len 
+</a>
+<span class="vSuchStm rInf">umkrallte &middot; hat umkrallt</span><br>
+</div>
+<a href="http://www.verblisten.de/listen/verben/anfangsbuchstabe/vollstaendig.html?i=al">...</a><br>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('e658e');
+</script>
+</section>
+</div>
+<div class="vSuchBox">
+<section class="rBox rBoxWht" id="9d579Box">
+<header>
+<div class="rBoxText">
+<h2>V</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="9d579Img" onclick="Rahmen.aufzu('9d579')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="9d579" class="rAufZu">
+<div class="vSuchSplt">
+<a href="/konjugation/validieren.htm">
+v<mark>al</mark>idieren 
+</a>
+<span class="vSuchStm rInf">validierte &middot; hat validiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/valutieren.htm">
+v<mark>al</mark>utieren 
+</a>
+<span class="vSuchStm rInf">valutierte &middot; hat valutiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/verallgemeinern.htm">
+ver<mark>al</mark>lgemeinern 
+</a>
+<span class="vSuchStm rInf">verallgemeinerte &middot; hat verallgemeinert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/veralbern.htm">
+ver<mark>al</mark>bern 
+</a>
+<span class="vSuchStm rInf">veralberte &middot; hat veralbert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/veralten.htm">
+ver<mark>al</mark>ten 
+</a>
+<span class="vSuchStm rInf">veraltete &middot; ist veraltet</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/veranstalten.htm">
+veranst<mark>al</mark>ten 
+</a>
+<span class="vSuchStm rInf">veranstaltete &middot; hat veranstaltet</span><br>
+</div>
+<a href="http://www.verblisten.de/listen/verben/anfangsbuchstabe/vollstaendig.html?i=al">...</a><br>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('9d579');
+</script>
+</section>
+</div>
+<div class="vSuchBox">
+<section class="rBox rBoxWht" id="b6a71Box">
+<header>
+<div class="rBoxText">
+<h2>W</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="b6a71Img" onclick="Rahmen.aufzu('b6a71')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="b6a71" class="rAufZu">
+<div class="vSuchSplt">
+<a href="/konjugation/wachhalten.htm">
+wachh<mark>al</mark>ten 
+</a>
+<span class="vSuchStm rInf">hielt wach &middot; hat wachgehalten</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/wa:llen.htm">
+wällen 
+</a>
+<span class="vSuchStm rInf">wällte &middot; hat gewällt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/wa:lzen.htm">
+wälzen 
+</a>
+<span class="vSuchStm rInf">wälzte &middot; hat gewälzt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/sich_wa:lzen.htm">
+sich wälzen 
+</a>
+<span class="vSuchStm rInf">wälzte sich &middot; hat sich gewälzt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/walken_hat.htm">
+w<mark>al</mark>ken (hat) 
+</a>
+<span class="vSuchStm rInf">walkte &middot; hat gewalkt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/walken_ist.htm">
+w<mark>al</mark>ken (ist) 
+</a>
+<span class="vSuchStm rInf">walkte &middot; ist gewalkt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/wallen_ist.htm">
+w<mark>al</mark>len (ist) 
+</a>
+<span class="vSuchStm rInf">wallte &middot; ist gewallt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/wallen_hat.htm">
+w<mark>al</mark>len (hat) 
+</a>
+<span class="vSuchStm rInf">wallte &middot; hat gewallt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/walzen_ist.htm">
+w<mark>al</mark>zen (ist) 
+</a>
+<span class="vSuchStm rInf">walzte &middot; ist gewalzt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/walzen_hat.htm">
+w<mark>al</mark>zen (hat) 
+</a>
+<span class="vSuchStm rInf">walzte &middot; hat gewalzt</span><br>
+</div>
+<a href="http://www.verblisten.de/listen/verben/anfangsbuchstabe/vollstaendig.html?i=al">...</a><br>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('b6a71');
+</script>
+</section>
+</div>
+<div class="vSuchBox">
+<section class="rBox rBoxWht" id="49449Box">
+<header>
+<div class="rBoxText">
+<h2>Z</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="49449Img" onclick="Rahmen.aufzu('49449')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="49449" class="rAufZu">
+<div class="vSuchSplt">
+<a href="/konjugation/zentralisieren.htm">
+zentr<mark>al</mark>isieren 
+</a>
+<span class="vSuchStm rInf">zentralisierte &middot; hat zentralisiert</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/zerfallen.htm">
+zerf<mark>al</mark>len 
+</a>
+<span class="vSuchStm rInf">zerfiel &middot; ist zerfallen</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/zermalmen.htm">
+zerm<mark>al</mark>men 
+</a>
+<span class="vSuchStm rInf">zermalmte &middot; hat zermalmt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/zerqua:len.htm">
+zerquälen 
+</a>
+<span class="vSuchStm rInf">zerquälte &middot; hat zerquält</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/sich_zerqua:len.htm">
+sich zerquälen 
+</a>
+<span class="vSuchStm rInf">zerquälte sich &middot; hat sich zerquält</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/zerspalten.htm">
+zersp<mark>al</mark>ten 
+</a>
+<span class="vSuchStm rInf">zerspaltete &middot; hat zerspaltet/zerspalten</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/zueinanderhalten.htm">
+zueinanderh<mark>al</mark>ten 
+</a>
+<span class="vSuchStm rInf">hielt zueinander &middot; hat zueinandergehalten</span><br>
+</div>
+<a href="http://www.verblisten.de/listen/verben/anfangsbuchstabe/vollstaendig.html?i=al">...</a><br>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('49449');
+</script>
+</section>
+</div>
+<div class="vSuchBox">
+<section class="rBox rBoxWht" id="4555aBox">
+<header>
+<div class="rBoxText">
+<h2>Ü</h2>
+<br></div>
+<div class="rBoxKnopf">
+<button type="button" id="4555aImg" onclick="Rahmen.aufzu('4555a')"><svg fill="#dddddd" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+<path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+<path class="rZu" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+</svg></button></div>
+</header>
+<div class="rClear"></div>
+<div id="4555a" class="rAufZu">
+<div class="vSuchSplt">
+<a href="/konjugation/u:ber=fallen_hat.htm">
+überf<mark>al</mark>len (hat) 
+</a>
+<span class="vSuchStm rInf">überfiel &middot; hat überfallen</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/u:ber-fallen_ist.htm">
+über-f<mark>al</mark>len (ist) 
+</a>
+<span class="vSuchStm rInf">fiel über &middot; ist übergefallen</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/u:ber=malen.htm">
+überm<mark>al</mark>en 
+</a>
+<span class="vSuchStm rInf">übermalte &middot; hat übermalt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/u:ber-malen.htm">
+über-m<mark>al</mark>en 
+</a>
+<span class="vSuchStm rInf">malte über &middot; hat übergemalt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/u:berwa:ltigen.htm">
+überwältigen 
+</a>
+<span class="vSuchStm rInf">überwältigte &middot; hat überwältigt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/u:berwa:lzen.htm">
+überwälzen 
+</a>
+<span class="vSuchStm rInf">überwälzte &middot; hat überwälzt</span><br>
+</div>
+<div class="vSuchSplt">
+<a href="/konjugation/u:berwallen.htm">
+überw<mark>al</mark>len 
+</a>
+<span class="vSuchStm rInf">überwallte &middot; ist überwallt</span><br>
+</div>
+</div>
+<div class="rClear"></div>
+<script type="text/javascript">
+if(Rahmen.breite()<700)
+Rahmen.aufzu('4555a');
+</script>
+</section>
+</div>
+</div>
+</div><div class="rClear"></div></article>
+<footer><div>
+<div class="rLinks vFuss">
+<h2>Kontakt</h2>
+<p>Netzverb Inh. Andreas Göbel<br>
+Alte Buchholzer Str. 8<br>
+D-09487 Schlettau</p>
+<p>Telefon: +49 3733 6196894<br>
+E-Mail: info@netzverb.de</p>
+<p>Facebook: <a href="https://www.facebook.com/Netzverb" rel="nofollow" target="_blank">facebook.com/Netzverb</a><br>
+Twitter: <a href="https://twitter.com/Netzverb" rel="nofollow" target="_blank">twitter.com/Netzverb</a><br>
+Google+: <a href="https://plus.google.com/+NetzverbDe" rel="nofollow" target="_blank">plus.google.com/+NetzverbDe</a></p>
+</div>
+<div class="rLinks vFuss">
+<h2>Netzverb</h2>
+<p>Netzwerk der deutschen Sprache<br>
+<a href="//www.netzverb.de">www.netzverb.de</a> · <a href="//www.netzverb.de/blog/">Blog</a></p>
+<p>Deutsche Flexion: <a href="//www.verbformen.de">verbformen.de</a><br>
+Deutsches Wörterbuch: <a href="//www.verblisten.de">verblisten.de</a><br>
+Sprachforum: <a href="http://www.konjugation.de">konjugation.de</a><br>
+Deutsche Grammatik: <a href="http://www.verben.de">verben.de</a></p>
+<a href="https://www.facebook.com/Netzverb" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path>
+</svg></a>
+<a href="https://twitter.com/Netzverb" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path>
+</svg></a>
+<a href="https://plus.google.com/+NetzverbDe" title="Folgen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewBox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M23,11H21V9H19V11H17V13H19V15H21V13H23M8,11V13.4H12C11.8,14.4 10.8,16.4 8,16.4C5.6,16.4 3.7,14.4 3.7,12C3.7,9.6 5.6,7.6 8,7.6C9.4,7.6 10.3,8.2 10.8,8.7L12.7,6.9C11.5,5.7 9.9,5 8,5C4.1,5 1,8.1 1,12C1,15.9 4.1,19 8,19C12,19 14.7,16.2 14.7,12.2C14.7,11.7 14.7,11.4 14.6,11H8Z"></path>
+</svg></a>		
+</div>
+<div class="rLinks vFuss">
+<h2>Hinweise</h2>
+<p><a href="//www.netzverb.de/impressum.htm">Impressum</a> ·
+<a href="//www.netzverb.de/impressum.htm">Nutzungsbedingungen</a><br>
+<a href="//www.netzverb.de/datenschutz.htm">Datenschutz</a> ·
+<a href="//www.netzverb.de/datenschutz.htm">Cookies</a></p>
+<h2>Hilfe</h2>
+<p><a href="/hilfe/">Hilfe und FAQ</a> · <a href="/kommentare.htm">Kommentare</a><br>
+<a href="//www.netzverb.de/links/">Links</a> · <a href="/hilfe/widgets.htm">Widgets</a> · <a href="/neuigkeiten.htm">Neuigkeiten</a></p>
+<a href="/nutzer/?anmelden">Anmelden</a>
+</div>
+<div class="rClear">
+<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow">
+<svg fill="#fff" fill-opacity="0.6" height="26" viewBox="0 0 26 26" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="m13 0c3.6 0 6.7 1.3 9.3 3.8 1.2 1.2 2.2 2.6 2.8 4.2 0.6 1.6 0.9 3.3 0.9 5 0 1.8-0.3 3.5-0.9 5 -0.6 1.6-1.5 2.9-2.8 4.1 -1.3 1.3-2.7 2.2-4.3 2.9 -1.6 0.7-3.3 1-5 1s-3.4-0.3-4.9-1c-1.6-0.6-3-1.6-4.3-2.9 -1.3-1.2-2.2-2.6-2.8-4.2 -0.6-1.5-1-3.2-1-4.9s0.3-3.4 1-5c0.7-1.6 1.6-3 2.9-4.3 2.5-2.5 5.5-3.8 9.1-3.8Zm0 2.3c-3 0-5.5 1-7.5 3.1 -1 1-1.8 2.2-2.3 3.5 -0.5 1.3-0.8 2.6-0.8 4 0 1.4 0.3 2.7 0.8 4 0.5 1.3 1.3 2.4 2.4 3.5s2.2 1.8 3.5 2.3c1.3 0.5 2.6 0.8 4 0.8 1.4 0 2.7-0.3 4.1-0.8s2.5-1.3 3.5-2.3c2-2 3-4.5 3-7.4 0-1.4-0.3-2.8-0.8-4.1 -0.5-1.3-1.2-2.4-2.2-3.4 -2.1-2.1-4.6-3.1-7.6-3.1Zm-0.2 8.5l-1.7 0.9c-0.2-0.4-0.4-0.7-0.7-0.8 -0.3-0.2-0.5-0.2-0.8-0.2 -1.2 0-1.7 0.8-1.7 2.3 0 0.7 0.1 1.3 0.4 1.7 0.3 0.4 0.7 0.6 1.3 0.6 0.8 0 1.3-0.4 1.6-1.1l1.6 0.8c-0.3 0.6-0.8 1.1-1.4 1.5 -0.6 0.4-1.3 0.5-2 0.5 -1.2 0-2.1-0.4-2.8-1.1 -0.7-0.7-1.1-1.7-1.1-3 0-1.2 0.4-2.2 1.1-2.9 0.7-0.7 1.6-1.1 2.7-1.1 1.6 0 2.8 0.6 3.5 1.9Zm7.5 0l-1.7 0.9c-0.2-0.4-0.4-0.7-0.7-0.8 -0.3-0.2-0.5-0.2-0.8-0.2 -1.2 0-1.7 0.8-1.7 2.3 0 0.7 0.1 1.3 0.4 1.7 0.3 0.4 0.7 0.6 1.3 0.6 0.8 0 1.3-0.4 1.6-1.1l1.6 0.8c-0.4 0.6-0.8 1.1-1.4 1.5 -0.6 0.4-1.3 0.5-2 0.5 -1.2 0-2.1-0.4-2.8-1.1 -0.7-0.7-1.1-1.7-1.1-3 0-1.2 0.4-2.2 1.1-2.9 0.7-0.7 1.6-1.1 2.7-1.1 1.6 0 2.8 0.6 3.4 1.9Z"></path>
+</svg>
+<svg fill="#fff" fill-opacity="0.6" height="26" viewBox="0 0 26 26" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="m13 0c3.7 0 6.7 1.3 9.2 3.8 2.5 2.6 3.8 5.6 3.8 9.2 0 3.7-1.2 6.7-3.7 9.1 -2.6 2.6-5.8 3.9-9.3 3.9 -3.6 0-6.6-1.3-9.2-3.8 -2.5-2.6-3.8-5.6-3.8-9.2 0-3.6 1.3-6.6 3.8-9.2 2.5-2.5 5.6-3.8 9.2-3.8Zm0.1 2.3c-3 0-5.4 1-7.5 3.1 -2.1 2.2-3.2 4.7-3.2 7.6 0 2.9 1.1 5.4 3.2 7.5 2 2 4.5 3.1 7.4 3.1 2.9 0 5.4-1.1 7.6-3.2 2-2 3.1-4.5 3.1-7.4s-1-5.5-3.1-7.6c-2-2.1-4.5-3.2-7.5-3.2Zm3.5 7.4v5.3h-1.5v6.3h-4v-6.3h-1.5v-5.3c0-0.2 0.1-0.4 0.2-0.6 0.2-0.2 0.4-0.2 0.6-0.2h5.3c0.2 0 0.4 0.1 0.6 0.2 0.2 0.2 0.3 0.4 0.3 0.6Zm-5.4-3.4c0-1.2 0.6-1.8 1.8-1.8s1.8 0.6 1.8 1.8c0 1.2-0.6 1.8-1.8 1.8 -1.2 0-1.8-0.6-1.8-1.8Z"></path>
+</svg>
+<svg fill="#fff" fill-opacity="0.6" height="26" viewBox="0 0 26 26" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="m13 0c3.6 0 6.7 1.3 9.2 3.8 2.5 2.5 3.8 5.6 3.8 9.2 0 3.6-1.2 6.7-3.7 9.1 -2.6 2.6-5.7 3.9-9.3 3.9 -3.5 0-6.6-1.3-9.2-3.8 -2.5-2.6-3.8-5.6-3.8-9.2 0-3.5 1.3-6.6 3.8-9.2 2.5-2.5 5.6-3.8 9.2-3.8Zm0 2.3c-3 0-5.4 1-7.5 3.1 -2.1 2.2-3.2 4.7-3.2 7.5 0 2.9 1.1 5.4 3.2 7.5 2.1 2.1 4.6 3.2 7.5 3.2 2.9 0 5.4-1.1 7.6-3.2 2.1-2 3.1-4.5 3.1-7.4 0-3-1-5.5-3.1-7.5 -2-2.2-4.5-3.2-7.4-3.2Zm-5.7 8.9c0.3-1.6 0.9-2.9 1.9-3.7 1-0.9 2.3-1.3 3.8-1.3 2.1 0 3.7 0.7 4.9 2 1.2 1.3 1.8 3 1.8 5.1 0 2-0.6 3.7-1.9 5 -1.3 1.3-2.9 2-4.9 2 -1.5 0-2.7-0.4-3.8-1.3s-1.7-2.1-1.9-3.8h3.3c0.1 1.6 1 2.4 2.9 2.4 0.9 0 1.7-0.4 2.2-1.2 0.6-0.8 0.8-1.8 0.8-3.2 0-1.4-0.3-2.4-0.8-3.1 -0.5-0.7-1.2-1.1-2.2-1.1 -1.7 0-2.7 0.8-2.9 2.3h1l-2.6 2.6 -2.6-2.6 1 0Z"></path>
+</svg>
+</a>
+<p>Alle originären Inhalte auf dieser Website sind, soweit nichts anderes vermerkt ist, unter der offenen Lizenz <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license nofollow" target="_blank">CC BY-SA 4.0</a> <em>(https://creativecommons.org/licenses/by-sa/4.0)</em> verfügbar. Die Inhalte dürfen somit frei und dauerhaft verwendet, kopiert und geändert werden und eignen sich im Rahmen von Open Educational Resources (OER) als Lehrmaterial. Bei einer Veröffentlichung ist als Urheber <em>"Netzverb (<a href="https://www.verbformen.de/">www.verbformen.de</a>)"</em> mit Verlinkung auf <em>https://www.verbformen.de/</em> zu nennen. Mehr Informationen stehen in den <a href="//www.netzverb.de/impressum.htm">Nutzungsbedingungen</a>.</p>
+</div>
+</div></footer>
+<aside class="rHw rHwUnt" id="20170317_cookie">
+<div>
+<div class="rRechts" onclick="Hinweis.weg('20170317_cookie')">
+<svg fill="#505050" fill-opacity="0.6" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+<path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
+</svg>
+</div>
+Es werden <a target="_blank"  href="//www.netzverb.de/datenschutz.htm">Cookies</a> verwendet. Nur weiter, wenn einverstanden!
+</div>
+</aside>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-1466848-8', 'auto');
+ga('send', 'pageview');
+ga('set', 'anonymizeIp', true);
+</script>
+<script type="application/ld+json">
+{
+"@id": "http://www.netzverb.de/",
+"@context": "http://schema.org",
+"@type": "Organization",
+"url": "http://www.netzverb.de/",
+"name": "Netzverb Inh. Andreas Göbel",
+"logo": {
+"@type": "ImageObject",
+"url": "http://www.netzverb.de/netzverb.png"
+}, 
+"sameAs": [
+"https://www.facebook.com/Netzverb",
+"https://twitter.com/Netzverb",
+"https://plus.google.com/+NetzverbDe"
+]
+}
+</script>
+<script type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "WebSite",
+"url": "https://www.verbformen.de/",
+"potentialAction": {
+"@type": "SearchAction",
+"target": "https://www.verbformen.de/suche/?w={search_term_string}",
+"query-input": "required name=search_term_string"
+},
+"author": { "@id": "http://www.netzverb.de/" },
+"publisher": { "@id": "http://www.netzverb.de/" }
+}
+</script>
+</body>
+</html>
